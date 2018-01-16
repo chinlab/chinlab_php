@@ -1,0 +1,46 @@
+html,body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{font-family:"PingFang SC","微软雅黑";margin:0;padding:0}
+img{display: block;border: 0;}
+h1,h2,h3,h4,h5,h6{font-weight: 100;}
+a{text-decoration: none;}
+#banner{width:7.5rem;height:2.33rem;border-bottom: 0.1rem solid #f7f7f7;}
+#banner .bannerImg{width: 100%;height: 100%;}
+
+#accom,#exam,#project,#advan,#common,#map{width: 7.5rem;border-bottom: 0.1rem solid #f7f7f7;}
+#accom .title{width: 6.7rem;height: 0.69rem;font-size: 0.32rem;color: #00deff;line-height: 0.69rem;border-bottom: 1px solid #999;text-align: center;margin: 0 auto;}
+#accom .detail{width: 6.7rem;font-size: 0.24rem;color:#666;margin: 0 auto;margin-top: 0.24rem;margin-bottom: 0.67rem;}
+
+#exam .title{width: 6.7rem;height: 0.69rem;font-size: 0.32rem;color: #00deff;line-height: 0.69rem;border-bottom: 1px solid #999;text-align: center;margin: 0 auto;}
+#exam .detailCon{width: 6.7rem;font-size: 0.24rem;color:#666;margin: 0 auto;margin-top: 0.2rem;margin-bottom: 0.19rem;}
+#exam .address{width:6.7rem;display: flex;justify-content: space-around;margin: 0 auto;}
+#exam .address .japan,.taiwan{width:1.77rem;height:0.47rem;font-size: 0.32rem;background: #3395cd;border-radius:6px;color: #fff;line-height: 0.47rem;text-align: center;margin-top: 0.11rem;}
+#exam .place{display:flex;justify-content:space-around;width: 6.7rem;margin: 0 auto;margin-bottom: 0.23rem;}
+#exam .place1{width: 3.37rem;height:2.45rem;}
+#exam .place2{width: 3.23rem;height:2.45rem;}
+#exam .introContent2{display: none;}
+
+fieldset{border: 0;border-top: 2px solid #85d3ff;font-size: 0.3rem;text-align: center;width: 6.7rem;margin: 0 auto;margin-top: 0.18rem;}
+fieldset legend{padding: 0 0.12rem 0 0.12rem;color: #fe9c01;margin-bottom: 0.32rem;}
+#project .showCon{display: flex;justify-content: space-around;margin-bottom: 0.48rem;}
+#project .showCon img{width: 1.59rem;height: 1.59rem;}
+
+#advan .title{width: 6.7rem;height: 0.69rem;font-size: 0.32rem;color: #00deff;line-height: 0.69rem;border-bottom: 1px solid #999;text-align: center;margin: 0 auto;}
+#advan .adContent{display: flex;justify-content:space-around;font-size: 0.24rem;color:#666;}
+#advan .adWrap{display:flex;flex-direction: column;}
+#advan .adWrap .adImg1{margin: 0 auto;margin-top: 0.23rem;margin-bottom: 0.28rem;}
+#advan .adWrap .adCon1{margin-left: 0.2rem;line-height: 0.4rem;width:3rem;}
+#advan .adWrap img{width:2.35rem;height:0.77rem;}
+#advan .adWrap p{width: 3.2rem;}
+
+
+#common fieldset{border: 0;border-top: 2px solid #85d3ff;font-size: 0.3rem;text-align: center;width: 6.7rem;margin: 0 auto;margin-top: 0.18rem;}
+#common legend{color:#00deff;}
+#common .showCon{display: flex;justify-content: space-around;margin-bottom: 0.32rem;}
+#common .showCon img{width: 1.38rem;height: 1.38rem;}
+
+#map img{width: 6.6rem;height: 2.68rem;margin: 0 auto;margin-bottom: 0.48rem;}
+#footer{width: 7.5rem;height:1.9rem;background:#3db2e9;padding-top: 0.2rem;padding-bottom:0.35rem;font-size:0.24rem;color: #fff;}
+#footer .logoImg{width: 2.33rem;height:0.96rem;margin: 0 auto;}
+#footer .link1{text-align: center;margin-top: 0.19rem;}
+#footer .link2{text-align: center;}
+
+

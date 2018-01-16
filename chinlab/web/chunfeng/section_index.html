@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>科室列表</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="resource/sbadmin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resource/sbadmin/bower_components/bootstrap/dist/css/font-awesome.min.css" rel="stylesheet">
+    <link href="resource/sbadmin/bower_components/bootstrap/dist/css/newstyle.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="resource/sbadmin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="resource/sbadmin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
+          rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="resource/sbadmin/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="resource/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="resource/sbadmin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
+    <link href="resource/sbadmin/bower_components/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+          type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="resource/sbadmin/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resource/sbadmin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="resource/sbadmin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="resource/sbadmin/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="resource/sbadmin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="resource/sbadmin/dist/js/sb-admin-2.js"></script>
+    <!--new-->
+    <script src="resource/sbadmin/bower_components/layer/layer.js"></script>
+    <script type="text/javascript" src="resource/sbadmin/js/fnReloadAjax.js"></script>
+    <script src="resource/sbadmin/bower_components/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="resource/sbadmin/bower_components/datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="resource/sbadmin/bower_components/colResizable/colResizable-1.6.js"></script>
+
+    <!--script src="resource/sbadmin/bower_components/Bootstrap-3-Typeahead-master/bootstrap3-typeahead.js"></script-->
+    <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        .breadcrumb {
+            padding: 0px;
+            margin-bottom: 0px;
+        }
+
+        #datatable td, #datatable th {
+            overflow-x: hidden;
+            max-width: 60px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        $(function () {
+            var tdtipindex = "";
+            $(document).on("mouseover", "#datatable td,#datatable th", function () {
+                var tdcontent = $(this).text();
+                tdtipindex = layer.tips(tdcontent, $(this), {
+                    tips: [1, '#333333'],
+                    time: 0
+                });
+            }).on("mouseout", "#datatable td,#datatable th", function () {
+                layer.close(tdtipindex);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="mycommonfade" style="background-color:#000; opacity:0.3; filter:alpha(opacity=30);"></div>
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a>科室列表</a><a id="add_item_index" class="btn btn-info">添加一级科室</a>
+        </div>
+
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" id="closesearchform" data-parent="#accordion"
+                               href="#collapseOne">
+                                筛选条件<span class="icon-angle-up"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <form class="">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label for="section_name">科室名称</label>
+                                        <input type="text" name="disease_name" id="section_name" value=""
+                                               class="form-control" placeholder="科室名称">
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <label for="is_parent">科室父级</label>
+                                        <select id="is_parent" name="is_top" class="form-control" data-rel="chosen">
+                                            <option value="0">全部</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <label for="is_common">手术预约可见</label>
+                                        <select id="is_common" name="is_top" class="form-control" data-rel="chosen">
+                                            <option value="0">全部</option>
+                                            <option value="1">否</option>
+                                            <option value="2">是</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <label for="is_doctor_common">医生列表可见</label>
+                                        <select id="is_doctor_common" name="is_top" class="form-control"
+                                                data-rel="chosen">
+                                            <option value="0">全部</option>
+                                            <option value="1">否</option>
+                                            <option value="2">是</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <div class="col-sm-1">
+                                            <button id="searchbtn" type="button" class="btn btn-primary"
+                                                    style="margin-top:25px;">确定
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dataTable_wrapper">
+                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <thead>
+                    <tr>
+                        <th>科室ID</th>
+                        <th>科室名称</th>
+                        <th>科室父级名称</th>
+                        <th>手术预约是否可见</th>
+                        <th>医生列表是否可见</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<script type="text/html" id="add_item">
+    <div class="container col-sm-12" style="margin-top: 20px">
+        <div class="form-group col-sm-12">
+            <div class="col-sm-3"><label for="section_name_add">科室名称</label></div>
+            <div class="col-sm-9"><input type="email" class="form-control" id="section_name_add" placeholder="科室名称">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default" id="disease_commit">添加科室</button>
+    </div>
+</script>
+
+<script type="text/html" id="update_item_name">
+    <div class="container col-sm-12" style="margin-top: 20px">
+        <div class="form-group col-sm-12">
+            <input type="hidden" id="common_item_id" value="">
+
+            <div class="col-sm-3"><label for="common_item_name">科室名称</label></div>
+            <div class="col-sm-9"><input type="email" class="form-control" id="common_item_name" placeholder="科室名称">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default" id="name_commit">修改</button>
+    </div>
+</script>
+
+
+
+<script>
+    $(document).ready(function () {
+        $.ajaxSetup({
+            async: false
+        });
+        var parent_name = {};
+        //获取一级科室
+        function getParent() {
+
+            $.post(local + "/section_getparent.php", {}, function (data) {
+                parent_name = data;
+                var str = '<option value="0">全部</option>';
+                $.each(data, function (k, v) {
+                    str += '<option value="' + v.section_id + '">' + v.section_name + '</option>';
+                });
+                $("#is_parent").html(str);
+            }, "json")
+        }
+
+        getParent();
+        //table列表
+        var dataTable = $('#dataTables-example').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "searching": false,
+            "ordering": false,
+            "bLengthChange": false, //去掉每页显示多少条数据方法
+            "iDisplayLength": 10,
+            "stateSave": false,
+            "ajax": {
+                url: local + "/section_index.php", // json datasource
+                type: "post",  // method  , by default get
+                error: function () {  // error handling
+                    $(".employee-grid-error").html("");
+                    $("#employee-grid").append('<tbody class="employee-grid-error"><tr><th colspan="3">No data found in the server</th></tr></tbody>');
+                    $("#employee-grid_processing").css("display", "none");
+                },
+                "data": function (d) {
+                    //添加额外的参数传给服务器
+                    d.name = $("#section_name").val();
+                    d.is_common = $("#is_common").val();
+                    d.is_doctor_common = $("#is_doctor_common").val();
+                    d.is_parent = $("#is_parent").val();
+                }
+            },
+            "columns": [
+                {"data": "section_id"},
+                {"data": "section_name"},
+                {
+                    "data": function (data) {
+                        var item_parent_name = "";
+                        $.each(parent_name, function (k, v) {
+                            if (v.section_id == data.parent_id) {
+                                item_parent_name = v.section_name;
+                            }
+                        });
+                        return item_parent_name;
+                    }
+                },
+                {
+                    "data": function (data) {
+                        if (data.parent_id == 0) {
+                            return '';
+                        }
+                        if (data.is_common == 1) {
+                            return '<a class="update_item btn btn-danger" data-type="is_common" data-change="0" data-id="' + data.section_id + '" href="javascript:void(0)">是</a>';
+                        }
+                        return '<a class="update_item btn btn-danger" data-type="is_common" data-change="1" data-id="' + data.section_id + '" href="javascript:void(0)">否</a>';
+                    }
+                },
+                {
+                    "data": function (data) {
+                        if (data.parent_id == 0) {
+                            return '';
+                        }
+                        if (data.is_doctor_common == 1) {
+                            return '<a class="update_item btn btn-danger" data-type="is_doctor_common" data-change="0" data-id="' + data.section_id + '" href="javascript:void(0)">是</a>';
+                        }
+                        return '<a class="update_item btn btn-danger" data-type="is_doctor_common" data-change="1" data-id="' + data.section_id + '" href="javascript:void(0)">否</a>';
+                    }
+                }
+            ],
+            "oLanguage": {//对表格国际化
+                "sLengthMenu": "每页显示 _MENU_条",
+                "sZeroRecords": "没有找到符合条件的数据",
+                //  "sProcessing": "&lt;img src=’./loading.gif’ /&gt;",
+                "sInfo": "当前第 _START_ - _END_ 条　共计 _TOTAL_ 条",
+                "sInfoEmpty": "木有记录",
+                "sInfoFiltered": "(从 _MAX_ 条记录中过滤)",
+                "sSearch": "搜索：",
+                "oPaginate": {
+                    "sFirst": "首页",
+                    "sPrevious": "前一页",
+                    "sNext": "后一页",
+                    "sLast": "尾页"
+                }
+            },
+            "columnDefs": [
+                {
+                    "targets": [5],
+                    "data": function (data) {
+                        return {
+                            'parent_id': data.parent_id,
+                            'section_id': data.section_id,
+                            'name': data.section_name
+                        };
+                    },
+                    "render": function (data, type, full) {
+                        if (data.parent_id == 0) {
+                            return '<a class="add_section_item btn btn-info" data-id="' + data.section_id + '"  href="javascript:void(0)">添加二级科室</a>&nbsp;&nbsp;<a class="modify_name btn btn-info" data-id="' + data.section_id + '" data-name="' + data.name + '" href="javascript:void(0)">修改名称</a>&nbsp;&nbsp;&nbsp;<!--a class="del_item btn btn-danger" data-id="' + data.section_id + '"  href="javascript:void(0)">删除</a-->';
+                        }
+                        return '<a class="modify_name btn btn-info" data-id="' + data.parent_id + '" data-name="' + data.name + '"  href="javascript:void(0)">修改名称</a>&nbsp;&nbsp;&nbsp;<!--a class="del_item btn btn-danger" data-id="' + data.section_id + '"  href="javascript:void(0)">删除</a-->';
+                    }
+                }
+            ]
+        });
+        //搜索item
+        $("#searchbtn").click(function () {
+            dataTable.draw();
+        });
+        //删除item
+        $(document).on('click', '.del_item', function () {
+            $trid = $(this).attr("data-id");
+            layer.confirm('确定要删除？', {
+                btn: ['确定', '取消'] //按钮
+            }, function ($index) {
+                layer.close($index);
+                var loadingindex = layer.load(1, {
+                    shade: [0.5, '#ddd'] //0.1透明度的白色背景
+                });
+                $.post(local + "/section_delete.php", {"id": $trid}, function (data) {
+                    layer.close(loadingindex);
+                    if (data.state == 0) {
+                        dataTable.draw();
+                        layer.msg('删除成功', {icon: 1, closeBtn: 1, shadeClose: true});
+                    } else {
+                        layer.msg(data.message, {icon: 5, closeBtn: 1, shadeClose: true});
+                    }
+                }, "json")
+            });
+        });
+        //添加科室界面
+        $(document).on('click', '#add_item_index', function () {
+            content = $("#add_item").html();
+            var addlayer = layer.open({
+                type: 1,
+                title: "添加一级科室",
+                skin: 'layui-layer-rim', //加上边框
+                area: ['500px', '300px'], //宽高
+                content: content
+            });
+        });
+        //添加科室
+        $(document).on('click', '#disease_commit', function () {
+
+            content = $("#section_name_add").val();
+            if (content == "") {
+                layer.msg('名称不能为空', {icon: 1, closeBtn: 1, shadeClose: true});
+                return;
+            }
+            $.post(local + "/section_create.php", {
+                "name": content,
+                "is_common": 1,
+                "is_doctor_common": 1,
+                "parent_id": 0
+            }, function (data) {
+                if (data.state == 0) {
+                    dataTable.draw();
+                    getParent();
+                    layer.msg('添加成功', {icon: 1, closeBtn: 1, shadeClose: true});
+                    setTimeout("layer.closeAll()", 2000);
+                } else {
+                    layer.msg(data.message, {icon: 5, closeBtn: 1, shadeClose: true});
+                }
+            }, "json")
+        });
+        //修改科室名称界面
+        $(document).on('click', '.modify_name', function () {
+            content = $("#update_item_name").html();
+            var addlayer = layer.open({
+                type: 1,
+                title: "添加一级科室",
+                skin: 'layui-layer-rim', //加上边框
+                area: ['500px', '300px'], //宽高
+                content: content
+            });
+            $("#common_item_name").val($(this).attr("data-name"));
+            $("#common_item_id").val($(this).attr("data-id"));
+        });
+        //修改科室名称
+        $(document).on('click', '#name_commit', function () {
+
+            content = $("#common_item_name").val();
+            id = $("#common_item_id").val();
+            if (content == "") {
+                layer.msg('名称不能为空', {icon: 1, closeBtn: 1, shadeClose: true});
+                return;
+            }
+            $.post(local + "/section_update.php", {"name": content, "id": id}, function (data) {
+                if (data.state == 0) {
+                    getParent();
+                    dataTable.draw();
+                    layer.msg('添加成功', {icon: 1, closeBtn: 1, shadeClose: true});
+                    setTimeout("layer.closeAll()", 2000);
+                } else {
+                    layer.msg(data.message, {icon: 5, closeBtn: 1, shadeClose: true});
+                }
+            }, "json")
+        });
+        //修改科室状态
+        $(document).on('click', '.update_item', function () {
+
+            utype = $(this).attr("data-type");
+            id = $(this).attr("data-id");
+            var update_item_index = $(this);
+            $.post(local + "/section_updatestatus.php", {"type": utype, "id": id}, function (data) {
+                if (data.state == 0) {
+                    layer.msg('修改成功', {icon: 1, closeBtn: 1, shadeClose: true});
+                    update_item_index.html(update_item_index.html() == "是" ? "否" : "是");
+                } else {
+                    layer.msg(data.message, {icon: 5, closeBtn: 1, shadeClose: true});
+                }
+            }, "json")
+        });
+        //添加二级科室界面
+        $(document).on('click', '.add_section_item', function () {
+            content = $("#two_section_item").html();
+            var addlayer = layer.open({
+                type: 1,
+                title: "添加二级科室",
+                skin: 'layui-layer-rim', //加上边框
+                area: ['500px', '300px'], //宽高
+                content: content
+            });
+            $("#parent_two").val($(this).attr("data-id"));
+        });
+        //添加二级科室
+        $(document).on('click', '#update_commit', function () {
+
+            content = $("#two_section_name").val();
+            parent_id = $("#parent_two").val();
+            is_common = $("#surgery_two").val();
+            is_doctor_common = $("#doctor_two").val();
+            if (content == "") {
+                layer.msg('名称不能为空', {icon: 1, closeBtn: 1, shadeClose: true});
+                return;
+            }
+            $.post(local + "/section_create.php", {
+                "name": content,
+                "is_common": is_common,
+                "is_doctor_common": is_doctor_common,
+                "parent_id": parent_id
+            }, function (data) {
+                if (data.state == 0) {
+                    dataTable.draw();
+                    layer.msg('添加成功', {icon: 1, closeBtn: 1, shadeClose: true});
+                    setTimeout("layer.closeAll()", 2000);
+                } else {
+                    layer.msg(data.message, {icon: 5, closeBtn: 1, shadeClose: true});
+                }
+            }, "json")
+        });
+        //删除科室
+        /*
+        $(document).on('click', '#update_commit', function () {
+
+            content = $("#two_section_name").val();
+            parent_id = $("#parent_two").val();
+            is_common = $("#surgery_two").val();
+            is_doctor_common = $("#doctor_two").val();
+            if (content == "") {
+                layer.msg('名称不能为空', {icon: 1, closeBtn: 1, shadeClose: true});
+                return;
+            }
+            $.post(local + "/section_create.php", {
+                "name": content,
+                "is_common": is_common,
+                "is_doctor_common": is_doctor_common,
+                "parent_id": parent_id
+            }, function (data) {
+                if (data.state == 0) {
+                    dataTable.draw();
+                    layer.msg('添加成功', {icon: 1, closeBtn: 1, shadeClose: true});
+                    setTimeout("layer.closeAll()", 2000);
+                } else {
+                    layer.msg(data.message, {icon: 5, closeBtn: 1, shadeClose: true});
+                }
+            }, "json")
+        });
+        */
+    });
+</script>
+
+<script type="text/html" id="two_section_item">
+    <div class="container col-sm-12" style="margin-top: 20px">
+        <input type="hidden" id="parent_two" value=""/>
+        <div class="form-group col-sm-12">
+            <div class="col-sm-3"><label for="two_section_name">科室名称</label></div>
+            <div class="col-sm-9"><input type="email" class="form-control" id="two_section_name" placeholder="科室名称"></div>
+        </div>
+        <div class="form-group col-sm-12">
+            <div class="col-sm-3"><label for="surgery_two">手术预约是否可见</label></div>
+            <div class="col-sm-9">
+                <select id="surgery_two" name="is_top" class="form-control" data-rel="chosen">
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group col-sm-12">
+            <div class="col-sm-3"><label for="doctor_two">医生列表是否可见</label></div>
+            <div class="col-sm-9">
+                <select id="doctor_two" name="is_top" class="form-control" data-rel="chosen">
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default" id="update_commit">添加</button>
+    </div>
+</script>
+
+</body>
+</html>

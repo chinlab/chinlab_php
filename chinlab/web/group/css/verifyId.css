@@ -1,0 +1,396 @@
+
+#wrapper nav .navbar-brand{
+	width:auto;
+	height: auto!important;
+}
+
+#main_warp{
+	width:100%;
+	margin:6.5% auto 0;
+	border-top: 1px solid #10b791;
+}
+#main{
+	width:1200px;
+	height: 488px;
+	margin:0 auto;
+	border-top: 7px solid #10b791;
+	border-bottom: 1px solid #bdbdbd;
+	border-left: 1px solid #bdbdbd;
+	border-right: 1px solid #bdbdbd;
+	position: relative;
+}
+#title{
+	width:350px;
+	height: 40px;
+	background: #10b791;
+	position: absolute;
+	left: -1px;
+	top: -47px;
+}
+#title .title_left{
+	height: 100%;
+	line-height: 40px;
+	color: #ffffff;
+	font-size: 27px;
+	padding:0 14px;
+}
+#title_center{
+	display: block;
+	height: 30px;
+	margin:5px 0;
+	border:1px solid #fff;
+}
+#title .title_right{
+	height: 100%;
+	line-height: 40px;
+	color: #ffffff;
+	font-size: 24px;
+	padding:0 20px;
+}
+#main{
+	background: #fff;
+}
+#content1{
+	width:665px;
+	height:auto;
+	margin:92px auto 0;
+}
+#content1 .progress_bar{
+	width:665px;
+	height:38px;
+	line-height: 38px;
+	font-size: 26px;
+	background: #c7c7c7;
+	color:#fff;
+	
+	background: #c7c7c7;
+}
+#content1 .progress_bar .progress_first{
+	padding:0 72px 0 22px;
+	margin-right: 13px;
+	background: url(../img/bg1.png) no-repeat left center;
+}
+#content1 .progress_bar .progress_second{
+	padding:0 22px;
+	margin-right: 63px;
+}
+#content1 .progress_bar .progress_third{
+	padding:0 20px;
+}
+#content1 .user_name{
+	height:30px;
+	width:100%;
+	line-height: 28px;
+	margin-top: 66px;
+	margin-bottom: 20px;
+}
+#content1 .user_name p{
+	display: inline-block;
+	font-size: 17px;
+	color:#555555;
+	margin-right: 40px;
+}
+#content1 .user_name input{
+	width:200px;
+	border:1px solid #c1c1c1;
+	margin-right: 13px;
+	padding:0 10px;
+	outline:none;
+}
+#content1 .user_name span{
+	font-size:13px;
+	color:#a8a8a8;
+}
+#content1 .name_tip{
+	color:#ff0000;
+	padding-left:120px;
+	display: none;
+}
+#content1 .passwd{
+	height:30px;
+	width:100%;
+	line-height: 28px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#content1 .passwd p{
+	display: inline-block;
+	font-size: 17px;
+	color:#555555;
+	margin-right: 58px;
+}
+#content1 .passwd input{
+	width:200px;
+	border:1px solid #c1c1c1;
+	margin-right: 13px;
+	padding:0 10px;
+	outline:none;
+}
+#content1 .passwd_tip{
+	color:#ff0000;
+	padding-left:120px;
+	display: none;
+}
+#nextbtn1{
+	height:40px;
+	margin-top:42px;
+	text-align: center;
+}
+#nextbtn1 button{
+	height:100%;
+	width:180px;
+	line-height: 36px;
+	border:2px solid #d3d3d3;
+	background: #fff;
+	font-size: 25px;
+	color:#00b38a;
+	outline:none;
+}
+
+
+#content2{
+	width:665px;
+	height:330px;
+	margin:92px auto 0;
+	display: none;
+}
+#content2 .progress_bar{
+	width:665px;
+	height:38px;
+	line-height: 38px;
+	font-size: 26px;
+	background: #c7c7c7;
+	color:#fff;
+	background: #c7c7c7;
+}
+#content2 .progress_bar .progress_first{
+	padding:0 72px 0 22px;
+	margin-right: 13px;
+	
+}
+#content2 .progress_bar .progress_second{
+	padding:0 72px 0 22px;
+	margin-right: 33px;
+	background: url(../img/bg1.png) no-repeat left center;
+}
+#content2 .progress_bar .progress_third{
+	padding:0 20px;
+}
+#content2 .newpasswd{
+	height:30px;
+	width:100%;
+	line-height: 28px;
+	margin-top: 66px;
+	margin-bottom: 20px;
+}
+#content2 .newpasswd p{
+	display: inline-block;
+	font-size: 17px;
+	color:#555555;
+	margin-right: 40px;
+}
+#content2 .newpasswd input{
+	width:200px;
+	border:1px solid #c1c1c1;
+	margin-right: 13px;
+	padding:0 10px;
+	outline:none;
+}
+#content2 .newpasswd span{
+	font-size:13px;
+	color:#a8a8a8;
+}
+#content2 .newpasswd_tip{
+	color:#ff0000;
+	padding-left:120px;
+	display: none;
+}
+#content2 .reconfirm_pw{
+	height:30px;
+	width:100%;
+	line-height: 28px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#content2 .reconfirm_pw p{
+	display: inline-block;
+	font-size: 17px;
+	color:#555555;
+	margin-right: 6px;
+}
+#content2 .reconfirm_pw input{
+	width:200px;
+	border:1px solid #c1c1c1;
+	margin-right: 13px;
+	padding:0 10px;
+	outline:none;
+}
+#content2 .reconfirm_pw span{
+	font-size:13px;
+	color:#a8a8a8;
+}
+#content2 .reconfirm_pw_tip{
+	color:#ff0000;
+	padding-left:120px;
+	display: none;
+}
+#nextbtn2{
+	height:40px;
+	margin-top:42px;
+	text-align: center;
+}
+#nextbtn2 button{
+	height:100%;
+	width:180px;
+	line-height: 36px;
+	border:2px solid #d3d3d3;
+	background: #fff;
+	font-size: 25px;
+	color:#00b38a;
+	outline:none;
+}
+
+
+#content3{
+	width:650px;
+	height:330px;
+	margin:92px auto 0;
+	display: none;
+}
+#content3 .progress_bar{
+	width:650px;
+	height:38px;
+	line-height: 38px;
+	font-size: 26px;
+	background: #c7c7c7;
+	color:#fff;
+	background: #c7c7c7;
+}
+#content3 .progress_bar .progress_first{
+	padding:0 62px 0 35px;
+	margin-right: 13px;
+	
+}
+#content3 .progress_bar .progress_second{
+	padding:0 22px;
+	margin-right: 63px;
+}
+#content3 .progress_bar .progress_third{
+	padding:0 54px 0 54px;
+	background: url(../img/bg1.png) no-repeat left center;
+}
+#content3 .first_tip{
+	height:35px;
+	line-height: 35px;
+	font-size: 23px;
+	color:#a8a8a8;
+	text-align: center;
+	margin:40px 0 30px;
+}
+#content3 .second_tip{
+	height:30px;
+	line-height: 30px;
+	font-size: 18px;
+	color:#afafaf;
+	text-align: center;
+	margin:0 0 57px;
+}
+#content3 .third_tip{
+	height:30px;
+	line-height: 30px;
+	font-size: 18px;
+	color:#ff2626;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#footer_warp{
+	width: 100%;
+	height:56px;
+	position: absolute;
+	left: 0;
+	bottom: 50px;
+}
+#footer{
+	width:1200px;
+	margin:0 auto;
+}
+#footer .contact_title{
+	overflow: hidden;
+	padding-left:100px;
+	font-size: 14px;
+	color:#000000;
+	height:28px;
+	line-height: 28px;
+	
+}
+#footer .contact_info{
+	overflow: hidden;
+	padding-left:185px;
+	font-size: 14px;
+	color:#000000;
+	height:28px;
+	line-height: 28px;
+}
+#footer .contact_info p{
+	margin-bottom: 0;
+}
+#footer .contact_info .contact_tel{
+	margin-right: 48px;
+}
+#footer .contact_info .contact_url{
+	margin-right: 73px;
+}
+
+
+
+
+
+
+
+
+
+

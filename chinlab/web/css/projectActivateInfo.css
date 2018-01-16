@@ -1,0 +1,16 @@
+.panel-heading{
+	overflow: hidden;
+}
+hr{
+	border:1px solid #C0C0C0;
+}
+.left{
+	float: left;
+}
+.hide{
+	display: none;
+}
+.upload{
+	height: 100%;
+	margin-top:5px;
+}

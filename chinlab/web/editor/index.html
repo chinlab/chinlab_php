@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑器测试</title>
+    <link rel="stylesheet" type="text/css" href="resource/css/wangEditor.min.css">
+</head>
+<body>
+<div style="width:60%">
+    <div id="div1" style="height:400px;max-height:500px;">
+        <p>请输入内容...</p>
+    </div>
+</div>
+<script type="text/javascript" src="resource/js/lib/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="resource/js/wangEditor.min.js"></script>
+<script type="text/javascript">
+    var editor = new wangEditor('div1');
+    editor.config.uploadImgUrl = '/site_upload.php';
+    editor.config.uploadImgFileName = 'upload';
+    editor.create();
+</script>
+
+</body>
+</html>

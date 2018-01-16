@@ -1,0 +1,22 @@
+html,body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{font-family:"PingFang SC","微软雅黑";margin:0;padding:0}
+img{display: block;border: 0;}
+h1,h2,h3,h4,h5,h6{font-weight: 100;}
+#banner{width:7.5rem;height:2.6rem;border-bottom: 0.1rem solid #f7f7f7;}
+#banner .bannerImg{width: 100%;height: 100%;}
+#donation,#apply,#witness,#story,#organization{width: 7.5rem;border-bottom: 0.1rem solid #f7f7f7;}
+#donation .donationContent{text-indent: 2em;}
+#donation .donationContent .span1{text-indent: 2em;}
+#donation .donationTitle,#apply .donationTitle,#witness .donationTitle{display: flex;justify-content: space-around;width: 5.18rem;margin: 0 auto;height: 0.62rem;line-height: 0.62rem;}
+#donation .donationTitle .titleContent,#apply .donationTitle .titleContent,#witness .donationTitle .titleContent{font-size: 0.3rem;color: #009cff;font-weight: 600;}
+#donation .donationTitle img,#apply .donationTitle img,#witness .donationTitle img{width: 1.29rem;height: 0.1rem;margin-top: 0.27rem;}
+#donation .donationContent,#apply .donationContent,#witness .donationContent,#story .storyContent{font-size: 0.24rem;color: #666;width:6.6rem;padding: 0 0.45rem 0 0.45rem;/*line-height: 0.32rem;*/margin-bottom: 0.1rem;}
+#apply{padding-bottom: 0.5rem;}
+#witness{padding-bottom:0.55rem;}
+#story .storyTitle,#organization .organTitle{color:#009cff;font-size: 0.3rem;font-weight: 600;width: 7.05rem;padding-left: 0.45rem;line-height: 0.6rem;}
+#story .storyContent .spanContent{margin-left: 1.44rem;}
+#organization{padding-bottom: 0.53rem;}
+#organization .organImg{display: flex;padding-left:1.52rem;}
+#organization .organImg .left{display:block;margin-right:0.6rem;}
+#organization img{width: 1.92rem;height:0.69rem;margin-top: 0.22rem;}
+#footer{width: 7.5rem;height:2.05rem;margin-top: 0.59rem;}
+#footer .logoImg{width: 2.29rem;height:1.74rem;margin: 0 auto;}

@@ -1,0 +1,42 @@
+#side-menu>li>a:focus, #side-menu>li>a:hover{
+	background-color: #2d2727!important;
+}
+#side-menu>li>.nav>li>a:focus, #side-menu>li>.nav>li>a:hover{
+	background-color: #2d2727!important;
+}
+#wrapper nav .navbar-brand{
+	width:auto;
+	height: auto!important;
+}
+#wrapper nav .nav_right{
+	height:100%;
+}
+#wrapper nav .nav_right li{
+	height:80px;
+}
+#wrapper nav .nav_right li a{
+	height:100%;
+	line-height: 50px;
+}
+#wrapper nav .nav_right .black{
+	color:#000000;
+}
+#order_start_time{
+	display: inline-block!important;
+	width: 46%;
+}
+#order_end_time{
+	display: inline-block!important;
+	width: 46%;
+}
+.datatable_infoleft{
+	text-align: right;
+}
+
+.datatable_inforight{
+	text-align: left!important;
+}
+
+
+
+

@@ -1,0 +1,49 @@
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{font-family:"微软雅黑";margin:0;padding:0}
+img{display: block;border: 0;}
+h1,h2,h3,h4,h5,h6{font-weight: 100;}
+a{text-decoration: none;}
+li{list-style: none;}
+
+#banner{width: 7.5rem;height: 2.6rem;border-bottom: 0.1rem solid #f7f7f7;}
+#banner .bannerImg{width: 100%;height: 100%;}
+#showOne,#showTwo,#showThree,#showFour{width: 7.5rem;border-bottom: 0.1rem solid #f7f7f7;}
+#showOne .titleOne,#showTwo .titleTwo,#showThree .titleThree,#showSix .titleSix,#showSenv .titleSenv{width: 6.7rem;height:0.7rem;line-height: 0.7rem;margin: 0 auto;font-size: 0.32rem;color: #00deff;text-align: center;border-bottom: 0.01rem solid #999;}
+#showOne .detailOne{width: 6.7rem;line-height:0.34rem;margin: 0 auto;font-size: 0.24rem;color: #666;margin-top: 0.24rem;margin-bottom: 0.24rem;}
+#showTwo .detailTwo{width: 6.7rem;height:3.15rem;margin: 0 auto;margin-top: 0.24rem;margin-bottom: 0.24rem;}
+#showThree{width: 7.5rem;border-bottom: 0.1rem solid #f7f7f7;}
+#showThree .detailThree{width: 6.7rem;height:3.15rem;margin: 0 auto;margin-top: 0.24rem;margin-bottom: 0.24rem;}
+#showFour .titleFour{width: 6.7rem;height:0.7rem;line-height: 0.7rem;margin: 0 auto;font-size: 0.32rem;color: #00deff;text-align: center;border-bottom: 0.01rem solid #999;margin-bottom: 0.12rem;}
+#showFour .tabOne,.tabTwo{width: 6.7rem;margin: 0 auto;font-size: 0.24rem;color: #666;border: 0;border-color: #e5e5e5;border-collapse: collapse;}
+#showFour .tabTwo{margin-top: 0.19rem;margin-bottom: 0.28rem;}
+#showFour .tabTwo .td1{text-align: center;color: #00deff;font-size: 0.32rem;}
+#showFour tr{height:0.77rem;}
+#showFour tr td:first-child{width:1.63rem;padding-left: 0.2rem;color: #ff9001;}
+#showFour tr td:nth-child(2){width: 2.45rem;padding-left:0.2rem;}
+#showFour tr td:last-child{width: 2.03rem;padding-left: 0.19rem;}
+#showFour td{height:0.77rem;}
+#showFive img{width: 6.7rem;height: 3.02rem;margin: 0 auto;margin-top: 0.19rem;}
+#showSix{width: 7.5rem;border-bottom: 0.1rem solid #f7f7f7;overflow: hidden;}
+#showSix .detailSix{width: 6.7rem;line-height:0.34rem;margin: 0 auto;font-size: 0.24rem;color: #666;margin-top: 0.24rem;margin-bottom: 0.32rem;}
+#showSix dl{font-size: 0.24rem;color:#666;float: left;width: 1.25rem;margin-left: 0.8rem;margin-bottom: 0.3rem;}
+#showSix dl dt{width: 1.25rem;}
+#showSix dl dt img{width: 0.73rem;height: 0.73rem;margin: 0 auto;}
+#showSix dd{line-height: 0.32rem;margin-top: 0.1rem;}
+#showSenv{width: 7.5rem;border-bottom: 0.1rem solid #f7f7f7;overflow: hidden;}
+#showSenv dl{width:6.7rem;margin: 0 auto;}
+#showSenv dt{float: left;margin-right: 0.3rem;margin-top: 0.1rem;}
+#showSenv dt img{width: 1.39rem;height:1.17rem;}
+#showSenv dd{float: left;font-size: 0.24rem;color:#666;margin-top: 0.3rem;line-height: 0.32rem;}
+#showSenv p{font-size: 0.24rem;color:#666;width:6.7rem;margin: 0 auto;margin-top: 0.3rem;margin-bottom:0.4rem;line-height: 0.32rem;}
+#showEight{width: 7.5rem;border-bottom: 0.1rem solid #f7f7f7;overflow: hidden;}
+#showEight .titleEight{width: 6.7rem;height:0.7rem;line-height: 0.7rem;margin: 0 auto;font-size: 0.32rem;color: #00deff;text-align: center;border-bottom: 0.01rem solid #999;}
+#showEight .flow{float:left;width: 1.32rem;height:7.15rem;margin: 0 auto;margin-top: 0.28rem;margin-bottom: 0.31rem;}
+#showEight .ulLeft{width:1.68rem;color:#666;font-size: 0.24rem;float: left;margin-right: 0.5rem;margin-left: 0.88rem;}
+#showEight .ulLeft li{margin-bottom: 0.3rem;height: 1.04rem;margin-top: 0.5rem;}
+#showEight .ulRight{width:1.9rem;font-size: 0.24rem;color:#666;float: left;margin-right: 0.36rem;margin-left: 0.6rem;margin-top:1.06rem;}
+#showEight .ulRight li{margin-bottom: 0.3rem;height: 1.04rem;margin-bottom:0.88rem;}
+#showEight .ulRight .li2{margin-bottom: 0.27rem;}
+
+#footer{width: 7.5rem;height:1.9rem;background:#3db2e9;padding-top: 0.2rem;padding-bottom:0.35rem;font-size:0.24rem;color: #fff;}
+#footer .logoImg{width: 2.33rem;height:0.96rem;margin: 0 auto;}
+#footer .link1{text-align: center;margin-top: 0.19rem;}
+#footer .link2{text-align: center;}

@@ -1,0 +1,18 @@
+html,body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{font-family:"PingFang SC","微软雅黑";margin:0;padding:0}
+img{display: block;border: 0;}
+h1,h2,h3,h4,h5,h6{font-weight: 100;}
+#elect{width: 6.9rem;padding: 0.3rem 0.3rem 0.6rem 0.3rem;}
+#elect .top{border-bottom: 1px solid #ddd;}
+#elect .top .topTitle{font-size: 0.26rem;width:2rem ;height:0.6rem ;background: #36b4f1;text-align: center;line-height: 0.6rem;color: #fff;}
+#elect .top .topContent{font-size: 0.26rem;text-indent: 0.6rem;margin-bottom: 0.1rem;margin-top: 0.12rem;color:#323232;}
+
+fieldset{border: 0;border-top: 2px solid #bc9e66;text-align: center;width: 5.3rem;margin: 0 auto;margin-top: 0.18rem;}
+fieldset legend{color: #bc9e66;font-family: "宋体";font-size: 0.3rem;font-weight: 600;padding-left: 0.34rem;padding-right: 0.34rem;}
+.influTitle{text-align: center;font-size: 0.26rem;color: #bc9e66;}
+.science{border-bottom: 1px solid #ddd;}
+.list{font-size: 0.26rem;display: flex;justify-content: space-between;}
+.listCont{width: 5rem;margin: 0 auto;margin-top: 0.2rem;}
+.listCont img{width: 0.2rem;height:0.19rem;margin-top: 0.06rem;}
+
+.influContent .condition{font-size: 0.26rem;color: #000;margin:0.17rem 0 0.17rem 0;font-weight: 600;}
+.influContent .conditionContent{font-size: 0.26rem;color: #323232;/*line-height: 0.32rem;*/margin-bottom: 0.16rem;}

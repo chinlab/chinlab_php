@@ -1,0 +1,29 @@
+.header{
+	font-size: 24px;
+	height:60px;
+	line-height: 60px;
+	color:#ffffff;
+	background:#66cefa;
+	padding:0 30px;
+}
+.header button{
+	margin-top:13px;
+}
+.table>tbody>tr>td{
+	vertical-align: middle;
+}
+.upload{
+	height: 100%;
+	margin-top:5px;
+}
+#case_img{
+	margin-top:5px;
+}
+
+
+
+
+
+
+
+

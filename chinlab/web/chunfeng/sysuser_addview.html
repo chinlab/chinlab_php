@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>诺春风医疗系统</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="resource/sbadmin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="resource/sbadmin/bower_components/bootstrap/dist/css/font-awesome.min.css" rel="stylesheet">
+        <link href="resource/sbadmin/bower_components/bootstrap/dist/css/newstyle.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="resource/sbadmin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="resource/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="resource/sbadmin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="resource/sbadmin/bower_components/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- /#wrapper -->
+
+        <!-- jQuery -->
+        <script src="resource/sbadmin/bower_components/jquery/dist/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="resource/sbadmin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="resource/sbadmin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="resource/sbadmin/dist/js/sb-admin-2.js"></script>
+
+        <!-- new script -->
+        <script src="resource/sbadmin/bower_components/layer/layer.js"></script>
+        <script src="resource/sbadmin/bower_components/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="resource/sbadmin/bower_components/datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+
+        <!--fileinput plin-->
+        <link href="resource/sbadmin/bower_components/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" type="text/css">
+        <script src="resource/sbadmin/bower_components/bootstrap-fileinput/js/fileinput.min.js"></script>
+        <script src="resource/sbadmin/bower_components/bootstrap-fileinput/js/zh.js"></script>
+
+        <!--summernote plin-->
+        <link href="resource/sbadmin/bower_components/summernote/summernote.css" rel="stylesheet" type="text/css">
+        <script src="resource/sbadmin/bower_components/summernote/summernote.min.js"></script>
+        <script src="resource/sbadmin/bower_components/summernote/lang/summernote-zh-CN.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/check.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            function initFileInput(ctrlName, uploadUrl, initurl) {
+                var control = $('#' + ctrlName);
+                if (initurl != "") {
+                    initurl = '<img src="' + initurl + '" width="200" height="200" alt="图标"/>'
+                }
+                control.fileinput({
+                    language: 'zh', //设置语言
+                    uploadUrl: uploadUrl, //上传的地址
+                    showClose: false,
+                    showUpload: true, //是否显示上传按钮
+                    allowedFileExtensions: ['jpg', 'png', 'gif'], //接收的文件后缀
+                    showCaption: false, //是否显示标题
+                    dropZoneEnabled: true, //是否显示拖拽区域
+                    browseOnZoneClick: true,
+                    browseClass: "btn btn-primary", //按钮样式             
+                    previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+                    initialPreview: initurl
+
+                });
+            }
+            /**
+             * 
+             * @param {type} jsonlist 格式是：
+             * [
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"},
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"},
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"},
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"},
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"}
+             * ]
+             * @returns {undefined}
+             */
+            function checkform(jsonlist) {
+                for (var i = 0; i < jsonlist.length; i++) {
+                    if (jsonlist[i].type == "not_null") {
+                        var nodeval = $(jsonlist[i].node).val();
+                        if (nodeval == "") {
+                            layer.msg(jsonlist[i].message);
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+            
+            $.fn.serializeObject = function()
+            {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function() {
+                    if (o[this.name]) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+        </script>
+    </head>
+    <body>
+        <div class="mycommonfade" style="background-color:#000; opacity:0.3; filter:alpha(opacity=30);"></div><div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div>
+                    <div class="col-sm-6">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="name">姓名</label>
+                                <input type="text" name="name" value="" class="form-control"   placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="username">用户名(建议使用数字，字符串，字符混合)</label>
+                                <input type="text" name="username" value="" class="form-control"   placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="password">密码(建议使用数字，字符串，字符混合)</label>
+                                <input type="text" name="password" value="" class="form-control"   placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="phone">电话号码</label>
+                                <input type="text" name="phone" value="" class="form-control"   placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="email">邮箱</label>
+                                <input type="text" name="email" value="" class="form-control"   placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="status">账户状态</label>
+                                <select name="status" class="form-control">
+                                    <option value="1">已启用</option>
+                                    <option value="-1">已禁用</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p style="font-weight: 700;">账户权限</p>
+                            <input type="hidden" name="menulist" value="" class="form-control"   placeholder=""/>
+                            <iframe id="showgroupschoose" src="sysmenu_showmenuchoose.html" style="width:270px;height:400px;border:none;"></iframe>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-sm-12">
+                        <div class="col-sm-3">
+                            <button id="savesysuser" type="button" class="btn btn-primary">保存</button>
+                            <button id="cancledistrct" type="button" class="btn btn-default">取消</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-6 (nested) -->
+            </div>
+            <!-- /.row (nested) -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<script>
+    postflag = true;
+
+    $(function() {
+        layer.photos({
+            photos: '#photosDemo'
+        });
+
+        $("#cancledistrct").click(function() {
+            window.parent.layer.close(window.parent.layerindex);
+        });
+
+        $("#savesysuser").click(function() {
+        	console.log($("input[name=phone]").val())
+        	console.log($("input[name=name]").val())
+            $username = $("input[name=username]").val();
+            $phone = $("input[name=phone]").val();
+            $name = $("input[name=name]").val();
+            $status = $("select[name=status]").val();
+            $password = $("input[name=password]").val();
+            $email = $("input[name=email]").val();
+            $menulist = $("input[name=menulist]").val();
+            console.log($menulist)
+//          if(!postflag){
+//              return;
+//          }
+//          postflag=false;
+            $.post(local+"/admin_signupJson.php", {
+            	"userphone": $phone,
+            	"username": $username, 
+            	"nickname": $name, 
+            	"status": $status, 
+            	"menulist": $menulist, 
+            	"password": $password,
+            	"email": $email,
+            }, function(result) {
+            	console.log(result)
+                postflag=true;
+                if (result.state == '0') {
+                    $username = $("input[name=username]").val("");
+                    $phone = $("input[name=phone]").val("");
+                    $name = $("input[name=name]").val("");
+                    $password = $("input[name=password]").val("");
+                    $email = $("input[name=email]").val("");
+                    layer.msg(result.message, {icon: 1, closeBtn: 1, shadeClose: true});
+                } else {
+                    layer.msg(result.message, {icon: 5, closeBtn: 1, shadeClose: true});
+                }
+            }, 'json');
+        });
+
+
+//      $("input[name=districtname]").click(function() {
+//          //window.alert("nihao");
+//          var Y = $(this).offset().top;
+//          var X = $(this).offset().left;
+//          $(".mycommonfade").fadeIn(300);
+//          $(document.body).css({
+//              "overflow-x": "hidden",
+//              "overflow-y": "hidden"
+//          });
+//          $("#showgroupschoose").css("top", Y + 28);
+//          $("#showgroupschoose").css("left", X);
+//          $("#showgroupschoose").show();
+//      });
+//
+//      $(".mycommonfade").click(function() {
+//          //window.alert("nihao");
+//          $(".mycommonfade").fadeOut(300);
+//          $(document.body).css({
+//              "overflow-x": "auto",
+//              "overflow-y": "auto"
+//          });
+//          $("#showgroupschoose").hide();
+//      });
+
+    });
+</script>
+<!--<iframe id="showgroupschoose" src="/district_showdistrictschoose.html" style="position: fixed;width:270px;height:400px;border:none;display:none;z-index: 9999;"></iframe>-->
+</body>
+
+</html>

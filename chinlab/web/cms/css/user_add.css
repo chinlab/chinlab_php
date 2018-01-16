@@ -1,0 +1,22 @@
+.header{
+		font-size: 24px;
+		height:60px;
+		line-height: 60px;
+		color:#ffffff;
+		background:#66cefa;
+		padding:0 30px;
+	}
+.control-label{
+	text-align: right!important;
+	margin-top:6px;
+}
+.form-group{
+	overflow: hidden;
+}
+.form-control{
+	display: inline-block;
+	width:70%;
+}
+.tips{
+	margin-left:20px;
+}

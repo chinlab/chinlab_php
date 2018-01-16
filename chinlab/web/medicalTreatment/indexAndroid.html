@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>海外医疗</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<script type="text/javascript" src="js/rem.js"></script>
+	<script type="text/javascript" src="js/echo.min.js"></script>
+	
+	<script type="text/javascript">
+		
+		window.onload = function(){
+			var oBtn1 = document.getElementsByClassName("btn1")[0];
+			var oBtn2 = document.getElementsByClassName("btn2")[0];
+			var oBtn3 = document.getElementsByClassName("btn3")[0];
+			var oBtn4 = document.getElementsByClassName("btn4")[0];
+			var oBtn5 = document.getElementsByClassName("btn5")[0];
+			var oBtn6 = document.getElementsByClassName("btn6")[0];
+			oBtn1.addEventListener("click",function(){
+				yshuoban.btnImage1();
+				return false;
+			},false);
+			oBtn2.addEventListener("click",function(){
+				yshuoban.btnImage2();
+				return false;
+			},false);
+			oBtn3.addEventListener("click",function(){
+				yshuoban.btnImage3();
+				return false;
+			},false);
+			oBtn4.addEventListener("click",function(){
+				yshuoban.btnImage4();
+				return false;
+			},false);
+			oBtn5.addEventListener("click",function(){
+				yshuoban.btnImage5();
+				return false;
+			},false);
+			oBtn6.addEventListener("click",function(){
+				yshuoban.btnImage6();
+				return false;
+			},false);
+		}
+		
+            
+	</script>
+	<body>
+		<div id="banner">
+			<img class = "bannerImg" data-echo="img/banner.jpg">
+		</div>
+		<div id="serve">
+			<h2 class = "title">我们的服务</h2>
+			
+			<div class="serveImg">
+				<img class = "btn1"  data-echo="img/pic1.jpg">
+				<img class = "btn2"  data-echo="img/pic2.jpg">
+				<img class = "btn3"  data-echo="img/pic3.jpg">
+			</div>
+			<div class="serveImg">
+				<img class = "btn4" data-echo="img/pic4.jpg">
+				<img class = "btn5"  data-echo="img/pic5.jpg">
+				<img class = "btn6" data-echo="img/pic6.jpg">
+			</div>		
+		</div>
+		<div id="instro">
+			<h2 class = "title">简介</h2>
+			<p class="detail">“海外医疗”旨在为国内有需求的患者提供赴海外享受高精尖的医疗服务，包括：美国、欧洲、日本、台湾等地；专注为客户打造高质量、高效率、个性化的医疗服务方案，您可第一时间享受先进药物、治疗方法以及国际领先的医疗设备等优质医疗资源；提供专业的医疗翻译陪同人员，您无需担忧语言障碍与文化差异。<br/>“海外医疗”——让医疗无国界不再是梦！</p>
+		</div>
+		<div id="flow">
+			<h2 class = "title">服务流程</h2>
+			<div class="serveFlow">
+				<img class = "orderImg" data-echo="img/register.png">
+				<img class = "flowImg" data-echo="img/flow1.png"/>
+				<img class = "orderImg" data-echo="img/choose.png">
+				<img class = "flowImg"data-echo="img/flow1.png"/>
+				<img class = "orderImg" data-echo="img/pay.png"/>
+				<img class = "flowImg"data-echo="img/flow1.png"/>
+				<img class = "orderImg" data-echo="img/order.png"/>	
+			</div>
+			<div class = "list">
+				<div>免费注册</div>
+				<div>选择医生</div>
+				<div>网上支付</div>
+				<div>预约医生</div>
+			</div>
+			<div class = "flowDown">
+				<img class = "flowImg" data-echo="img/flow2.png">
+			</div>
+			<div class="serveFlow">
+				<img class = "orderImg" data-echo="img/look.png">
+				<img class = "flowImg"data-echo="img/flow3.png"/>
+				<img class = "orderImg" data-echo="img/consult.png">
+				<img class = "flowImg"data-echo="img/flow3.png"/>
+				<img class = "orderImg" data-echo="img/remind.png"/>
+				<img class = "flowImg"data-echo="img/flow3.png"/>
+				<img class = "orderImg" data-echo="img/upload.png"/>	
+			</div>
+			<div class = "list">
+				<div>查看报告</div>
+				<div>视频咨询</div>
+				<div>上线提醒</div>
+				<div>上传病例</div>
+			</div>
+		</div>
+		
+		
+		<div id="hospital">
+			<h2 class = "title">伙伴医院</h2>
+			<div class = "hosImg">
+				<img data-echo="img/americ.jpg">
+				<img data-echo="img/europe.jpg">	
+			</div>
+			<div class="area1">
+				<div>美国</div>
+				<div>欧洲</div>
+			</div>
+			<div class = "hosImg">
+				<img data-echo="img/japan.jpg">
+				<img data-echo="img/taiwan.jpg">
+			</div>
+			<div class="area2">
+				<div>日本</div>
+				<div>台湾</div>
+			</div>	
+		</div>
+		<div id="doctor">
+			<h2 class = "title">伙伴医生</h2>
+			<div class = "detailContent">
+				<p class = "detail">通过和医疗网合作的规模化模式，在美国、台湾、日本拥有广泛的医疗资源。<p>
+				<p class = "detail">基于“看病先找医生”的医疗流程，直接与医生专家签约，保证就医的质量和速度，其中包含：<p>
+				<ul>
+					<li>1000 余名各专科领域的美国医学博士；</li>
+					<li>85% 为美国医学协会会员；</li>
+					<li>38% 以上有副教授、教授职称；</li>
+					<li>11% 为美国国家医学院院士。</li>
+				</ul>
+				<p>签约的家庭全科医生和内科医生配合度高、转诊网络广，可以及时应答患者问题，为患者提供大健康的轻咨询服务，并利用已成熟的医疗转诊系统，快速将患者转诊至最适合的专家处。全科医生的服务，将中国患者和美国、台湾“看病找医生”（而不是找医院）的医疗体系完美对接。通过执业医生，
+					患者可以转诊到美国、台湾境内各大医院，包括国人知名的麻省总院MGH, 梅奥诊所，安德森肿瘤中心、台湾荣民总医院、台大医院、长庚医院等。</p>
+				<img class = "expertImg"data-echo="img/expert.jpg" alt="">
+			</div>	
+		</div>
+		<div id="footer">
+			<img class = "logoImg"data-echo="img/logo.png"/>
+			<p class="link1">400-001-2255</p>
+			<p class="link2">info@huobanys.com</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		echo.init();
+	</script>
+</html>

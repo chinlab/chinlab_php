@@ -1,0 +1,19 @@
+.control-label{
+	text-align: right!important;
+	margin-top:6px;
+}
+.form-group{
+	overflow: hidden;
+}
+.form-control{
+	display: inline-block;
+	width:70%;
+}
+.tips{
+	margin-left:20px;
+}
+
+#pvw a{
+	text-decoration: none;
+	color:#000000;
+}

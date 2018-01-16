@@ -1,0 +1,242 @@
+[
+  {
+    "desc": "查询用户是否可以注册",
+    "url": "/userApi/register_getUserPwd.php",
+    "params": [
+      {
+        "field": "user_name",
+        "fieldDesc": "用户邮箱",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "用户注册",
+    "url": "/userApi/register_registerUser.php",
+    "params": [
+      {
+        "field": "user_name",
+        "fieldDesc": "用户邮箱",
+        "is_require": "1"
+      },
+      {
+        "field": "user_passwd",
+        "fieldDesc": "用户密码",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "user_name:用户邮箱,user_passwd:用户密码",
+    "resultDesc": ""
+  },
+  {
+    "desc": "用户画像",
+    "url": "/userApi/register_userPortrait.php",
+    "params": [
+      {
+        "field": "user_id",
+        "fieldDesc": "用户ID",
+        "is_require": "1"
+      },
+      {
+        "field": "country_id",
+        "fieldDesc": "国家代码",
+        "is_require": "1"
+      },
+      {
+        "field": "lang",
+        "fieldDesc": "母语",
+        "is_require": "1"
+      },
+      {
+        "field": "interest",
+        "fieldDesc": "兴趣",
+        "is_require": "1"
+      },
+      {
+        "field": "user_initlevel",
+        "fieldDesc": "用户初始级别",
+        "is_require": "1"
+      },
+      {
+        "field": "user_curlevel",
+        "fieldDesc": "用户当前级别",
+        "is_require": "1"
+      },
+      {
+        "field": "user_targetlevel",
+        "fieldDesc": "用户目标级别",
+        "is_require": "1"
+      },
+      {
+        "field": "learn_time",
+        "fieldDesc": "用户设置的学习时长",
+        "is_require": "1"
+      },
+      {
+        "field": "user_age",
+        "fieldDesc": "用户生日",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "获取用户信息",
+    "url": "/userApi/register_getUserMassage.php",
+    "params": [
+      {
+        "field": "user_id",
+        "fieldDesc": "用户ID",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "获取国家列表",
+    "url": "/userApi/register_userCountry.php",
+    "params": [],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "获取母语列表",
+    "url": "/userApi/register_userMotherTongue.php",
+    "params": [],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "获取兴趣列表",
+    "url": "/userApi/register_userObjective.php",
+    "params": [],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "获取学习时间列表",
+    "url": "/userApi/register_userLearnTime.php",
+    "params": [],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "发送留言",
+    "url": "/userApi/register_userEmailMessage.php",
+    "params": [
+      {
+        "field": "user_name",
+        "fieldDesc": "邮箱",
+        "is_require": "1"
+      },
+      {
+        "field": "user_contents",
+        "fieldDesc": "留言内容",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "用户登录",
+    "url": "/userApi/register_userLogin.php",
+    "params": [
+      {
+        "field": "user_name",
+        "fieldDesc": "用户邮箱",
+        "is_require": "1"
+      },
+      {
+        "field": "user_passwd",
+        "fieldDesc": "用户密码",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "修改密码",
+    "url": "/userApi/register_updatePasswd.php",
+    "params": [
+      {
+        "field": "user_id",
+        "fieldDesc": "用户ID",
+        "is_require": "1"
+      },
+      {
+        "field": "user_passwd",
+        "fieldDesc": "原密码",
+        "is_require": "1"
+      },
+      {
+        "field": "new_passwd",
+        "fieldDesc": "新密码",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "修改用户信息",
+    "url": "/userApi/register_updateUserInfo.php",
+    "params": [
+      {
+        "field": "user_id",
+        "fieldDesc": "用户ID",
+        "is_require": "1"
+      },
+      {
+        "field": "learn_time",
+        "fieldDesc": "用户学习时间",
+        "is_require": "0"
+      },
+      {
+        "field": "user_age",
+        "fieldDesc": "用户年龄",
+        "is_require": "0"
+      },
+      {
+        "field": "user_agent",
+        "fieldDesc": "用户性别",
+        "is_require": "0"
+      },
+      {
+        "field": "user_nickname",
+        "fieldDesc": "用户昵称",
+        "is_require": "0"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "上传头像",
+    "url": "/userApi/register_uploadImage.php",
+    "params": [
+      {
+        "field": "user_id",
+        "fieldDesc": "用户ID",
+        "is_require": "1"
+      },
+      {
+        "field": "filetype",
+        "fieldDesc": "上传文件",
+        "is_require": "1"
+      },
+      {
+        "field": "fileName",
+        "fieldDesc": "图片名称",
+        "is_image": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  }
+]

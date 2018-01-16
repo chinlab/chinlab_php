@@ -1,0 +1,21 @@
+{
+    "name": "kasole/yii2-getui",
+    "description": "getui  push for yii2,this my first yii2 extensiion,very happy!",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","getui"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zhangka",
+            "email": "773683464@qq.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "kasole\\getui\\": "src"
+        }
+    }
+}

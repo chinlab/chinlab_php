@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>诺春风医疗系统</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="resource/sbadmin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="resource/sbadmin/bower_components/bootstrap/dist/css/font-awesome.min.css" rel="stylesheet">
+        <link href="resource/sbadmin/bower_components/bootstrap/dist/css/newstyle.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="resource/sbadmin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+        <!-- DataTables CSS -->
+        <link href="resource/sbadmin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+        <!-- DataTables Responsive CSS -->
+        <link href="resource/sbadmin/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="resource/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="resource/sbadmin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="resource/sbadmin/bower_components/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- jQuery -->
+        <script src="resource/sbadmin/bower_components/jquery/dist/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="resource/sbadmin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="resource/sbadmin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+        <!-- DataTables JavaScript -->
+        <script src="resource/sbadmin/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script src="resource/sbadmin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="resource/sbadmin/dist/js/sb-admin-2.js"></script>
+        <!--new-->
+        <script src="resource/sbadmin/bower_components/layer/layer.js"></script>
+        <script type="text/javascript" src="resource/sbadmin/js/fnReloadAjax.js"></script>
+        <script src="resource/sbadmin/bower_components/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="resource/sbadmin/bower_components/datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+        <script src="resource/sbadmin/bower_components/colResizable/colResizable-1.6.js"></script>
+        
+         <script src="resource/sbadmin/bower_components/Bootstrap-3-Typeahead-master/bootstrap3-typeahead.js"></script>
+         <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+        <style>
+            .breadcrumb{
+                padding:0px;
+                margin-bottom: 0px;
+            }
+
+            #datatable td,#datatable th{
+                overflow-x:hidden;
+                max-width: 60px;
+                white-space:nowrap;
+                overflow:hidden;
+            }
+        </style>
+        <script>
+            $(function() {
+                var tdtipindex = "";
+                $(document).on("mouseover", "#datatable td,#datatable th", function() {
+                    var tdcontent = $(this).text();
+                    tdtipindex = layer.tips(tdcontent, $(this), {
+                        tips: [1, '#333333'],
+                        time: 0
+                    });
+                }).on("mouseout", "#datatable td,#datatable th", function() {
+                    layer.close(tdtipindex);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="mycommonfade" style="background-color:#000; opacity:0.3; filter:alpha(opacity=30);"></div><div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <ol class="breadcrumb">
+                <li><a href="/district_index_parentid_0.html">全部</a></li>
+                                            </ol>
+            <br/>
+                        <a id="adddistrict">添加区域</a>
+            
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="dataTable_wrapper">
+                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>简称</th>
+                            <th>全称</th>
+                            <th>邮编</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                <tr>
+                            <!--<td></td>-->
+                            <td>中国</td>
+                            <td>中国</td>
+                            <td>中国</td>
+                            <td></td>
+                            <td>
+                                <a href="/district_index_parentid_100000.html" class="tablelink">下一级区域</a>
+                                <a trid="100000" class="editdistrict">修改</a>
+                                <a trid="100000" class="tablelink delrecord"> 删除</a>
+                            </td>
+                        </tr> 
+                                            </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true,
+            "oLanguage": {//对表格国际化  
+                "sLengthMenu": "每页显示 _MENU_条",
+                "sZeroRecords": "没有找到符合条件的数据",
+                //  "sProcessing": "&lt;img src=’./loading.gif’ /&gt;",    
+                "sInfo": "当前第 _START_ - _END_ 条　共计 _TOTAL_ 条",
+                "sInfoEmpty": "木有记录",
+                "sInfoFiltered": "(从 _MAX_ 条记录中过滤)",
+                "sSearch": "搜索：",
+                "oPaginate": {
+                    "sFirst": "首页",
+                    "sPrevious": "前一页",
+                    "sNext": "后一页",
+                    "sLast": "尾页"
+                }},
+        });
+    });
+
+    var layerindex = "";
+    var ifchange = false;
+    $("#adddistrict").click(function() {
+        $(document.body).css({
+            "overflow-x": "hidden",
+            "overflow-y": "hidden"
+        });
+        powidth = $(window).width() - 50;
+        poheight = $(window).height() - 50;
+        layerindex = layer.open({
+            type: 2,
+            //skin: 'layui-layer-lan',
+            title: "添加区域",
+            fix: false,
+            shadeClose: true,
+            maxmin: true,
+            area: [powidth + 'px', poheight + 'px'],
+            content: "/district_addview_parentid_.html",
+            end: function() {
+                $(document.body).css({
+                    "overflow-x": "auto",
+                    "overflow-y": "auto"
+                });
+                if (ifchange) {
+                    window.location.reload();
+                }
+            }
+        });
+    });
+
+    $(".editdistrict").click(function() {
+        $trid = $(this).attr("trid");
+        $(document.body).css({
+            "overflow-x": "hidden",
+            "overflow-y": "hidden"
+        });
+        powidth = $(window).width() - 50;
+        poheight = $(window).height() - 50;
+        layerindex = layer.open({
+            type: 2,
+            //skin: 'layui-layer-lan',
+            title: "修改区域",
+            fix: false,
+            shadeClose: true,
+            maxmin: true,
+            area: [powidth + 'px', poheight + 'px'],
+            content: "/district_editview.html?district_id=" + $trid,
+            end: function() {
+                $(document.body).css({
+                    "overflow-x": "auto",
+                    "overflow-y": "auto"
+                });
+                if (ifchange) {
+                    window.location.reload();
+                }
+            }
+        });
+    });
+
+
+    $(".delrecord").click(function() {
+        $trid = $(this).attr("trid");
+        layer.confirm('确定要删除？', {
+            btn: ['确定', '取消'] //按钮
+        }, function($index) {
+            layer.close($index);
+            var loadingindex = layer.load(1, {
+                shade: [0.5, '#ddd'] //0.1透明度的白色背景
+            });
+            $.post("/district_delete.html", {"district_id": $trid}, function(data) {
+                layer.close(loadingindex);
+                if (data.code == 0) {
+                    layer.msg('删除成功', {icon: 1, closeBtn: 1, shadeClose: true});
+                    window.location.reload();
+                } else {
+                    layer.msg(data.message, {icon: 5, closeBtn: 1, shadeClose: true});
+                }
+            }, "json")
+        });
+    });
+
+</script>
+
+</body>
+
+</html>

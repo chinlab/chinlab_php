@@ -1,0 +1,888 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>诺春风医疗系统</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="resource/sbadmin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="resource/sbadmin/bower_components/bootstrap/dist/css/font-awesome.min.css" rel="stylesheet">
+        <link href="resource/sbadmin/bower_components/bootstrap/dist/css/newstyle.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="resource/sbadmin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="resource/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="resource/sbadmin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="resource/sbadmin/bower_components/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- /#wrapper -->
+
+        <!-- jQuery -->
+        <script src="resource/sbadmin/bower_components/jquery/dist/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="resource/sbadmin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="resource/sbadmin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="resource/sbadmin/dist/js/sb-admin-2.js"></script>
+
+        <!-- new script -->
+        <script src="resource/sbadmin/bower_components/layer/layer.js"></script>
+        <script src="resource/sbadmin/bower_components/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="resource/sbadmin/bower_components/datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+
+        <!--fileinput plin-->
+        <link href="resource/sbadmin/bower_components/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" type="text/css">
+        <script src="resource/sbadmin/bower_components/bootstrap-fileinput/js/fileinput.min.js"></script>
+        <script src="resource/sbadmin/bower_components/bootstrap-fileinput/js/zh.js"></script>
+
+        <!--summernote plin-->
+        <link href="resource/sbadmin/bower_components/summernote/summernote.css" rel="stylesheet" type="text/css">
+        <script src="resource/sbadmin/bower_components/summernote/summernote.min.js"></script>
+        <script src="resource/sbadmin/bower_components/summernote/lang/summernote-zh-CN.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/check.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            function initFileInput(ctrlName, uploadUrl, initurl) {
+                var control = $('#' + ctrlName);
+                if (initurl != "") {
+                    initurl = '<img src="' + initurl + '" width="200" height="200" alt="图标"/>'
+                }
+                control.fileinput({
+                    language: 'zh', //设置语言
+                    uploadUrl: uploadUrl, //上传的地址
+                    showClose: false,
+                    showUpload: true, //是否显示上传按钮
+                    allowedFileExtensions: ['jpg', 'png', 'gif'], //接收的文件后缀
+                    showCaption: false, //是否显示标题
+                    dropZoneEnabled: true, //是否显示拖拽区域
+                    browseOnZoneClick: true,
+                    browseClass: "btn btn-primary", //按钮样式             
+                    previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+                    initialPreview: initurl
+
+                });
+            }
+            /**
+             * 
+             * @param {type} jsonlist 格式是：
+             * [
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"},
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"},
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"},
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"},
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"}
+             * ]
+             * @returns {undefined}
+             */
+            function checkform(jsonlist) {
+                for (var i = 0; i < jsonlist.length; i++) {
+                    if (jsonlist[i].type == "not_null") {
+                        var nodeval = $(jsonlist[i].node).val();
+                        if (nodeval == "") {
+                            layer.msg(jsonlist[i].message);
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+            
+            $.fn.serializeObject = function()
+            {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function() {
+                    if (o[this.name]) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+        </script>
+    </head>
+    <style type="text/css">
+    	hr{
+    		border:1px solid #C0C0C0;
+    	}
+    	#order_price{
+    		display: none;
+    	}
+    	.left{
+    		float: left;
+    	}
+    	#status{
+    		list-style: none;
+    		overflow: hidden;
+    	}
+    	#status li{
+    		width:80px;
+    		height:80px;
+    		/*line-height: 80px;*/
+    		/*padding:20px 5px 0;*/
+    		/*text-align: center;*/
+			position: relative;
+    		border:1px solid #049e57;
+    		border-radius: 100%;
+    	}
+    	#status li p{
+    		text-align: center;
+    		position: absolute;
+    		width:80px;
+    		height:20px;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            margin: auto;
+    		margin:auto; 
+    	}
+    	#status .arrows{
+    		margin-top:28px;
+    	}
+    	.change{
+    		background: #049e57;
+    		color:#fff;
+    	}
+    	.hide{
+    		display: none;
+    	}
+    	.upload{
+    		height: 100%;
+    		margin-top:5px;
+    	}
+    	#case_img{
+    		margin-top:5px;
+    	}
+    </style>
+    <body>
+        <div class="mycommonfade" style="background-color:#000; opacity:0.3; filter:alpha(opacity=30);"></div>
+        <div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+         	  订单详情
+        </div>
+        <div class="panel-body">
+
+            <fieldset>
+                <legend>患者信息</legend>
+                <table class="table table-bordered" id="datatable1">
+                	<tr>
+                		<td>
+                			<label class="col-sm-4 control-label" for="order_name" style="text-align: center;margin-top:6px;">患者姓名</label>
+			                  <div class="col-sm-8">
+			                     <input class="form-control" disabled id="order_name" type="text"/>
+			                  </div>
+                		</td>
+                		<td>
+                			<label class="col-sm-4 control-label" for="user_name" style="text-align: center;margin-top:6px;">用户名</label>
+			                  <div class="col-sm-8">
+			                     <input class="form-control" disabled id="user_name" type="text"/>
+			                  </div>
+                		</td>
+                		<td>
+                			<label class="col-sm-4 control-label" for="order_phone" style="text-align: center;margin-top:6px;">手机号码</label>
+			                  <div class="col-sm-8">
+			                     <input class="form-control" disabled id="order_phone" type="text"/>
+			                  </div>
+                		</td>
+                	</tr>
+                	<tr>
+                		<td>
+                			<label class="col-sm-4 control-label" for="id_card" style="text-align: center;margin-top:6px;">身份证号码</label>
+			                  <div class="col-sm-8">
+			                     <input class="form-control" disabled id="id_card" type="text"/>
+			                  </div>
+                		</td>
+                		<td>
+                			<label class="col-sm-4 control-label" for="hospital_name" style="text-align: center;margin-top:6px;">就诊医院</label>
+			                  <div class="col-sm-8">
+			                     <input class="form-control" disabled id="hospital_name" type="text"/>
+			                  </div>
+                		</td>
+                		<td>
+                			<label class="col-sm-4 control-label" for="section_name" style="text-align: center;margin-top:6px;">就诊科室</label>
+			                  <div class="col-sm-8">
+			                     <input class="form-control" disabled id="section_name" type="text"/>
+			                  </div>
+                		</td>
+                		
+                	</tr>
+                	<tr>
+                		<td>
+                			<label class="col-sm-4 control-label" for="doctor_name" style="text-align: center;margin-top:6px;">就诊医生</label>
+			                  <div class="col-sm-8">
+			                     <input class="form-control" disabled id="doctor_name" type="text"/>
+			                  </div>
+                		</td>
+                		<td>
+                			<label class="col-sm-4 control-label" for="order_type_desc" style="text-align: center;margin-top:6px;">服务项目</label>
+			                  <div class="col-sm-8">
+			                     <input class="form-control" disabled id="order_type_desc" type="text"/>
+			                  </div>
+                		</td>
+                		<td>
+                			<label class="col-sm-4 control-label" for="disease_name" style="text-align: center;margin-top:6px;">病例名称</label>
+			                  <div class="col-sm-8">
+			                     <input class="form-control" disabled id="disease_name" type="text"/>
+			                  </div>
+                		</td>
+                		
+                	</tr>
+                	<tr>
+                		<td>
+                			<label class="col-sm-4 control-label" for="ds_host" style="text-align: center;margin-top:6px;">上传资料</label>
+			                  <div class="left upload">
+                			  		已上传
+                			  	</div>
+			                    <div class="col-sm-6 left" id="case_img">
+			                     	<a href='javascript:void(0)' class='goCase'>预览</a>
+			                    </div>
+                		</td>
+                		<td>
+                			
+                		</td>
+                		<td>
+                			
+                		</td>
+                	</tr>
+                </table>
+                <div class="form-group">
+                    <label for="disease_des">病情描述</label>
+                    <textarea class="form-control" id="disease_des"  disabled  rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                        <label for="order_design">处理备注</label>
+                        <textarea class="form-control" id="order_design" rows="3"></textarea>
+                </div>
+                <div class="form-group" style="overflow: hidden;">
+                        <label>操作</label>
+                        <div class="col-sm-12">
+                        	<div class="col-sm-4">
+                        		<label for="order_type">订单状态</label>
+                        		<select id="order_type" name="order_type" class="form-control" data-rel="chosen">
+                        			<option value=""></option>
+                        		</select>
+                        		
+                        	</div>
+                        	<div class="col-sm-8">
+                        		<ul id="status">
+                        			<li class="order_status left"><p>vip咨询费待支付</p></li>
+                        			<div class="left arrows">
+                        				<img src="img/right.png"/>
+                        			</div>
+                        			
+                        			
+                        		</ul>
+                        	</div>
+                        	<div class="col-sm-4" style="margin-top: 20px;">
+                        			<label for="order_time">就诊时间</label>
+                        			<input type="text" disabled class="form-control" id="order_time">
+                        	</div>
+                        </div>
+                </div>
+                <div class="form-group" style="overflow: hidden;" id="price">
+                         <div class="col-sm-12">
+                        	<label class="col-sm-2 control-label" for="order_price" style="text-align: center;margin-top:6px;">定制服务费输入：</label>
+			                <div class="col-sm-2">
+			                     <input class="form-control" id="order_price" disabled type="number" style="display: inline-block;width:90%;"/>&nbsp;&nbsp;元
+			                </div>
+                        </div>
+                </div>
+                
+                
+                <div class="col-sm-12" style="margin-top: 20px;">
+                    <button id="saveedit" type="button" class="btn btn-primary">保存</button>
+                    <button id="cancledistrct" type="button" class="btn btn-default">取消</button>
+                </div>
+               
+            </fieldset>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+         	  费用详情
+        </div>
+        <div class="panel-body">
+        	<table class="table table-striped table-bordered table-hover" id="datatable2">
+					<thead>
+						<tr>
+							<th>
+								序号
+							</th>
+							<th>
+								费用类型
+							</th>
+							<th>
+								付款方式
+							</th>
+							<th>
+								付款金额
+							</th>
+							<th>
+								付款时间
+							</th>
+							<th>
+								付款状态
+							</th>
+							<th>
+								操作
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						 
+						
+					</tbody>
+			</table>
+			
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+         	  操作日志
+        </div>
+        <div class="panel-body">
+        	<table class="table table-striped table-bordered table-hover" id="datatable3">
+					<thead>
+						<tr>
+							<th>
+								序号
+							</th>
+							<th>
+								操作人
+							</th>
+							<th>
+								操作模块
+							</th>
+							<th>
+								操作时间
+							</th>
+							<th class="col-sm-4">
+								备注
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+			</table>
+        </div>
+    </div>
+    
+    
+</div>
+<script>
+    postflag = true;
+//    initFileInput("tcicon", "/order_uploadicon.html", "");
+//  $("#tcicon").on("fileuploaded",
+//          function (event, data, previewId, index) {
+//              var code = data.response.code;
+//              if (code == "0") {
+//                  $("#tciconsrc").val(data.response.url);
+//              } else {
+//                  layer.msg(data.response.message, {
+//                      icon: 5,
+//                      closeBtn: 1,
+//                      shadeClose: true
+//                  });
+//                  $('#tcicon').fileinput('reset');
+//              }
+//          });
+
+
+
+//  $('#tcicon').on('filecleared',
+//          function (event) {
+//              $("#tciconsrc").val("");
+//          });
+
+
+
+
+    $('#order_time').datetimepicker({
+        language: 'zh-CN',
+        format: "yyyy-mm-dd hh:ii:ss"
+    }).on('changeDate', function (ev) {
+    });
+    $('#order_date').datetimepicker({
+        language: 'zh-CN',
+        format: "yyyy-mm-dd hh:ii:ss"
+    }).on('changeDate',
+            function (ev) {
+
+            });
+
+//  $('#reseticon').click(function () {
+//      $('#tcicon').fileinput('refresh');
+//      $("#tciconsrc").val("");
+//  });
+    function getDate(tm){ 
+		var tt=new Date(parseInt(tm) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ") 
+		return tt; 
+	}
+    
+    
+    $(function () {
+    	
+    	var href = window.location.search;    	
+    	var id = href.replace("?","").split("=")[1];
+    	$("#case_img").find("a").attr("id",id)
+    	$("#case_img").find("a").attr("trid",id)
+    	//console.log(id)
+    	$.ajax({
+    		type:"post",
+    		url:local+"/order_viewJson.php"+href,
+    		async:true,
+    		success:function(data){
+    			if(data.state==100){
+    				layer.msg(data.message, {
+                        icon: 5,
+                        closeBtn: 1,
+                        shadeClose: true
+	                });
+    				$("#saveedit").attr("disabled","disabled")
+    				$("#cancledistrct").attr("disabled","disabled")
+    			}
+    			var data_1 = data.data
+  				//console.log(data_1)
+    			var str1 = "";
+    			var m=0;
+    			var n=0;
+    			//console.log(data_1)
+    			if(data_1.order_type==14){
+    				$("#price").css("display","block")
+    			}else{
+    				$("#price").css("display","none")
+    			}
+    			$("#order_name").val(data_1.order_name);
+      			$("#user_name").val(data_1.user_name);
+        		$("#order_phone").val(data_1.order_phone);
+				$("#hospital_name").val(data_1.hospital_name);
+   				$("#section_name").val(data_1.section_name);
+  				$("#doctor_name").val(data_1.doctor_name);
+				$("#order_type_desc").val(data_1.order_type_desc);
+      			$("#disease_name").val(data_1.disease_name);
+      			$("#disease_des").val(data_1.disease_des);
+      			$("#order_design").val(data_1.order_design);
+      			$("#order_time").val(data_1.order_time);
+      			$("#id_card").val(data_1.id_card);
+      			
+      			//照片是否上传
+      			if(data_1.orderfile_url.length==0){
+      				$("#case_img").css("display","none");
+      				$(".upload").html("未上传")
+      			}else{
+      				$("#case_img").css("display","block");
+      				$(".upload").html("已上传")
+      			}
+      			     			
+//    			var data_2 = data.data[1].option
+//    			//console.log(data_2)
+//    			for(var i=0;i<data_2.length;i++){
+//    				str += "<option value='"+ data_2[i].value +"'>"+ data_2[i].name +"</option>"
+//    			}
+//    			$("#order_state").html(str)
+//    			var data_3 = data.data[1].order_price
+//    			if(data_3){
+//    				$("#order_price").css("display","block");
+//    			}else{
+//    				$("#order_price").css("display","none");
+//    			}
+      			var data_2 = data.data.payList
+      			var data_2_total = data.data.pay_info
+      			//console.log(data_2)
+      			for(var i=0;i<data_2.length;i++){
+      				n++;
+      				var update_time = getDate(data_2[i].update_time)
+    				str1 += "<tr><td>"+ n +"</td><td>"+ data_2[i].body +"</td><td>"+ data_2[i].pay_type +"</td><td>"+ data_2[i].pay_money +"</td><td>"+ update_time +"</td><td>"+ data_2[i].pay_status +"</td><td></td></tr>"				  			
+      			}
+      			str1 += "<tr><td colspan='7'>合计费用：<span>"+ data_2_total.totalMoney +"</span>元/单 &nbsp;&nbsp; 已付费用：<span>"+ data_2_total.alreadyPaid +"</span>元 &nbsp;&nbsp; 未付费用：<span>"+ data_2_total.notPaid +"</span>元</td></tr>"	  
+      			$("#datatable2").find('tbody').html(str1)
+      			
+      			
+      			
+      			var data_3 = data.data.select_order_state.option
+      			//console.log(data_3)
+      			var str2 = ""
+				for(var i=0;i<data_3.length;i++){
+					str2 += "<option value='"+ data_3[i].value +"'>"+ data_3[i].name +"</option>"
+				}
+				$("#order_type").html(str2)
+
+				var data_4 = data.data.operation_log
+      			//console.log(data_4)
+      			var str3 = "";
+      			for(var i=0;i<data_4.length;i++){
+      				m++;
+      				var create_time = getDate(data_4[i].create_time)
+    				str3 += "<tr><td>"+ m +"</td><td>"+ data_4[i].manager_name +"</td><td>"+ data_4[i].operation_model +"</td><td>"+ create_time +"</td><td>"+ data_4[i].operation_desc +"</td></tr>"
+    			}
+      			$("#datatable3").find('tbody').html(str3)
+      			
+      			
+      			//进度条
+      			var data_5 = data.data.current_order_type
+      			//console.log(data_5)
+      			var str4="";
+      			for(i in data_5){
+      				str4 += "<li class='order_status left' is_active='"+ data_5[i].is_active +"'><p>"+ data_5[i].option +"</p></li><div class='left arrows'><img src='img/right.png'/></div>"
+      			}
+      			$("#status").html(str4)
+      			$("#status").find("li").each(function(){
+      				if($(this).attr("is_active")==1){
+      					$(this).addClass("change")
+      				}
+      			})
+      			$("#status").children("div:last-child").addClass("hide");
+      			
+				
+				//费用支付
+      			var data_6 = data.data.select_order_state.config_order_price
+      			//console.log(data_6)
+      			if(data_6){
+      				$("#order_price").removeAttr("disabled");
+      			}			
+				
+				var data_7 = data.data.select_order_state.config_time
+      			//console.log(data_7)
+      			if(data_7){
+      				$("#order_time").removeAttr("disabled");
+      			}
+				
+    		}
+    	});
+    	
+//      $disease_name = $("#disease_name").val("感冒");
+//      $news_type = $("#order_type").val("2");
+//      $news_title = $("#order_time").val("2016-11-04 11:57:39");
+//      $tciconsrc = $("#order_name").val("来了");
+//      $order_gender = $("#order_gender").val("1");
+//      $order_phone = $("#order_phone").val("13213213213");
+//      $order_age = $("#order_age").val("13");
+//      $order_state = $("#order_state").val("5");
+//      $order_date = $("#order_date").val("2016-11-04 11:56:38");
+       
+
+        layer.photos({
+            photos: '#photosDemo'
+        });
+
+        $('#collapseOne').on('hide.bs.collapse',
+                function () {
+                    $("#closesearchform").html('筛选条件<span class="icon-angle-down"></span>');
+                });
+                
+                
+                
+                
+//      function sendFile(file, note) {
+//          data = new FormData();
+//          data.append("file", file);
+//          $.ajax({
+//              data: data,
+//              type: "POST",
+//              url: "/order_uploadtextimg.html?retype=text",
+//              cache: false,
+//              contentType: false,
+//              processData: false,
+//              success: function (url) {
+//                  if (url == "permission_error") {
+//                      layer.msg("你没有操作权限", {
+//                          icon: 5,
+//                          closeBtn: 1,
+//                          shadeClose: true
+//                      });
+//                  } else if (url == "error") {
+//                      layer.msg("上传失败", {
+//                          icon: 5,
+//                          closeBtn: 1,
+//                          shadeClose: true
+//                      });
+//                  } else {
+//                      //$("#news_content").summernote('insertImage', url, 'image name'); // the insertImage API
+//                      $(note).summernote('insertImage', url, 'image name'); // the insertImage API
+//                  }
+//              }
+//          });
+//      }
+
+        $("#cancledistrct").click(function () {
+            //window.parent.layer.close(window.parent.layerindex);
+            
+            var order_id = id;
+            var order_type = $("#order_type").val();
+            $.ajax({
+            	type:"post",
+            	url:local+"/order_UpdateorderstatusJson.php",
+            	data:{
+					"order_id" : order_id,
+					"order_state" : -1,
+				},
+            	async:true
+            });
+            
+            var index = parent.layer.getFrameIndex(window.name); 
+			parent.layer.close(index);
+        });
+
+        $("#saveedit").click(function () {
+//          var disease_name = $("#disease_name").val();
+			var order_type = $("#order_type").val();
+  			var order_time = $("#order_time").val();
+//			var order_name = $("#order_name").val();
+//			var order_gender = $("#order_gender").val();
+//			var order_phone = $("#order_phone").val();
+//			var order_age = $("#order_age").val();
+//			var order_info = $("#order_info").val();
+            var order_id = id;
+//            var order_state = $("#order_state").val();
+//            var price = $("#oPrice").val();
+            var order_design = $("#order_design").val();
+            var order_money = $("#order_price").val();
+            
+            $.ajax({
+            	type:"post",
+            	url:local+"/order_UpdateorderstatusJson.php",
+            	data:{
+					"order_id" : order_id,
+					"order_design": order_design,
+					"order_state" : order_type,
+					"order_time" : order_time,
+					"order_money" : order_money,
+				},
+            	async:true,
+            	success:function(data){
+            		if(data.state==0){
+            			layer.msg(data.message,{
+	                                icon: 1,
+	                                closeBtn: 1,
+	                                shadeClose: true,
+	                                time:2000,
+	                            },function(){
+	                            	var index = parent.layer.getFrameIndex(window.name); 
+									parent.layer.close(index);
+	                            });
+                        
+            		}else{
+            			layer.msg(data.message, {
+	                                icon: 5,
+	                                closeBtn: 1,
+	                                shadeClose: true
+	                            });
+            		}
+            		
+            		
+            		
+            		
+//          		if(data.data[1].order_price){
+//						if(Number(price)=="" || Number(price)<0){
+//							layer.msg("请输入手术费用", {
+//			                                icon: 5,
+//			                                closeBtn: 1,
+//			                                shadeClose: true
+//			                            })
+//						}else{
+//							$.post(local+"/order_updateJson.php", {
+//			//                "order_type": order_type,
+//				                "order_id": order_id,
+//				                "order_state":order_state,
+//				                "order_price":price,
+//				//              "order_time": order_time,
+//				//              "order_name": order_name,
+//				//              "order_gender": order_gender,
+//				//              "order_phone": order_phone,
+//				//              "order_age": order_age,
+//				//              "order_state": $order_state,
+//				//              "order_date": $order_date,
+//				              	"order_design": order_design,
+//				//              "disease_des": $disease_des,
+//				            },
+//				                    function (result) {
+//				//                        postflag = true;
+//				                        //console.log(result)
+//				                        if (result.state == '0') {
+//				                            layer.msg(result.message, {
+//				                                icon: 1,
+//				                                closeBtn: 1,
+//				                                shadeClose: true
+//				                            });
+//				                        } else {
+//				                            layer.msg(result.message, {
+//				                                icon: 5,
+//				                                closeBtn: 1,
+//				                                shadeClose: true
+//				                            });
+//				                        }
+//				                        var index = parent.layer.getFrameIndex(window.name); 
+//										parent.layer.close(index);
+//				                    },
+//				                    'json');
+//						}
+//					}else{
+//						$.post(local+"/order_updateJson.php", {
+//			//                "order_type": order_type,
+//			                "order_id": order_id,
+//			                "order_state":order_state,
+//			                "order_price":price,
+//			//              "order_time": order_time,
+//			//              "order_name": order_name,
+//			//              "order_gender": order_gender,
+//			//              "order_phone": order_phone,
+//			//              "order_age": order_age,
+//			//              "order_state": $order_state,
+//			//              "order_date": $order_date,
+//			              	"order_design": order_design,
+//			//              "disease_des": $disease_des,
+//			            },
+//			                    function (result) {
+//			//                        postflag = true;
+//			                        //console.log(result)
+//			                        if (result.state == '0') {
+//			                            layer.msg(result.message, {
+//			                                icon: 1,
+//			                                closeBtn: 1,
+//			                                shadeClose: true
+//			                            });
+//			                        } else {
+//			                            layer.msg(result.message, {
+//			                                icon: 5,
+//			                                closeBtn: 1,
+//			                                shadeClose: true
+//			                            });
+//			                        }
+//			                        var index = parent.layer.getFrameIndex(window.name); 
+//									parent.layer.close(index);
+//			                    },
+//			                    'json');
+//					}
+            	}
+            });
+            //console.log(price)
+//          if (!postflag) {
+//              return;
+//          }
+//          postflag = false;
+			
+			
+			
+			
+            
+        });
+        
+        
+//      function reflashrecord(id) {
+//					$.post(local+"/order_viewJson.php", {
+//							"id": id
+//						},
+//						function(result) {
+//							console.log(result)
+//							var result = result.data[0]
+//							console.log(result)
+//							var $tds = $("#" + id).parents("tr").find("td");
+//							$tds.eq(7).text(result.state_name);
+////							$tds.eq(1).text(data.order_time);
+////							$tds.eq(2).text(data.ordertype);
+////							$tds.eq(3).text(data.order_name);
+////							$tds.eq(4).text(data.order_phone);
+////							$tds.eq(5).text(data.order_state);
+//							return;
+//						},
+//						'json');
+//				}
+
+				
+
+				var layerindex = "";
+				var ifchange = false;
+				$(document).on("click", ".goCase",
+					function() {
+						var trid = $(this).attr("trid");
+						$(document.body).css({
+							"overflow-x": "hidden",
+							"overflow-y": "hidden"
+						});
+						powidth = $(window).width() - 50;
+						poheight = $(window).height() - 50;
+						layerindex = layer.open({
+							type: 2,
+							title: "用户预约详情",
+							fix: false,
+							shadeClose: true,
+							maxmin: true,
+							area: [powidth + 'px', poheight + 'px'],
+							content: "surgery_img.html?order_id=" + trid,
+							end: function() {
+								$(document.body).css({
+									"overflow-x": "auto",
+									"overflow-y": "auto"
+								});
+							}
+						});
+					});
+
+
+
+
+
+
+
+
+
+
+
+//      $("input[name=districtname]").click(function () {
+//          //window.alert("nihao");
+//          var Y = $(this).offset().top;
+//          var X = $(this).offset().left;
+//          $(".mycommonfade").fadeIn(300);
+//          $(document.body).css({
+//              "overflow-x": "hidden",
+//              "overflow-y": "hidden"
+//          });
+//          $("#showgroupschoose").css("top", Y + 28);
+//          $("#showgroupschoose").css("left", X);
+//          $("#showgroupschoose").show();
+//      });
+//
+//      $(".mycommonfade").click(function () {
+//          //window.alert("nihao");
+//          $(".mycommonfade").fadeOut(300);
+//          $(document.body).css({
+//              "overflow-x": "auto",
+//              "overflow-y": "auto"
+//          });
+//          $("#showgroupschoose").hide();
+//      });
+    });
+</script>
+</body>
+
+</html>

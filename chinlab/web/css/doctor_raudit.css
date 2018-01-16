@@ -1,0 +1,22 @@
+ul{
+	list-style: none;
+	overflow: hidden;
+}
+.form-group{
+	overflow: hidden;
+}
+.imgbox{
+	min-height: 165px;
+}
+.head_img li{
+	margin-bottom: 10px;
+	height:130px;
+}
+.certificateimg li{
+	margin-bottom: 10px;
+	height:130px;
+}
+.titlesimg li{
+	margin-bottom: 10px;
+	height:130px;
+}

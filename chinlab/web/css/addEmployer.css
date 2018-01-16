@@ -1,0 +1,7 @@
+.panel-heading{
+	overflow: hidden;
+}
+.form-control{
+	display: inline-block;
+	width:60%;
+}

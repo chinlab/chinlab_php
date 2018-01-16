@@ -1,0 +1,192 @@
+
+
+
+#warp{
+	height:100%;
+	overflow: hidden;
+}
+#main{
+	width:1200px;
+	margin:11% auto 0;
+}
+#login{
+	height:380px;
+	width:422px;
+	margin:0 auto;
+}
+#login .title{
+	text-align:center;
+	font-size:37px;
+	color:#268fce;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+#login .username{
+	width:100%;
+	height:55px;
+	border:2px solid #c1d7e3;
+	margin-top:17px;
+	background: #fff;
+}
+#login .username i{
+	height:100%;
+	font-size: 34px;
+	color:#268fce;
+	margin:0 15px;
+}
+#login .username p{
+	height:100%;
+	width:70px;
+	font-size:18px;
+	line-height:50px;
+	color:#8d8d8d;
+	margin:0;
+}
+#user_name{
+	width:283px;
+	height:100%;
+	font-size: 20px;
+	border:0;
+	outline:none;
+}
+
+#login .password{
+	width:100%;
+	height:55px;
+	border:2px solid #c1d7e3;
+	margin-top:17px;
+	background: #fff;
+}
+
+#login .password i{
+	height:100%;
+	font-size: 34px;
+	color:#268fce;
+	margin:0 15px;
+}
+#login .password p{
+	height:100%;
+	width:50px;
+	font-size:18px;
+	line-height:50px;
+	color:#8d8d8d;
+	margin:0;
+}
+#pass_word{
+	width:303px;
+	height:100%;
+	font-size: 20px;
+	border:0;
+	outline:none;
+}
+#login .code{
+	width:100%;
+	overflow: hidden;
+	margin-top:17px;
+}
+#verify_code{
+	width:213px;
+	height:55px;
+	border:2px solid #c1d7e3;
+	font-size: 20px;
+	color:#8d8d8d;
+	outline:none;
+	padding:0 30px;
+}
+#login .code .codeImg a{
+	display: block;
+	width:100%;
+	text-align: center;
+}
+#login .code .codeImg .code_img{
+	width:138px;
+	height:52px;
+	margin-bottom: 11px;
+}
+#login .code .codeImg .code_img img{
+	width:100%;
+	height:100%;
+}
+
+#login .login_btn{
+	width:100%;
+	height:52px;
+	margin-top:17px;
+}
+#go{
+	width:100%;
+	height:100%;
+	background: #268fce;
+	font-size: 27px;
+	color:#ffffff;
+	text-align: center;
+	line-height: 32px;
+	border:0;
+	letter-spacing:10px;
+}
+
+#footer_warp{
+	width: 100%;
+	height:56px;
+	position: absolute;
+	left: 0;
+	bottom: 50px;
+}
+#footer{
+	width:1200px;
+	margin:0 auto;
+}
+#footer .contact_title{
+	overflow: hidden;
+	padding-left:100px;
+	font-size: 14px;
+	color:#000000;
+	height:28px;
+	line-height: 28px;
+	
+}
+#footer .contact_info{
+	overflow: hidden;
+	padding-left:185px;
+	font-size: 14px;
+	color:#000000;
+	height:28px;
+	line-height: 28px;
+}
+#footer .contact_info p{
+	margin-bottom: 0;
+}
+#footer .contact_info .contact_tel{
+	margin-right: 48px;
+}
+#footer .contact_info .contact_url{
+	margin-right: 73px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

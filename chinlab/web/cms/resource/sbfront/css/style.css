@@ -1,0 +1,15 @@
+*{ margin: 0; padding: 0; border: none; list-style: none; font-family: "微软雅黑"; }
+html,body{ width: 100%; min-height: 100%; background: #f0f0f0; color: #000000;}
+.faq dl{ width: 100%; background: url(../img/faq_down.png) no-repeat 98% 1.1rem; background-size:1rem auto; border-bottom: 1px solid #ddd; }
+.faq dt{ background: url(../img/faq_02.png) no-repeat 0.5rem 1.1rem; padding:1rem 2rem; background-size:1.2rem auto; }
+.faq dd{ color: #555555; font-size: 0.9rem; padding:0rem 2rem; display: none; padding-bottom: 1rem;}
+.faq dl.current{ background:#fff url(../img/faq_up.png) no-repeat 98% 1.1rem; background-size:1rem auto;}
+.faq dl.current dt{background: url(../img/faq_01.png) no-repeat 0.5rem 1.1rem; background-size:1.2rem auto;}
+
+.article{ padding:1rem;}
+.article h3{ font-weight: normal; text-align: center; line-height:2.5rem;}
+.article small{ display: block; color: #999999;text-align:center; line-height: 1.5rem;}
+.article p{ color: #555555; text-indent: 2rem; line-height: 1.5rem; font-size: 0.9rem;}
+.article img{ width: 100%; margin: 1rem auto;}
+
+.article_banner{ width: 100%; margin-bottom: 1rem;}

@@ -1,0 +1,168 @@
+ul{
+	list-style: none;
+}
+.isShow{
+	display: block!important;
+}
+.isHide{
+	display: none!important;
+}
+.header{
+	font-size: 24px;
+	height:60px;
+	line-height: 60px;
+	color:#ffffff;
+	background:#66cefa;
+	padding:0 30px;
+}
+.header button{
+	margin-top:13px;
+}
+label{
+	margin-top:6px;
+	text-align: center;
+}
+.unit{
+	height: 100%;
+	margin-top:6px;
+}
+.electplace{
+	margin: 0;
+	display: none;
+}
+.electplace li{
+	margin:0 10px;
+	
+}
+.electplace li input{
+	vertical-align:middle;
+	margin-top:-2px; 
+	margin-bottom:1px;
+	margin-right: 5px;
+}
+.remind{
+	color:red;
+}
+ul{
+	list-style: none;
+	padding-left:0;
+}
+
+#keywordList li{
+	float: left;
+	margin:3px;
+}
+#keywordList li .tags{
+	margin-right: 2px;
+    color: #fff;
+    background-color: #5bc0de;
+    display: inline;
+  	padding: 2.4px 7.2px 3.6px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 12px;
+    text-align: center;
+    border-radius: 4px;
+}
+#keywordList li .tags .removetag{
+	padding-left: 5px;
+}
+.title_imglist{
+	text-align: center;
+	width:100%;
+	font-size:18px;
+}
+#hotsale_list{
+	padding:20px;
+	border: 1px solid #C0C0C0;
+	border-radius: 10px;
+}
+#hotsale_list img{
+	width:100%;
+	height: 100%;
+}
+#projectimg_list{
+	padding:20px;
+	border: 1px solid #C0C0C0;
+	border-radius: 10px;
+}
+#projectimg_list img{
+	width:100%;
+	height: 100%;
+}
+#bannerimg_list{
+	padding:20px;
+	border: 1px solid #C0C0C0;
+	border-radius: 10px;
+}
+#bannerimg_list img{
+	width:100%;
+	height: 100%;
+}
+#projectdetails_list{
+	padding:20px;
+	border: 1px solid #C0C0C0;
+	border-radius: 10px;
+	overflow: hidden;
+}
+#projectdetails_list li{
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+#projectdetails_list li img{
+	width:100%;
+	height: 100%;
+}
+#hotsalebox{
+	display: none;
+}
+#projectimgbox{
+	display: none;
+}
+#bannerimgbox{
+	display: none;
+}
+#detailimgbox{
+	display: none;
+}
+
+.taglist{
+	margin: 0;
+}
+.taglist li{
+	margin:0 10px;
+	
+}
+.taglist li input{
+	vertical-align:middle;
+	margin-top:-2px; 
+	margin-bottom:1px;
+	margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

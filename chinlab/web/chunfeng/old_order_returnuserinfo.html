@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>诺春风医疗系统</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="resource/sbadmin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="resource/sbadmin/bower_components/bootstrap/dist/css/font-awesome.min.css" rel="stylesheet">
+        <link href="resource/sbadmin/bower_components/bootstrap/dist/css/newstyle.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="resource/sbadmin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="resource/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="resource/sbadmin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="resource/sbadmin/bower_components/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- /#wrapper -->
+
+        <!-- jQuery -->
+        <script src="resource/sbadmin/bower_components/jquery/dist/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="resource/sbadmin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="resource/sbadmin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="resource/sbadmin/dist/js/sb-admin-2.js"></script>
+
+        <!-- new script -->
+        <script src="resource/sbadmin/bower_components/layer/layer.js"></script>
+        <script src="resource/sbadmin/bower_components/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="resource/sbadmin/bower_components/datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+
+        <!--fileinput plin-->
+        <link href="resource/sbadmin/bower_components/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" type="text/css">
+        <script src="resource/sbadmin/bower_components/bootstrap-fileinput/js/fileinput.min.js"></script>
+        <script src="resource/sbadmin/bower_components/bootstrap-fileinput/js/zh.js"></script>
+
+        <!--summernote plin-->
+        <link href="resource/sbadmin/bower_components/summernote/summernote.css" rel="stylesheet" type="text/css">
+        <script src="resource/sbadmin/bower_components/summernote/summernote.min.js"></script>
+        <script src="resource/sbadmin/bower_components/summernote/lang/summernote-zh-CN.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/check.js" type="text/javascript" charset="utf-8"></script>
+        <!--<script>
+            function initFileInput(ctrlName, uploadUrl, initurl) {
+                var control = $('#' + ctrlName);
+                if (initurl != "") {
+                    initurl = '<img src="' + initurl + '" width="200" height="200" alt="图标"/>'
+                }
+                control.fileinput({
+                    language: 'zh', //设置语言
+                    uploadUrl: uploadUrl, //上传的地址
+                    showClose: false,
+                    showUpload: true, //是否显示上传按钮
+                    allowedFileExtensions: ['jpg', 'png', 'gif'], //接收的文件后缀
+                    showCaption: false, //是否显示标题
+                    dropZoneEnabled: true, //是否显示拖拽区域
+                    browseOnZoneClick: true,
+                    browseClass: "btn btn-primary", //按钮样式             
+                    previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+                    initialPreview: initurl
+
+                });
+            }
+            /**
+             * 
+             * @param {type} jsonlist 格式是：
+             * [
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"},
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"},
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"},
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"},
+             *      {node:"#xxxxx",error:"xxxx不能为空",type:"not_null"}
+             * ]
+             * @returns {undefined}
+             */
+            function checkform(jsonlist) {
+                for (var i = 0; i < jsonlist.length; i++) {
+                    if (jsonlist[i].type == "not_null") {
+                        var nodeval = $(jsonlist[i].node).val();
+                        if (nodeval == "") {
+                            layer.msg(jsonlist[i].message);
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+            
+            $.fn.serializeObject = function()
+            {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function() {
+                    if (o[this.name]) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+        </script>-->
+    </head>
+    <style type="text/css">
+    	hr{
+    		border:1px solid #C0C0C0;
+    	}
+    	#order_price{
+    		display: none;
+    	}
+    </style>
+    <body>
+        <div class="mycommonfade" style="background-color:#000; opacity:0.3; filter:alpha(opacity=30);"></div><div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            编辑用户预约
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div>
+                    
+                    <div class="col-sm-1">
+                        <div class="form-group">
+                            <label for="order_gender">就诊人性别</label>
+                            <select id="order_gender" name="order_gender" disabled class="form-control">
+                                <option value="1">男</option>
+                                <option value="2">女</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-group">
+                            <label for="order_type">预约类型</label>
+                            <!--<select id="order_type" name="order_type" disabled class="form-control" data-rel="chosen">
+                                                                <option value="">请选择</option>
+																<option value="1">手术预约</option>
+																<option value="2">精准预约</option>
+																<option value="3">海外医疗</option>
+																<option value="4">绿色通道</option>
+																<option value="5">预约诊疗</option>
+																<option value="6">健康体检</option>
+																<option value="7">生育辅助</option>
+																<option value="8">膝关节手术</option>
+																<option value="9">医疗抗衰</option>
+																<option value="10">第二诊疗意见</option>
+																<option value="11">重症转诊</option>
+																<option value="12">vip服务</option>
+																<option value="13">慈善公益</option>
+                            </select>-->
+                            <input type="text" class="form-control"  disabled id="order_type" placeholder="预约类型">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="order_time">下单时间</label>
+                            <input type="text" class="form-control"  disabled id="order_time"
+                                   placeholder="下单时间">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="disease_name">疾病名称</label>
+                            <input type="text" class="form-control" disabled id="disease_name" placeholder="疾病名称">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="order_name">患者姓名</label>
+                            <input type="text" class="form-control" disabled id="order_name" placeholder="就诊人姓名">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="order_age">就诊人年龄</label>
+                            <input type="text" class="form-control" disabled id="order_age" placeholder="就诊人年龄">
+                        </div>
+                    </div>
+                                        <!--<div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="district_name">期望就诊城市</label>
+                            <input type="text" class="form-control" id="district_name" value="南京市" disabled placeholder="期望就诊城市">
+                        </div>
+                    </div>-->
+                    
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="order_phone">就诊人电话号码</label>
+                            <input type="text" class="form-control" disabled id="order_phone" placeholder="就诊人电话号码">
+                        </div>
+                    </div>
+                                         <!--<div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="order_date">期望就诊时间</label>
+                            <input type="text" class="form-control" id="order_date" value=""
+                                   placeholder="下单时间">
+                        </div>
+                    </div>-->
+                 
+                  	
+                  	
+                  	
+                   		<div class="form-group col-sm-4">
+	                        <label for="order_state">就诊状态</label>
+	                        <select id="order_state" name="order_state" class="form-control">
+	                            <option value="">请选择</option>
+	                        </select>
+	                    </div>   
+	                   	<div class="col-sm-4" id="order_price">
+	                        <div class="form-group">
+	                            <label for="order_phone">手术费用</label>
+	                            <input type="number" class="form-control" id="oPrice" placeholder="手术费用" val="0" style="width: 90%;display: inline-block;">&nbsp;元
+	                        </div>
+	                    </div>
+	                     <div class="col-sm-12">
+	                        <div class="form-group">
+	                            <label for="order_design">处理备注（处理人填写)</label>
+	                            <textarea class="form-control" id="order_design" rows="3"></textarea>
+	                        </div>
+	                    </div>
+                   
+            
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="order_info">病情描述</label>
+                            <textarea class="form-control" id="order_info"  disabled  rows="5"></textarea>
+                        </div>
+                    </div>
+                    <!--<div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="comment">用户评论</label>
+                            <textarea class="form-control" id="comment" rows="3"  disabled ></textarea>
+                        </div>
+                    </div>-->
+
+                    <div id="photosDemo" class="photos-demo">
+                        <!-- layer-src表示大图  layer-pid表示图片id  src表示缩略图-->
+                                                                                                
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-sm-12">
+                        <div class="col-sm-12">
+                            <button id="saveedit" type="button" class="btn btn-primary">保存</button>
+                            <button id="cancledistrct" type="button" class="btn btn-default">取消</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-6 (nested) -->
+            </div>
+            <!-- /.row (nested) -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<script>
+    postflag = true;
+//    initFileInput("tcicon", "/order_uploadicon.html", "");
+//  $("#tcicon").on("fileuploaded",
+//          function (event, data, previewId, index) {
+//              var code = data.response.code;
+//              if (code == "0") {
+//                  $("#tciconsrc").val(data.response.url);
+//              } else {
+//                  layer.msg(data.response.message, {
+//                      icon: 5,
+//                      closeBtn: 1,
+//                      shadeClose: true
+//                  });
+//                  $('#tcicon').fileinput('reset');
+//              }
+//          });
+
+
+
+//  $('#tcicon').on('filecleared',
+//          function (event) {
+//              $("#tciconsrc").val("");
+//          });
+
+
+
+
+    $('#order_time').datetimepicker({
+        language: 'zh-CN',
+        format: "yyyy-mm-dd hh:ii:ss"
+    }).on('changeDate', function (ev) {
+    });
+    $('#order_date').datetimepicker({
+        language: 'zh-CN',
+        format: "yyyy-mm-dd hh:ii:ss"
+    }).on('changeDate',
+            function (ev) {
+
+            });
+
+//  $('#reseticon').click(function () {
+//      $('#tcicon').fileinput('refresh');
+//      $("#tciconsrc").val("");
+//  });
+    
+    
+    
+    $(function () {
+    	
+    	var href = window.location.search;    	
+    	var id = href.replace("?","").split("=")[1];
+    	//console.log(id)
+    	$.ajax({
+    		type:"post",
+    		url:local+"/torder_viewJson.php"+href,
+    		async:true,
+    		success:function(data){
+    			console.log(data)
+    			var data_1 = data.data[0][0]
+    			var str = ""
+    			//console.log(data_1)
+    			$("#disease_name").val(data_1.disease_name);
+      			$("#order_type").val(data_1.type_name);
+        		$("#order_time").val(data_1.order_time);
+				$("#order_name").val(data_1.order_name);
+   				$("#order_gender").val(data_1.order_gender);
+  				$("#order_phone").val(data_1.order_phone);
+				$("#order_age").val(data_1.order_age);
+      			$("#order_info").val(data_1.disease_des);
+      			$("#order_design").val(data_1.order_design);
+      			var data_2 = data.data[1].option
+      			//console.log(data_2)
+      			for(var i=0;i<data_2.length;i++){
+      				str += "<option value='"+ data_2[i].value +"'>"+ data_2[i].name +"</option>"
+      			}
+      			$("#order_state").html(str)
+      			var data_3 = data.data[1].order_price
+      			if(data_3){
+      				$("#order_price").css("display","block");
+      			}else{
+      				$("#order_price").css("display","none");
+      			}
+    		}
+    	});
+    	
+//      $disease_name = $("#disease_name").val("感冒");
+//      $news_type = $("#order_type").val("2");
+//      $news_title = $("#order_time").val("2016-11-04 11:57:39");
+//      $tciconsrc = $("#order_name").val("来了");
+//      $order_gender = $("#order_gender").val("1");
+//      $order_phone = $("#order_phone").val("13213213213");
+//      $order_age = $("#order_age").val("13");
+//      $order_state = $("#order_state").val("5");
+//      $order_date = $("#order_date").val("2016-11-04 11:56:38");
+       
+
+        layer.photos({
+            photos: '#photosDemo'
+        });
+
+        $('#collapseOne').on('hide.bs.collapse',
+                function () {
+                    $("#closesearchform").html('筛选条件<span class="icon-angle-down"></span>');
+                });
+                
+                
+                
+                
+//      function sendFile(file, note) {
+//          data = new FormData();
+//          data.append("file", file);
+//          $.ajax({
+//              data: data,
+//              type: "POST",
+//              url: "/order_uploadtextimg.html?retype=text",
+//              cache: false,
+//              contentType: false,
+//              processData: false,
+//              success: function (url) {
+//                  if (url == "permission_error") {
+//                      layer.msg("你没有操作权限", {
+//                          icon: 5,
+//                          closeBtn: 1,
+//                          shadeClose: true
+//                      });
+//                  } else if (url == "error") {
+//                      layer.msg("上传失败", {
+//                          icon: 5,
+//                          closeBtn: 1,
+//                          shadeClose: true
+//                      });
+//                  } else {
+//                      //$("#news_content").summernote('insertImage', url, 'image name'); // the insertImage API
+//                      $(note).summernote('insertImage', url, 'image name'); // the insertImage API
+//                  }
+//              }
+//          });
+//      }
+
+        $("#cancledistrct").click(function () {
+            //window.parent.layer.close(window.parent.layerindex);
+            var index = parent.layer.getFrameIndex(window.name); 
+			parent.layer.close(index);
+        });
+
+        $("#saveedit").click(function () {
+//          var disease_name = $("#disease_name").val();
+//			var order_type = $("#order_type").val();
+//  		var order_time = $("#order_time").val();
+//			var order_name = $("#order_name").val();
+//			var order_gender = $("#order_gender").val();
+//			var order_phone = $("#order_phone").val();
+//			var order_age = $("#order_age").val();
+//			var order_info = $("#order_info").val();
+            var order_id = id;
+            var order_state = $("#order_state").val();
+            var price = $("#oPrice").val();
+            var order_design = $("#order_design").val();
+            
+            $.ajax({
+            	type:"post",
+            	url:local+"/torder_viewJson.php"+href,
+            	async:true,
+            	success:function(data){         		
+            		if(data.data[1].order_price){
+						if(Number(price)=="" || Number(price)<0){
+							layer.msg("请输入手术费用", {
+			                                icon: 5,
+			                                closeBtn: 1,
+			                                shadeClose: true
+			                            })
+						}else{
+							$.post(local+"/torder_updateJson.php", {
+			//                "order_type": order_type,
+				                "order_id": order_id,
+				                "order_state":order_state,
+				                "order_price":price,
+				//              "order_time": order_time,
+				//              "order_name": order_name,
+				//              "order_gender": order_gender,
+				//              "order_phone": order_phone,
+				//              "order_age": order_age,
+				//              "order_state": $order_state,
+				//              "order_date": $order_date,
+				              	"order_design": order_design,
+				//              "disease_des": $disease_des,
+				            },
+				                    function (result) {
+				//                        postflag = true;
+				                        //console.log(result)
+				                        if (result.state == '0') {
+				                            layer.msg(result.message, {
+				                                icon: 1,
+				                                closeBtn: 1,
+				                                shadeClose: true
+				                            });
+				                        } else {
+				                            layer.msg(result.message, {
+				                                icon: 5,
+				                                closeBtn: 1,
+				                                shadeClose: true
+				                            });
+				                        }
+				                        var index = parent.layer.getFrameIndex(window.name); 
+										parent.layer.close(index);
+				                    },
+				                    'json');
+						}
+					}else{
+						$.post(local+"/torder_updateJson.php", {
+			//                "order_type": order_type,
+			                "order_id": order_id,
+			                "order_state":order_state,
+			                "order_price":price,
+			//              "order_time": order_time,
+			//              "order_name": order_name,
+			//              "order_gender": order_gender,
+			//              "order_phone": order_phone,
+			//              "order_age": order_age,
+			//              "order_state": $order_state,
+			//              "order_date": $order_date,
+			              	"order_design": order_design,
+			//              "disease_des": $disease_des,
+			            },
+			                    function (result) {
+			//                        postflag = true;
+			                        //console.log(result)
+			                        if (result.state == '0') {
+			                            layer.msg(result.message, {
+			                                icon: 1,
+			                                closeBtn: 1,
+			                                shadeClose: true
+			                            });
+			                        } else {
+			                            layer.msg(result.message, {
+			                                icon: 5,
+			                                closeBtn: 1,
+			                                shadeClose: true
+			                            });
+			                        }
+			                        var index = parent.layer.getFrameIndex(window.name); 
+									parent.layer.close(index);
+			                    },
+			                    'json');
+					}
+            	}
+            });
+            //console.log(price)
+//          if (!postflag) {
+//              return;
+//          }
+//          postflag = false;
+			
+			
+			
+			
+            
+        });
+        
+        
+//      function reflashrecord(id) {
+//					$.post(local+"/order_viewJson.php", {
+//							"id": id
+//						},
+//						function(result) {
+//							console.log(result)
+//							var result = result.data[0]
+//							console.log(result)
+//							var $tds = $("#" + id).parents("tr").find("td");
+//							$tds.eq(7).text(result.state_name);
+////							$tds.eq(1).text(data.order_time);
+////							$tds.eq(2).text(data.ordertype);
+////							$tds.eq(3).text(data.order_name);
+////							$tds.eq(4).text(data.order_phone);
+////							$tds.eq(5).text(data.order_state);
+//							return;
+//						},
+//						'json');
+//				}
+
+        $("input[name=districtname]").click(function () {
+            //window.alert("nihao");
+            var Y = $(this).offset().top;
+            var X = $(this).offset().left;
+            $(".mycommonfade").fadeIn(300);
+            $(document.body).css({
+                "overflow-x": "hidden",
+                "overflow-y": "hidden"
+            });
+            $("#showgroupschoose").css("top", Y + 28);
+            $("#showgroupschoose").css("left", X);
+            $("#showgroupschoose").show();
+        });
+
+        $(".mycommonfade").click(function () {
+            //window.alert("nihao");
+            $(".mycommonfade").fadeOut(300);
+            $(document.body).css({
+                "overflow-x": "auto",
+                "overflow-y": "auto"
+            });
+            $("#showgroupschoose").hide();
+        });
+    });
+</script>
+<!--<iframe id="showgroupschoose" src="/district_showdistrictschoose.html"
+        style="position: fixed;width:270px;height:400px;border:none;display:none;z-index: 9999;">
+</iframe>-->
+</body>
+
+</html>

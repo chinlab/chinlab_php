@@ -1,0 +1,71 @@
+*{ margin: 0; padding: 0; border: none; list-style: none; font-family: "微软雅黑"; box-sizing: border-box;}
+html,body{ width: 100%; min-height: 100%; background: #f0f0f0; color: #000000;}
+.faq dl{ width: 100%; background: url(../img/faq_down.png) no-repeat 98% 1.1rem; background-size:1rem auto; border-bottom: 1px solid #ddd; }
+.faq dt{ background: url(../img/faq_02.png) no-repeat 0.5rem 1.1rem; padding:1rem 2rem; background-size:1.2rem auto; }
+.faq dd{ color: #555555; font-size: 0.9rem; padding:0rem 2rem; display: none; padding-bottom: 1rem;}
+.faq dl.current{ background:#fff url(../img/faq_up.png) no-repeat 98% 1.1rem; background-size:1rem auto;}
+.faq dl.current dt{background: url(../img/faq_01.png) no-repeat 0.5rem 1.1rem; background-size:1.2rem auto;}
+
+
+.article{ padding:1rem;}
+.article h3{ font-weight: normal; text-align: center; line-height:2.5rem;}
+.article small{ display: block; color: #999999;text-align:center; line-height: 1.5rem;}
+.article p{ color: #555555; text-indent: 2rem; line-height: 1.5rem; font-size: 0.9rem;}
+.article img{ width: 100%; margin: 1rem auto;}
+.article_banner{ width: 100%; margin-bottom: 1rem;}
+
+html#wap_index,html#wap_index body{ background: #FFFFFF; font-size: 20px;}
+@media screen and (max-width:720px) {
+    html#wap_index,html#wap_index body{font-size:18px;}
+
+}
+@media screen and (max-width:640px) {
+    html#wap_index,html#wap_index body{font-size:17px;}
+
+}
+@media screen and (max-width:480px) {
+    html#wap_index,html#wap_index body{font-size:16px;}
+
+}
+@media screen and (max-width:320px) {
+    html#wap_index,html#wap_index body{font-size:15px;}
+
+}
+.header_img{width: 100%; display: block;}
+.content{ background:#FFFFFF url(../img/index_bg_02.jpg) no-repeat top center; background-size:100% auto; min-height: 100%; padding-bottom: 5rem; position: relative;}
+.show{ width: 55%; float:right; padding-right: 1rem;}
+.show img{ width: 100%;}
+
+.intro_text{padding-top: 9rem; width: 40%; float: left; margin-left: 5%;}
+.intro_text dl{ display: block; padding:1.5rem 2.5rem;}
+@media screen and (max-width:720px) {
+    .intro_text dl{padding:1.5rem 2.5rem;}
+    .intro_text{padding-top:7rem; width: 40%; margin-left: 5%;}
+
+}
+@media screen and (max-width:640px) {
+    .intro_text dl{padding:1.5rem 2rem;}
+    .intro_text{padding-top:5rem; width: 42%; margin-left: 3%;}
+
+}
+@media screen and (max-width:480px) {
+    .intro_text dl{padding:1.5rem 2rem;}
+    .intro_text{padding-top:3rem; width: 45%; margin-left: 0%;}
+
+}
+@media screen and (max-width:400px) {
+    .intro_text dl{padding:1rem;}
+    .intro_text{padding-top:2rem; width: 45%; margin-left: 0%;}
+
+}
+
+dl.blue{ background: url(../img/blue_line.png) no-repeat left top; background-size: 2rem;}
+dl.green{ background: url(../img/green_line.png) no-repeat left top; background-size: 2rem;}
+.intro_text dl.blue dt{ font-weight: normal; color: #2db2ff; font-size: 1rem;}
+.intro_text dl.green dt{ font-weight: normal; color: #15bc6c;font-size: 1rem;}
+.intro_text dl dd{ font-size: 0.8rem; white-space: nowrap;}
+.clear{ clear: both;}
+.footer{ width: 100%; padding:1rem 2rem; background: rgba(255,255,255,0.8); position: fixed; bottom: 0; left: 0; overflow: hidden;}
+.download_btn{ display:block;width: 45%; padding:1rem 0;text-align: center; text-decoration: none; color: #FFFFFF; border-radius:5rem; white-space: nowrap;}
+.download_btn.blue{ background: #2DB2FF; float: right;}
+.download_btn.green{ background: #15BC6C; float: left;}

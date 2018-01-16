@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>web - 接口文档</title>
+
+<!-- Bootstrap core CSS -->
+<link href="static/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="static/lib/highlight/styles/default.css">
+
+<style type="text/css">
+html,body{ overflow:hidden;height: 100%; }
+.content{background-color: rgba(255, 255, 255, 0.92);height: 100%;}
+h2{ margin:0; padding:25px 0; }
+#sidebar{ overflow-y:auto; padding-right:20px; padding-left:20px; padding-top:20px; box-shadow:2px 2px 3px rgba(223, 223, 223, 0.59); }
+#result .input-group{  margin-right:50px; box-shadow:2px 2px 3px rgba(223, 223, 223, 0.59); margin-bottom:10px; }
+.item-result{ margin-bottom:15px; margin-right:50px; }
+.item-result pre{ overflow-y:scroll; background-color: rgba(221, 221, 221, 0.22); box-shadow:2px 2px 3px rgba(223, 223, 223, 0.59); clear:both;  margin-bottom:20px;}
+.item-result h5{float: right;
+    position: relative;
+    margin-bottom: -28px;
+    margin-right: 16px;
+    background-color: rgba(197, 197, 197, 0.28);
+    padding: 6px 14px;
+    color: green;  }
+.item-doc{ border:1px solid #ccc; padding:0 10px; margin-bottom:5px; border-radius:3px; box-shadow:2px 2px 3px rgba(223, 223, 223, 0.59); }
+.item-doc form{ padding-bottom:10px; display:none; }
+.item-doc em{ color:red; }
+.item-doc .input-group{ margin-bottom:10px; width:95%; }
+.item-doc .input-group-addon{ width:45%; text-align:right;}
+.item-doc h5{  cursor:pointer; }
+.item-doc h5 .link{ color:#2a6496; }
+.alert-warning{ background-color: rgba(245, 236, 189, 0.52); }
+</style>
+</head>
+<body>
+<div class="content">
+
+<h2 class="text-center">Web - 接口文档</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <ul class="nav sidebar-nav" id="sidebar">
+            <li>
+                <div class="item-doc">
+                    <h5>说明：</h5>
+                    <p>
+                        [code]  <br />
+                        = 0  &nbsp;&nbsp;   ok<br />
+                        =404   &nbsp;&nbsp;     数据不存在<br />
+                        =500   &nbsp;&nbsp;     错误
+                    </p>
+
+                </div>
+            </li>
+            <li>
+	            <h3>User</h3>
+                <div class="item-doc">
+                    <h5>列表及按条件搜索: <small class="link">/user_indexJson.php</small></h5>
+                    <form role="form" action="/user_indexJson.php">
+                    	 <div class="input-group">
+				            <span class="input-group-addon">user_id</span><input name="user_id" placeholder="用户id" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">user_name</span><input name="user_name" placeholder="用户名" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">user_mobile</span><input name="user_mobile" placeholder="手机号" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">sort</span><input name="sort" placeholder="排序" value="" type="text" class="form-control">
+			             </div>
+			             <br/> desc(倒序):-user_id;  asc(正序) : user_id; 所有字段均可以排序显示
+			             <div class="input-group">
+				            <span class="input-group-addon">pageSize</span><input name="pageSize" placeholder="每页显示条数" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">page</span><input name="page" placeholder="当前页" value="" type="text" class="form-control">
+			             </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+	            <div class="item-doc">
+		            <h5>id查询信息: <small class="link">/user_viewJson.php</small></h5>
+		            <form role="form" action="/user_viewJson.php">
+		                <div class="input-group">
+				            <span class="input-group-addon">id</span><input name="id" placeholder="用户id" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	             <div class="item-doc">
+		            <h5>sms短信验证码: <small class="link">/user_SendSmsJson.php</small></h5>
+		            <form role="form" action="/user_SendSmsJson.php">
+		                <div class="input-group">
+				            <span class="input-group-addon">phone</span><input name="phone" placeholder="phone" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">code</span><input name="code" placeholder="code" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	            <div class="item-doc">
+                    <h5>测试用户注册: <small class="link">/user_createJson.php</small></h5>
+                    <form role="form" action="/user_createJson.php">
+                    	 <div class="input-group">
+				            <span class="input-group-addon">user_id</span><input name="user_id" placeholder="用户id" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">user_name</span><input name="user_name" placeholder="用户名" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">user_mobile</span><input name="user_mobile" placeholder="手机号" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">pageSize</span><input name="pageSize" placeholder="每页显示条数" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">page</span><input name="page" placeholder="当前页" value="" type="text" class="form-control">
+			             </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+	            </li>
+	            
+	            <li>
+	            <h3>问诊</h3>
+                <div class="item-doc">
+                    <h5>列表及按条件搜索: <small class="link">/inquiry_indexJson.php</small></h5>
+                    <form role="form" action="/inquiry_indexJson.php">
+                    	 <div class="input-group">
+				            <span class="input-group-addon">inquiry_id</span><input name="inquiry_id" placeholder="主键" value="" type="text" class="form-control">
+			             </div>
+                    	 <div class="input-group">
+				            <span class="input-group-addon">user_id</span><input name="user_id" placeholder="用户id" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_time</span><input name="inquiry_time" placeholder="问诊时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_name</span><input name="inquiry_name" placeholder="问诊人姓名" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_gender</span><input name="inquiry_gender" placeholder="问诊人性别" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_phone</span><input name="inquiry_phone" placeholder="问问诊人号码" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_age</span><input name="inquiry_age" placeholder="问诊人年龄" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">disease_name</span><input name="disease_name" placeholder="疾病名称，未确诊可不填" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_state</span><input name="inquiry_state" placeholder="1=问诊中，2=已回复，3=已取消" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_retime</span><input name="inquiry_retime" placeholder="回复时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">create_time</span><input name="create_time" placeholder="创建时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">is_delete</span><input name="is_delete" placeholder="1代表未删除，2已经删除" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">sort</span><input name="sort" placeholder="排序" value="" type="text" class="form-control">
+			             </div>
+			             <br/> desc(倒序):-user_id;  asc(正序) : user_id; 所有字段均可以排序显示
+			             <div class="input-group">
+				            <span class="input-group-addon">pageSize</span><input name="pageSize" placeholder="每页显示条数" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">page</span><input name="page" placeholder="当前页" value="" type="text" class="form-control">
+			             </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+	            <div class="item-doc">
+		            <h5>id查询信息: <small class="link">/inquiry_viewJson.php</small></h5>
+		            <form role="form" action="/inquiry_viewJson.php">
+		                <div class="input-group">
+				            <span class="input-group-addon">id</span><input name="id" placeholder="用户id" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	            <div class="item-doc">
+                    <h5>create inquiry: <small class="link">/inquiry_createJson.php</small></h5>
+                    <form role="form" action="/inquiry_createJson.php">
+                    	 <div class="input-group">
+				            <span class="input-group-addon">user_id</span><input name="user_id" placeholder="用户id" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_time</span><input name="inquiry_time" placeholder="问诊时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_name</span><input name="inquiry_name" placeholder="问诊人姓名" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_gender</span><input name="inquiry_gender" placeholder="问诊人性别" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_phone</span><input name="inquiry_phone" placeholder="问问诊人号码" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_age</span><input name="inquiry_age" placeholder="问诊人年龄" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">disease_name</span><input name="disease_name" placeholder="疾病名称，未确诊可不填" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_state</span><input name="inquiry_state" placeholder="1=问诊中，2=已回复，3=已取消" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_file</span><input name="inquiry_file" placeholder="图片地址" value="" type="file" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">is_delete</span><input name="is_delete" placeholder="1代表未删除，2已经删除" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_retime</span><input name="inquiry_retime" placeholder="回复时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">create_time</span><input name="create_time" placeholder="创建时间" value="" type="text" class="form-control">
+			             </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                 <div class="item-doc">
+		            <h5>修改: <small class="link">/inquiry_updateJson.php</small></h5>
+		            <form role="form" action="/inquiry_updateJson.php">
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_id</span><input name="inquiry_id" placeholder="问诊id" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">user_id</span><input name="user_id" placeholder="用户id" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_time</span><input name="inquiry_time" placeholder="问诊时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_name</span><input name="inquiry_name" placeholder="问诊人姓名" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_gender</span><input name="inquiry_gender" placeholder="问诊人性别" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_phone</span><input name="inquiry_phone" placeholder="问问诊人号码" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_age</span><input name="inquiry_age" placeholder="问诊人年龄" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">disease_name</span><input name="disease_name" placeholder="疾病名称，未确诊可不填" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_state</span><input name="inquiry_state" placeholder="1=问诊中，2=已回复，3=已取消" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_file</span><input name="inquiry_file" placeholder="" value="" type="file" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">is_delete</span><input name="is_delete" placeholder="1代表未删除，2已经删除" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">inquiry_retime</span><input name="inquiry_retime" placeholder="回复时间" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	           </div>  
+	            </li>
+	            
+                <li>
+	            <h3>App版本</h3>
+	            <div class="item-doc">
+		            <h5>列表及按条件搜索: <small class="link">/version_indexJson.php</small></h5>
+		            <form role="form" action="/version_indexJson.php">
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>version_id</span><input name="version_id" placeholder="版本ID" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>version_name</span><input name="version_name" placeholder="版本名" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>version_device</span><input name="version_device" placeholder="设备" value="" type="text" class="form-control">
+			            </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">sort</span><input name="sort" placeholder="排序" value="" type="text" class="form-control">
+			             </div>
+			             <br/> desc(倒序):-version_id;  asc(正序) : version_id; 所有字段均可以排序显示
+			            <div class="input-group">
+				            <span class="input-group-addon">pageSize</span><input name="pageSize" placeholder="每页显示条数" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">page</span><input name="page" placeholder="当前页" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	             <div class="item-doc">
+		            <h5>创建新的App版本: <small class="link">/version_createJson.php</small></h5>
+		            <form role="form" action="/version_createJson.php">
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>version_name</span><input name="version_name" placeholder="版本名" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>version_design</span><input name="version_design" placeholder="版本更新描述" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>version_url</span><input name="version_url" placeholder="下载地址" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>version_device</span><input name="version_device" placeholder="android 安卓设备 ， ios 苹果设备" value="" type="text" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div> 
+	            <div class="item-doc">
+		            <h5>修改App版本: <small class="link">/version_updateJson.php</small></h5>
+		            <form role="form" action="/version_updateJson.php">
+		                <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>version_id</span><input name="version_id" placeholder="版本id" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>version_name</span><input name="version_name" placeholder="版本名" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>version_design</span><input name="version_design" placeholder="版本更新描述" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>version_url</span><input name="version_url" placeholder="下载地址" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>version_device</span><input name="version_device" placeholder="android 安卓设备 ， ios 苹果设备" value="" type="text" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	           </div>   
+	         </li>
+	         <li>
+	          <h3>Order</h3>
+                <div class="item-doc">
+                    <h5>列表及按条件搜索: <small class="link">/order_indexJson.php</small></h5>
+                    <form role="form" action="/order_indexJson.php">
+                    	 <div class="input-group">
+				            <span class="input-group-addon">order_id</span><input name="order_id" placeholder="订单id" value="" type="text" class="form-control">
+			             </div>
+                    	 <div class="input-group">
+				            <span class="input-group-addon">user_id</span><input name="user_id" placeholder="就诊人id" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon">hospital_id</span><input name="hospital_id" placeholder="所属医院" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_number</span><input name="order_number" placeholder="预定订单号码" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">advise_price</span><input name="advise_price" placeholder="预约价格" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_price</span><input name="order_price" placeholder="诊疗费" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">id_card</span><input name="id_card" placeholder="id_card" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">vip_type</span><input name="vip_type" placeholder="VIP订单" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_type</span><input name="order_type" placeholder="1=手术预约，2=精准预约，3=海外医疗" value="" type="text" class="form-control">
+			             </div>
+			                order_type  : 1=手术预约，2=精准预约，3=海外医疗
+			             <div class="input-group">
+				            <span class="input-group-addon">order_time</span><input name="order_time" placeholder="下单时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_name</span><input name="order_name" placeholder="就诊人姓名" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_gender</span><input name="order_gender" placeholder="用户性别，1男，2女" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_phone</span><input name="order_phone" placeholder="就诊人号码" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_age</span><input name="order_age" placeholder="就诊人年龄" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_state</span><input name="order_state" placeholder="订单状态" value="" type="text" class="form-control">
+			             </div>
+			              	order_state : 预约状态:1=咨询服务费未支付,2=咨询服务费已支付<br/>3=待安排,4=手术费未支付,5=手术费已支付<br/>6=已完成,7=资讯服务取消,8=手术服务取消
+			             <div class="input-group">
+				            <span class="input-group-addon">order_city_name</span><input name="order_city_name" placeholder="城市名称" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_date</span><input name="order_date" placeholder="期望就诊时间，type=2时必填" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">disease_name</span><input name="disease_name" placeholder="疾病名称，未确诊内容为空" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">disease_des</span><input name="disease_des" placeholder="疾病描述" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_update_time</span><input name="order_update_time" placeholder="预约状态更新时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_design</span><input name="order_design" placeholder="预约状态备注" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">create_time</span><input name="create_time" placeholder="创建时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">update_time</span><input name="update_time" placeholder="修改时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">is_delete</span><input name="is_delete" placeholder="1代表未删除，2已经删除" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">sort</span><input name="sort" placeholder="排序" value="" type="text" class="form-control">
+			             </div>
+			             <br/> desc(倒序):-user_id;  asc(正序) : user_id; 所有字段均可以排序显示
+			             <div class="input-group">
+				            <span class="input-group-addon">pageSize</span><input name="pageSize" placeholder="每页显示条数" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">page</span><input name="page" placeholder="当前页" value="" type="text" class="form-control">
+			             </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+	            <div class="item-doc">
+		            <h5>id查询信息: <small class="link">/order_viewJson.php</small></h5>
+		            <form role="form" action="/order_viewJson.php">
+		                <div class="input-group">
+				            <span class="input-group-addon">id</span><input name="id" placeholder="order_id" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	            <div class="item-doc">
+		            <h5>修改订单信息: <small class="link">/order_updateJson.php</small></h5>
+		            <form role="form" action="/order_updateJson.php">
+		                 <div class="input-group">
+				            <span class="input-group-addon">order_id</span><input name="order_id" placeholder="订单id" value="" type="text" class="form-control">
+			             </div>
+                    	 <div class="input-group">
+				            <span class="input-group-addon">user_id</span><input name="user_id" placeholder="就诊人id" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon">hospital_id</span><input name="hospital_id" placeholder="所属医院" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_number</span><input name="order_number" placeholder="预定订单号码" value="" type="text" class="form-control">
+			             </div>
+			                <div class="input-group">
+				            <span class="input-group-addon">advise_price</span><input name="advise_price" placeholder="预约价格" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_price</span><input name="order_price" placeholder="诊疗费" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">id_card</span><input name="id_card" placeholder="id_card" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">vip_type</span><input name="vip_type" placeholder="VIP订单" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_type</span><input name="order_type" placeholder="1=手术预约，2=精准预约，3=海外医疗" value="" type="text" class="form-control">
+			             </div>
+			                order_type  : 1=手术预约，2=精准预约，3=海外医疗
+			             <div class="input-group">
+				            <span class="input-group-addon">order_time</span><input name="order_time" placeholder="下单时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_name</span><input name="order_name" placeholder="就诊人姓名" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_gender</span><input name="order_gender" placeholder="用户性别，1男，2女" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_phone</span><input name="order_phone" placeholder="就诊人号码" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_age</span><input name="order_age" placeholder="就诊人年龄" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_state</span><input name="order_state" placeholder="订单状态" value="" type="text" class="form-control">
+			             </div>
+			              		order_state : 预约状态:1=咨询服务费未支付,2=咨询服务费已支付<br/>3=待安排,4=手术费未支付,5=手术费已支付<br/>6=已完成,7=资讯服务取消,8=手术服务取消
+			             <div class="input-group">
+				            <span class="input-group-addon">order_city_name</span><input name="order_city_name" placeholder="城市名称" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_date</span><input name="order_date" placeholder="期望就诊时间，type=2时必填" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">disease_name</span><input name="disease_name" placeholder="疾病名称，未确诊内容为空" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">disease_des</span><input name="disease_des" placeholder="疾病描述" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_update_time</span><input name="order_update_time" placeholder="预约状态更新时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_design</span><input name="order_design" placeholder="预约状态备注" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">create_time</span><input name="create_time" placeholder="创建时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">update_time</span><input name="update_time" placeholder="修改时间" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">order_file</span><input name="order_file" placeholder="图片文件" value="" type="file" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">is_delete</span><input name="is_delete" placeholder="1代表未删除，2已经删除" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	           </div>   
+	        </li>
+	        <li>
+	        <h3>广告</h3>
+	            <div class="item-doc">
+		            <h5>列表及按条件搜索: <small class="link">/advert_indexJson.php</small></h5>
+		            <form role="form" action="/advert_indexJson.php">
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>ad_id</span><input name="ad_id" placeholder="广告ID" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>ad_title</span><input name="ad_title" placeholder="广告标题" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_ok</span><input name="is_ok" placeholder="0正常，1禁用" value="" type="text" class="form-control">
+			            </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">sort</span><input name="sort" placeholder="排序" value="" type="text" class="form-control">
+			             </div>
+			             <br/> desc(倒序):-ad_id;  asc(正序) : ad_id; 所有字段均可以排序显示
+			            <div class="input-group">
+				            <span class="input-group-addon">pageSize</span><input name="pageSize" placeholder="每页显示条数" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">page</span><input name="page" placeholder="当前页" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	             <div class="item-doc">
+		            <h5>创建新的AD: <small class="link">/advert_createJson.php</small></h5>
+		            <form role="form" action="/advert_createJson.php">
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>ad_title</span><input name="ad_title" placeholder="广告标题" value="" type="text" class="form-control">
+			            </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>ad_img</span><input name="ad_img" placeholder="广告图片" value="" type="file" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>ad_url</span><input name="ad_url" placeholder="ad_url" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_ok</span><input name="is_ok" placeholder="0正常，1禁用" value="" type="text" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div> 
+	            <div class="item-doc">
+		            <h5>修改AD: <small class="link">/advert_updateJson.php</small></h5>
+		            <form role="form" action="/advert_updateJson.php">
+		                <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>ad_id</span><input name="ad_id" placeholder="ad_id" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>ad_title</span><input name="ad_title" placeholder="广告标题" value="" type="text" class="form-control">
+			            </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>ad_img</span><input name="ad_img" placeholder="广告图片" value="" type="file" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>ad_url</span><input name="ad_url" placeholder="ad_url" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_ok</span><input name="is_ok" placeholder="0正常，1禁用" value="" type="text" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	           </div>
+			   <div class="item-doc">
+		            <h5>删除AD: <small class="link">/advert_deleteJson.php</small></h5>
+		            <form role="form" action="/advert_deleteJson.php">
+		                <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>ad_id</span><input name="ad_id" placeholder="ad_id" value="" type="text" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	           </div>   
+	         </li>
+	         <li>
+	           <h3>新闻</h3>
+	            <div class="item-doc">
+		            <h5>列表及按条件搜索: <small class="link">/news_indexJson.php</small></h5>
+		            <form role="form" action="/news_indexJson.php">
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_id</span><input name="news_id" placeholder="ID" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_type</span><input name="news_type" placeholder="0健康资讯，1企业文章" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_title</span><input name="news_title" placeholder="资讯标题" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_time</span><input name="news_time" placeholder="添加时间" value="" type="text" class="form-control">
+			            </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">sort</span><input name="sort" placeholder="排序" value="" type="text" class="form-control">
+			             </div>
+			             <br/> desc(倒序):-news_id;  asc(正序) : news_id; 所有字段均可以排序显示
+			            <div class="input-group">
+				            <span class="input-group-addon">pageSize</span><input name="pageSize" placeholder="每页显示条数" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">page</span><input name="page" placeholder="当前页" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	             <div class="item-doc">
+		            <h5>创建新的新闻: <small class="link">/news_createJson.php</small></h5>
+		            <form role="form" action="/news_createJson.php">
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_type</span><input name="news_type" placeholder="0健康资讯，1企业文章" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_title</span><input name="news_title" placeholder="资讯标题" value="" type="text" class="form-control">
+			            </div>
+			            <!-- 
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_content</span><input name="news_content" placeholder="0健康资讯，1企业文章" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_summary</span><input name="news_summary" placeholder="简介" value="" type="text" class="form-control">
+			            </div>
+			            -->
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_photo</span><input name="news_photo" placeholder="封面图" value="" type="file" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_url</span><input name="news_url" placeholder="资讯h5详情网页" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_top</span><input name="is_top" placeholder="0 不推荐，1推荐" value="" type="text" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div> 
+	            <div class="item-doc">
+		            <h5>修改新闻: <small class="link">/news_updateJson.php</small></h5>
+		            <form role="form" action="/news_updateJson.php">
+		                <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_id</span><input name="news_id" placeholder="新闻id" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_type</span><input name="news_type" placeholder="0健康资讯，1企业文章" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_title</span><input name="news_title" placeholder="资讯标题" value="" type="text" class="form-control">
+			            </div>
+			           <!-- 
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_content</span><input name="news_content" placeholder="0健康资讯，1企业文章" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_summary</span><input name="news_summary" placeholder="简介" value="" type="text" class="form-control">
+			            </div>
+			             -->
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_photo</span><input name="news_photo" placeholder="封面图" value="" type="file" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>news_url</span><input name="news_url" placeholder="资讯h5详情网页" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_top</span><input name="is_top" placeholder="0 不推荐，1推荐" value="" type="text" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	           </div> 
+	           <div class="item-doc">
+		            <h5>上传文件: <small class="link">/news_uploadJson.php</small></h5>
+		            <form role="form" action="/news_uploadJson.php">
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>fname</span><input name="fname" placeholder="fname" value="" type="file" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	           <div class="item-doc">
+		            <h5>删除新闻: <small class="link">/news_deleteJson.php</small></h5>
+		            <form role="form" action="/news_deleteJson.php">
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>id</span><input name="id" placeholder="新闻id" value="" type="text" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>   
+	         </li>
+	         
+	         <li>
+	        <h3>news cahce</h3>
+	            <div class="item-doc">
+		            <h5>列表新闻Cache: <small class="link">/news_GetNewsCacheJson.php</small></h5>
+		            <form role="form" action="/news_GetNewsCacheJson.php">
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_top</span><input name="is_top" placeholder="is_top" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon">size</span><input name="size" placeholder="每页显示条数" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">page</span><input name="page" placeholder="当前页" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	              
+			   <div class="item-doc">
+		            <h5>删除Cache: <small class="link">/news_DeleteCacheJson.php</small></h5>
+		            <form role="form" action="/news_DeleteCacheJson.php">
+		                <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>key</span><input name="key" placeholder="key" value="" type="text" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	           </div>   
+	         </li>
+	         
+	          <li>
+	          <h3>医院</h3>
+	              <div class="item-doc">
+		            <h5>列表及按条件搜索: <small class="link">/hospital_indexJson.php</small></h5>
+		            <form role="form" action="/hospital_indexJson.php">
+			               <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_id</span><input name="hospital_id" placeholder="id" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_name</span><input name="hospital_name" placeholder="医院名" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_level</span><input name="hospital_level" placeholder="医院等级" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_des</span><input name="hospital_des" placeholder="医院简介(规模，荣誉，地位)" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>district_id</span><input name="district_id" placeholder="地区ID" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>district_address</span><input name="district_address" placeholder="地址" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>sections_num</span><input name="sections_num" placeholder="医院科室数量" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>doctors_num</span><input name="doctors_num" placeholder="医院医生人数" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_top</span><input name="is_top" placeholder="0不推荐，1推荐" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_vip</span><input name="is_vip" placeholder="" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_delete</span><input name="is_delete" placeholder="1、代表未删除，2代表已经删除" value="1" type="text" class="form-control">
+			             </div>
+			             <br/> desc(倒序):-news_id;  asc(正序) : news_id; 所有字段均可以排序显示
+			            <div class="input-group">
+				            <span class="input-group-addon">pageSize</span><input name="pageSize" placeholder="每页显示条数" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon">page</span><input name="page" placeholder="当前页" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	             </div>
+	             <div class="item-doc">
+		            <h5>创建新的医院: <small class="link">/hospital_createJson.php</small></h5>
+		            <form role="form" action="/hospital_createJson.php">
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_name</span><input name="hospital_name" placeholder="医院名" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_level</span><input name="hospital_level" placeholder="医院等级" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_small_img</span><input name="hospital_small_img" placeholder="医院缩略图" value="" type="file" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_big_img</span><input name="hospital_big_img" placeholder="医院详情大图片" value="" type="file" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_des</span><input name="hospital_des" placeholder="医院简介(规模，荣誉，地位)" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>district_id</span><input name="district_id" placeholder="地区ID" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>district_address</span><input name="district_address" placeholder="地址" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>sections_num</span><input name="sections_num" placeholder="医院科室数量" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>doctors_num</span><input name="doctors_num" placeholder="医院医生人数" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_top</span><input name="is_top" placeholder="0不推荐，1推荐" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_vip</span><input name="is_vip" placeholder="" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_delete</span><input name="is_delete" placeholder="1、代表未删除，2代表已经删除" value="1" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	             </div>
+	             <div class="item-doc">
+		            <h5>修改医院信息: <small class="link">/hospital_updateJson.php</small></h5>
+		            <form role="form" action="/hospital_updateJson.php">
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_id</span><input name="hospital_id" placeholder="id" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_name</span><input name="hospital_name" placeholder="医院名" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_level</span><input name="hospital_level" placeholder="医院等级" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_small_img</span><input name="hospital_small_img" placeholder="医院缩略图" value="" type="file" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_big_img</span><input name="hospital_big_img" placeholder="医院详情大图片" value="" type="file" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>hospital_des</span><input name="hospital_des" placeholder="医院简介(规模，荣誉，地位)" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>district_id</span><input name="district_id" placeholder="地区ID" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>district_address</span><input name="district_address" placeholder="地址" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>sections_num</span><input name="sections_num" placeholder="医院科室数量" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>doctors_num</span><input name="doctors_num" placeholder="医院医生人数" value="" type="text" class="form-control">
+			             </div>
+			              <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_top</span><input name="is_top" placeholder="0不推荐，1推荐" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_vip</span><input name="is_vip" placeholder="" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>is_delete</span><input name="is_delete" placeholder="1、代表未删除，2代表已经删除" value="1" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	         </li>
+	         <li>
+	          <h3>权限</h3>
+	              <div class="item-doc">
+		            <h5>创建新的权限: <small class="link">/rbac/create-Permission-Json.php</small></h5>
+		            <form role="form" action="/rbac/create-Permission-Json.php">
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>permission</span><input name="permission" placeholder="权限" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>description</span><input name="description" placeholder="权限描述" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	             <div class="item-doc">
+		            <h5>创建新的角色: <small class="link">/rbac/create-Role-Json.php</small></h5>
+		            <form role="form" action="/rbac/create-Role-Json.php">
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>role</span><input name="role" placeholder="角色" value="" type="text" class="form-control">
+			            </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>description</span><input name="description" placeholder="权限描述" value="" type="text" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	             <div class="item-doc">
+		            <h5>将权限赋给角色: <small class="link">/rbac/add-Child-Json.php</small></h5>
+		            <form role="form" action="/rbac/add-Child-Json.php">
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>role</span><input name="role" placeholder="角色" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>permission</span><input name="permission" placeholder="权限" value="" type="text" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div> 
+	             <div class="item-doc">
+		            <h5>将角色赋给用户: <small class="link">/rbac/assign-Json.php</small></h5>
+		            <form role="form" action="/rbac/assign-Json.php">
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>role</span><input name="role" placeholder="角色" value="" type="text" class="form-control">
+			            </div>
+			            <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>user_id</span><input name="user_id" placeholder="用户id" value="" type="text" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	         </li>
+	         <li>
+	          <h3>管理员</h3>
+	              <div class="item-doc">
+		            <h5>创建新的管理员: <small class="link">/site/signup.php</small></h5>
+		            <form role="form" action="/site/signup.php">
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>username</span><input name="username" placeholder="登录名" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>email</span><input name="email" placeholder="邮箱" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>password</span><input name="password" placeholder="密码" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	            <div class="item-doc">
+		            <h5>管理员登录: <small class="link">/site/login.php</small></h5>
+		            <form role="form" action="/site/login.php">
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>username</span><input name="username" placeholder="登录名/邮箱" value="" type="text" class="form-control">
+			             </div>
+			             <div class="input-group">
+				            <span class="input-group-addon"><em>*</em>password</span><input name="password" placeholder="密码" value="" type="text" class="form-control">
+			             </div>
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	             <div class="item-doc">
+		            <h5>管理员登出: <small class="link">/site/logout.php</small></h5>
+		            <form role="form" action="/site/logout.php">
+			            <button type="submit" class="btn btn-primary">Submit</button>
+		            </form>
+	            </div>
+	         </li>
+         </ul>
+     </div>
+
+    <div class="col-md-9" id="result">
+        <div class="input-group">
+            <span class="input-group-addon">请求URL</span><input id="url" value="" type="text" class="form-control" onclick="this.select()" />
+        </div>
+        <div class="item-result">
+            <h5>json</h5>
+            <pre></pre>
+        </div>
+        <div class="item-result">
+            <h5>文本</h5>
+            <pre></pre>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<script src="static/lib/jquery/jquery-1.9.1.min.js"></script>
+<script src="static/lib/jquery/jquery.form.js"></script>
+<script src="static/lib/highlight/highlight.pack.js"></script>
+<!--<script src="static/lib/bootstrap/js/bootstrap.min.js"></script>-->
+<script>
+    var JsonUti = {
+        //定义换行符
+        n: "\n",
+        //定义制表符
+        t: "   ",
+        //转换String
+        convertToString: function(obj) {
+            return JsonUti.__writeObj(obj, 1);
+        },
+        //写对象
+        __writeObj: function(obj //对象
+                , level //层次（基数为1）
+                , isInArray) { //此对象是否在一个集合内
+            //如果为空，直接输出null
+            if (obj == null) {
+                return "null";
+            }
+            //为普通类型，直接输出值
+            if (obj.constructor == Number || obj.constructor == Date || obj.constructor == String || obj.constructor == Boolean) {
+                var v = obj.toString();
+                var tab = isInArray ? JsonUti.__repeatStr(JsonUti.t, level - 1) : "";
+                if (obj.constructor == String || obj.constructor == Date) {
+                    //时间格式化只是单纯输出字符串，而不是Date对象
+                    return tab + ("\"" + v + "\"");
+                }
+                else if (obj.constructor == Boolean) {
+                    return tab + v.toLowerCase();
+                }
+                else {
+                    return tab + (v);
+                }
+            }
+            //写Json对象，缓存字符串
+            var currentObjStrings = [];
+            //遍历属性
+            for (var name in obj) {
+                var temp = [];
+                //格式化Tab
+                var paddingTab = JsonUti.__repeatStr(JsonUti.t, level);
+                temp.push(paddingTab);
+                //写出属性名
+                temp.push("\"" + name + "\" : ");
+                var val = obj[name];
+                if (val == null) {
+                    temp.push("null");
+                }
+                else {
+                    var c = val.constructor;
+                    if (c == Array) { //如果为集合，循环内部对象
+                        temp.push(JsonUti.n + paddingTab + "[" + JsonUti.n);
+                        var levelUp = level + 2; //层级+2
+                        var tempArrValue = []; //集合元素相关字符串缓存片段
+                        for (var i = 0; i < val.length; i++) {
+                            //递归写对象
+                            tempArrValue.push(JsonUti.__writeObj(val[i], levelUp, true));
+                        }
+                        temp.push(tempArrValue.join("," + JsonUti.n));
+                        temp.push(JsonUti.n + paddingTab + "]");
+                    }
+                    else if (c == Function) {
+                        temp.push("[Function]");
+                    }
+                    else {
+                        //递归写对象
+                        temp.push(JsonUti.__writeObj(val, level + 1));
+                    }
+                }
+                //加入当前对象“属性”字符串
+                currentObjStrings.push(temp.join(""));
+            }
+            return (level > 1 && !isInArray ? JsonUti.n: "") //如果Json对象是内部，就要换行格式化
+                    + JsonUti.__repeatStr(JsonUti.t, level - 1) + "{" + JsonUti.n //加层次Tab格式化
+                    + currentObjStrings.join("," + JsonUti.n) //串联所有属性值
+                    + JsonUti.n + JsonUti.__repeatStr(JsonUti.t, level - 1) + "}"; //封闭对象
+        },
+        __isArray: function(obj) {
+            if (obj) {
+                return obj.constructor == Array;
+            }
+            return false;
+        },
+        __repeatStr: function(str, times) {
+            var newStr = [];
+            if (times > 0) {
+                for (var i = 0; i < times; i++) {
+                    newStr.push(str);
+                }
+            }
+            return newStr.join("");
+        }
+    };
+</script>
+<script>
+$(function(){
+    var $result=$('#result')
+            , $sidebar=$('#sidebar')
+            , $children=$result.children()
+            , $pre=$children.find('pre')
+            , offsetTop=$result.offset().top;
+    $(window).resize(function(){
+        var height=(document.documentElement.clientHeight-offsetTop-140)/2;
+        $pre.eq(0).height( height*0.7*2 );
+        $pre.eq(1).height( height*0.3*2 );
+        $sidebar.height( document.documentElement.clientHeight-offsetTop-35 );
+    }).trigger('resize');
+
+    function getUrl( $form ){
+        return $form.attr('action')
+    }
+    $('form').submit(function(e){
+        e.stopPropagation();
+        var $this=$(this);
+        var url=getUrl($this);
+        $pre.html('');
+        $('#url').val( window.location.origin + url );
+        $this.ajaxSubmit({
+            type:'post',
+            url:url,
+			dataType: 'text',
+            success:function( jsonText ){
+                var text=jsonText;
+                try{
+                    var json=$.parseJSON( jsonText );
+                    jsonText=JsonUti.convertToString(json);
+                }catch(e){}
+                $pre.eq(0).html( jsonText );
+                $pre.eq(1).html( text );
+                hljs.highlightBlock( $pre[0] );
+                hljs.highlightBlock( $pre[1] );
+            },
+            error:function(XMLHttpRequest, textStatus, errorThrown){
+                $pre.html( '' );
+                $pre.eq(0).html( 'status:'+XMLHttpRequest.status+'<br><br>'+XMLHttpRequest.responseText );
+            }
+        });
+        return false;
+    });
+
+    $('#sidebar h5').click(function(){
+        $(this).next('form').toggle();
+    })
+});
+</script>
+</body>
+</html>
+

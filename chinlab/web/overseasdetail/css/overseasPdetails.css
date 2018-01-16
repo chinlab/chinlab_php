@@ -1,0 +1,122 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary{ margin:0; padding:0;}  
+/*html{height:100%;}*/
+body{ font-family:"微软雅黑"!important; color:#333; background-color:#ececef; font-size:14px; overflow-x:hidden;width:100%; height:100%; overflow-y:auto;}  
+a{ color:#06f; text-decoration:none;}  
+a:hover{ color:#f60; text-decoration:none;}  
+img{ border:none;}  
+i,em{ font-style:normal;}  
+ol, ul ,li{list-style: none;} 
+table { border-collapse:collapse; border-spacing:0; }
+b{
+	font-weight: normal;
+}
+.left{ float:left;}  
+.right{ float:right;}  
+.clear{ zoom:1;}  
+.clear:after{ clear:both; content:"."; display:block; height:0; visibility:hidden;}   
+.hide{ display:none !important;}  
+.show{ display:block !important;} 
+#viewport{ width:100%; margin:0 auto; overflow-x:hidden;}
+*{   
+    -webkit-touch-callout:none;  /*系统默认菜单被禁用*/   
+    -webkit-user-select:none; /*webkit浏览器*/   
+    -khtml-user-select:none; /*早期浏览器*/   
+    -moz-user-select:none;/*火狐*/   
+    -ms-user-select:none; /*IE10*/   
+    user-select:none;   
+}  
+input {      
+     -webkit-user-select:auto; /*webkit浏览器*/     
+}
+.state{
+	height: 3.22rem;
+}
+.state img{
+	height:100%;
+	width:100%;
+}
+.details{
+	background:#ffffff;
+	padding:0.3rem;
+	margin-bottom: 0.1rem;
+}
+.details p{
+	font-size: 18px;
+	font-family: "黑体";
+	color:#000;
+	margin-bottom: 0.25rem;
+}
+.price{
+	overflow: hidden;
+	font-size: 0.26rem;
+	color:#757575;
+}
+.details .title{
+	font-size: 0.26rem;
+	margin-right:0.14rem;
+}
+.price .originalPrice span{
+	padding:0 0.12rem;
+	color: #ff0000;
+}
+.price .preferentialPrice{
+	margin-left: 0.5rem;
+}
+.projectCharacteristics{
+	overflow: hidden;
+	font-size: 0.26rem;
+	color:#757575;
+	padding:0.25rem 0 0;
+	display:-webkit-flex;
+	display:flex;
+}
+.details .projectCharacteristics .title{
+	width:auto;
+}
+.projectCharacteristics .keywords{
+	flex: 1;
+	display:-webkit-flex;
+	display:flex;
+	-webkit-flex-wrap:wrap;
+	flex-wrap:wrap;
+}
+.projectCharacteristics .keywords li{
+	background: #816ca4;
+	color: #fff;
+	font-size: 0.23rem;
+	margin:0 0.1rem 0.2rem;
+	padding:0.04rem 0.14rem;
+}
+.medicalInstitutions{
+	overflow: hidden;
+	font-size: 0.26rem;
+	color:#757575;
+}
+.imglist{
+	background:#ffffff;
+}
+.imglist li img{
+	display: block;
+	width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+ul{
+	list-style: none;
+}
+.file-drop-zone{
+	height: auto;
+}
+.header{
+	font-size: 24px;
+	height:60px;
+	line-height: 60px;
+	color:#ffffff;
+	background:#66cefa;
+	padding:0 30px;
+}
+.header button{
+	margin-top:13px;
+}
+.control-label{
+	text-align: right!important;
+	margin-top:6px;
+}
+.form-group{
+	overflow: hidden;
+}
+.form-control{
+	display: inline-block;
+	width:80%;
+}
+.tips{
+	margin-left:10px;
+}
+.editor{
+	display: none;
+}
+
+
+#editor-trigger {
+    height: 400px;
+    /*max-height: 500px;*/
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.panel-heading{
+	overflow: hidden;
+}
+
+
+#add_list li{
+	margin-right: 10px;
+}
+
+.allnum{
+	width:100%;
+	overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

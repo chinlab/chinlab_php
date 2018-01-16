@@ -1,0 +1,8 @@
+#order_start_time{
+	display: inline-block!important;
+	width: 46%;
+}
+#order_end_time{
+	display: inline-block!important;
+	width: 46%;
+}

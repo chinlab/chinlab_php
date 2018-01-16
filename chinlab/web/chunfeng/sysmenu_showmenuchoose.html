@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<HTML>
+    <HEAD>
+        <TITLE>区域选择</TITLE>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="resource/z_tree/css/demo.css" type="text/css">
+        <link rel="stylesheet" href="resource/z_tree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+        <script type="text/javascript" src="resource/z_tree/js/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="resource/z_tree/js/jquery.ztree.core-3.5.js"></script>
+        <script type="text/javascript" src="resource/z_tree/js/jquery.ztree.excheck-3.5.js"></script>
+        <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/check.js" type="text/javascript" charset="utf-8"></script>
+        <!--<script type="text/javascript" src="../../../js/jquery.ztree.exedit-3.5.js"></script>-->
+        <SCRIPT type="text/javascript">
+            <!--
+                var setting = {
+                check: {
+                    enable: true
+                },
+                data: {
+                    simpleData: {
+                        enable: true
+                    }
+                },
+                callback: {
+                    onCheck: zTreeOnCheck
+                }
+            };
+			
+           // var zNodes = [{"id":"5fce87c769ca44e4a77d5b7410dbcc03","pId":"0","name":"\u7528\u6237\u7ba1\u7406","open":"true"},{"id":"9ac67c0a2e314cd2a4a351b845b9153c","pId":"0","name":"\u7528\u6237\u9884\u7ea6\u7ba1\u7406","open":"true"},{"id":"c436d06db05a4b5db7076e5aed880a5f","pId":"0","name":"\u7528\u6237\u95ee\u8bca\u7ba1\u7406","open":"true"},{"id":"fb782e27402f46c4b66bba7faf3a9ba5","pId":"0","name":"\u533b\u9662\u7ba1\u7406","open":"true"},{"id":"0396dc0f54cd43a8812b69ad47105aec","pId":"0","name":"\u533b\u751f\u7ba1\u7406","open":"true"},{"id":"716b3bb4d835434a9d6d260bc782a047","pId":"0","name":"\u57fa\u7840\u7f16\u7801","open":"true"},{"id":"cee06ff91da448fd8f423be80312b471","pId":"0","name":"\u5e7f\u544a\u7ba1\u7406","open":"true"},{"id":"6eac792e064e44d6894c0d9611e88e16","pId":"0","name":"\u8d44\u8baf\u7ba1\u7406","open":"true"},{"id":"4433206421ab402982ceeab50212fefb","pId":"0","name":"\u7248\u672c\u7ba1\u7406","open":"true"},{"id":"1dac9cb1b36a4bcfab0d1ab146fd7016","pId":"5fce87c769ca44e4a77d5b7410dbcc03","name":"\u7528\u6237\u5217\u8868","open":"false"},{"id":"a1fa1605aebd4f04a3a688477f17e59c","pId":"5fce87c769ca44e4a77d5b7410dbcc03","name":"\u4fee\u6539\u7528\u6237\u4fe1\u606f","open":"false"},{"id":"9c40d774621b44c9a2795df495e5345b","pId":"5fce87c769ca44e4a77d5b7410dbcc03","name":"\u5220\u9664\u7528\u6237","open":"false"},{"id":"86580d85981644dc80a09bd64e22cc74","pId":"5fce87c769ca44e4a77d5b7410dbcc03","name":"\u6dfb\u52a0\u7528\u6237","open":"false"},{"id":"63ca0ac61b984b30baed9d894b4f826d","pId":"9ac67c0a2e314cd2a4a351b845b9153c","name":"\u9884\u7ea6\u5217\u8868","open":"false"},{"id":"327ba06735f34759a44e4a2e788b2cf9","pId":"63ca0ac61b984b30baed9d894b4f826d","name":"\u624b\u672f\u9884\u7ea6","open":"false"},{"id":"bf21c5c0edea4081933903802a48d06a","pId":"63ca0ac61b984b30baed9d894b4f826d","name":"\u7cbe\u51c6\u9884\u7ea6","open":"false"},{"id":"6c0c55b51a184cf28fe8b34c9c98c4db","pId":"63ca0ac61b984b30baed9d894b4f826d","name":"\u6d77\u5916\u533b\u7597","open":"false"},{"id":"f1e9f5991c1d4dae840ba952a736044f","pId":"63ca0ac61b984b30baed9d894b4f826d","name":"\u7eff\u8272\u901a\u9053","open":"false"},{"id":"eea7724c270d47848210cd7a265eefc9","pId":"9ac67c0a2e314cd2a4a351b845b9153c","name":"\u4fee\u6539\u9884\u7ea6","open":"false"},{"id":"430d71df478c460e993dc2cd91f2c143","pId":"c436d06db05a4b5db7076e5aed880a5f","name":"\u95ee\u8bca\u5217\u8868","open":"false"},{"id":"750490b3ea534b3789b59bb3f2949c1e","pId":"c436d06db05a4b5db7076e5aed880a5f","name":"\u4fee\u6539\u95ee\u8bca","open":"false"},{"id":"d69ea80f37be45eeb02ce8013fe29dbe","pId":"fb782e27402f46c4b66bba7faf3a9ba5","name":"\u533b\u9662\u5217\u8868","open":"false"},{"id":"56299d1c01f74989a83216ad0ea50ac8","pId":"fb782e27402f46c4b66bba7faf3a9ba5","name":"\u4fee\u6539\u533b\u9662\u4fe1\u606f","open":"false"},{"id":"f00c6140f6784d018a3a5e8f0d9ff8bb","pId":"fb782e27402f46c4b66bba7faf3a9ba5","name":"\u5220\u9664\u533b\u9662\u4fe1\u606f","open":"false"},{"id":"99f613e645b44b3cb776209e19c85eff","pId":"fb782e27402f46c4b66bba7faf3a9ba5","name":"\u6dfb\u52a0\u533b\u9662","open":"false"},{"id":"a2099476fc6b415b9554e501bf2bd80d","pId":"fb782e27402f46c4b66bba7faf3a9ba5","name":"\u63a8\u8350\u79d1\u5ba4\u75be\u75c5","open":"false"},{"id":"6751d919d7b54880aa64ac8d77bba5c3","pId":"0396dc0f54cd43a8812b69ad47105aec","name":"\u533b\u751f\u5217\u8868","open":"false"},{"id":"8b24fcb57bac439e8365597bc23845d1","pId":"0396dc0f54cd43a8812b69ad47105aec","name":"\u4fee\u6539\u533b\u751f\u4fe1\u606f","open":"false"},{"id":"0b9c0cdcf32b4b6785457fb9d7011404","pId":"0396dc0f54cd43a8812b69ad47105aec","name":"\u5220\u9664\u533b\u751f\u4fe1\u606f","open":"false"},{"id":"d04f1e05d1974634bbdf49427b118953","pId":"0396dc0f54cd43a8812b69ad47105aec","name":"\u6dfb\u52a0\u533b\u751f","open":"false"},{"id":"9dc9fb656b154d4db9430ebc339e41cd","pId":"716b3bb4d835434a9d6d260bc782a047","name":"\u79d1\u5ba4\u5217\u8868","open":"false"},{"id":"4eac19f5d05f4655b5d42be59fa4e4bc","pId":"716b3bb4d835434a9d6d260bc782a047","name":"\u79d1\u5ba4\u4fee\u6539","open":"false"},{"id":"5151b3f188ed43d2856d54b3197880f9","pId":"716b3bb4d835434a9d6d260bc782a047","name":"\u79d1\u5ba4\u5220\u9664","open":"false"},{"id":"edaef122a61a4c69bf6c1455427f197a","pId":"716b3bb4d835434a9d6d260bc782a047","name":"\u6dfb\u52a0\u79d1\u5ba4","open":"false"},{"id":"7abcd1df975d46188af984325620dff4","pId":"716b3bb4d835434a9d6d260bc782a047","name":"\u533a\u57df\u5217\u8868","open":"false"},{"id":"83386b4eeb4d429ab7586900610f262b","pId":"716b3bb4d835434a9d6d260bc782a047","name":"\u533a\u57df\u4fee\u6539","open":"false"},{"id":"02c72e7295c84345b111cf8b36d69c5a","pId":"716b3bb4d835434a9d6d260bc782a047","name":"\u533a\u57df\u5220\u9664","open":"false"},{"id":"c9cf0d9a52d04dcab3748b484162baad","pId":"716b3bb4d835434a9d6d260bc782a047","name":"\u6dfb\u52a0\u533a\u57df","open":"false"},{"id":"d31aac09385444f9a577a27342251678","pId":"cee06ff91da448fd8f423be80312b471","name":"\u5e7f\u544a\u5217\u8868","open":"false"},{"id":"eb9ef9ee76fc40478f40c39ad00d4ad6","pId":"cee06ff91da448fd8f423be80312b471","name":"\u4fee\u6539\u5e7f\u544a","open":"false"},{"id":"6d2cdbb2637a4e01a058beedce23078e","pId":"cee06ff91da448fd8f423be80312b471","name":"\u5220\u9664\u5e7f\u544a","open":"false"},{"id":"bcdb027b73bb4677ac02b96f78b60f2f","pId":"cee06ff91da448fd8f423be80312b471","name":"\u6dfb\u52a0\u5e7f\u544a","open":"false"},{"id":"0bd5c33fc1904d26b4cbc1c8eb9fba29","pId":"6eac792e064e44d6894c0d9611e88e16","name":"\u8d44\u8baf\u5217\u8868","open":"false"},{"id":"4d6178fa67bc4dec8b5a9ae45a8dbfc8","pId":"6eac792e064e44d6894c0d9611e88e16","name":"\u8d44\u8baf\u4fee\u6539","open":"false"},{"id":"5ac8a41264fa42d18e3fb88958eaee30","pId":"6eac792e064e44d6894c0d9611e88e16","name":"\u8d44\u8baf\u5220\u9664","open":"false"},{"id":"f8c571362c924a6886077e44656a2310","pId":"6eac792e064e44d6894c0d9611e88e16","name":"\u6dfb\u52a0\u8d44\u8baf","open":"false"},{"id":"305ae0fc2b7b46a4992ffdb1aa4c862a","pId":"6eac792e064e44d6894c0d9611e88e16","name":"\u4f01\u4e1a\u6587\u7ae0","open":"false"},{"id":"a69a8944d14f43f68768945a229c8bc0","pId":"4433206421ab402982ceeab50212fefb","name":"\u7248\u672c\u5217\u8868","open":"false"},{"id":"bf4ba104763443dbad15c709dea2a8fe","pId":"4433206421ab402982ceeab50212fefb","name":"\u7248\u672c\u4fee\u6539","open":"false"},{"id":"03b91f648ffd4ceabe340f276d85eb89","pId":"4433206421ab402982ceeab50212fefb","name":"\u7248\u672c\u5220\u9664","open":"false"},{"id":"0ab5dcdbc0bb48d490f0120856859225","pId":"4433206421ab402982ceeab50212fefb","name":"\u53d1\u5e03\u7248\u672c","open":"false"}] ;
+            $(document).ready(function() {
+            	$.ajax({
+            		type:"get",
+            		url:local+"/menu_ChildJson.php",
+            		async:true,
+            		success:function(data){          			
+            			var zNodes = data.data.data
+            			//console.log(data)
+            			//console.log(zNodes)
+            			 setting.check.chkboxType = {"Y": "ps", "N": "ps"};
+		                 $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		                 zTreeOnCheck("","","");
+		                 
+                		 
+            		}
+            	});
+               
+            });
+
+            function zTreeOnCheck(event, treeId, treeNode) {
+            	
+            	//alert(1)
+                var treeObj=$.fn.zTree.getZTreeObj("treeDemo");
+                //console.log(treeObj)
+//              var arr = [];
+//              var node2 = treeObj.getNodeByParam("id",10);
+//              arr.push(node2)
+//              var node3 = treeObj.getNodeByParam("id",11);
+//              arr.push(node3)
+//		        //console.log(node2)
+//		        for(var i=0;i<arr.length;i++){
+//		        	treeObj.checkNode(arr[i], true, true);
+//		        }
+               
+                
+                
+                
+                nodes = treeObj.getCheckedNodes(true);
+                //console.log(nodes)
+                v = "";
+                for (var i = 0; i < nodes.length; i++) {
+                    v += nodes[i].id + ",";
+                }
+                v = v.substring(0, v.length - 1);
+                //console.log(v)
+                $("input[name=menulist]", window.parent.document).val(v);
+            };
+            //-->
+        </SCRIPT>
+        <style>
+            body{
+                width:250px;
+                height:462px;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+            #treeDemo{
+                max-height:350px;
+            }
+        </style>
+    </HEAD>
+
+    <BODY>
+        <div class="zTreeDemoBackground left">
+            <ul id="treeDemo" class="ztree"></ul>
+        </div>
+    </BODY>
+</HTML>

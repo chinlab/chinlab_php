@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>诺春风医疗系统</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="resource/sbadmin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resource/sbadmin/bower_components/bootstrap/dist/css/font-awesome.min.css" rel="stylesheet">
+    <link href="resource/sbadmin/bower_components/bootstrap/dist/css/newstyle.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="resource/sbadmin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="resource/sbadmin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
+          rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="resource/sbadmin/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="resource/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="resource/sbadmin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
+    <link href="resource/sbadmin/bower_components/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" href="resource/sbadmin/bower_components/layer/skin/layer.css"
+          id="layui_layer_skinlayercss">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="resource/sbadmin/bower_components/jquery/dist/jquery-1.9.1.min.js"></script>
+    <script src="resource/sbadmin/bower_components/jquery/dist/jquery.form.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resource/sbadmin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="resource/sbadmin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="js/multiselect.min.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="resource/sbadmin/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="resource/sbadmin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="resource/sbadmin/dist/js/sb-admin-2.js"></script>
+    <!--new-->
+    <script src="resource/sbadmin/bower_components/layer/layer.js"></script>
+    <script type="text/javascript" src="resource/sbadmin/js/fnReloadAjax.js"></script>
+    <script src="resource/sbadmin/bower_components/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="resource/sbadmin/bower_components/datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="resource/sbadmin/bower_components/colResizable/colResizable-1.6.js"></script>
+    <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="mycommonfade" style="background-color:#000; opacity:0.3; filter:alpha(opacity=30);"></div>
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" id="closesearchform" data-parent="#accordion"
+                               href="#collapseOne">
+                                筛选条件<span class="icon-angle-up"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <form class="">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label for="hospital_name">医院名称</label>
+                                        <input type="text" name="hospital_name" id="hospital_name" value=""
+                                               class="form-control" placeholder="医院名称">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label for="hospital_name">医生名称</label>
+                                        <input type="text" name="oneName" id="h_oneName" value=""
+                                               class="form-control" placeholder="医生名称">
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <label for="is_top">是否推荐</label>
+                                        <select id="is_top" name="is_top" class="form-control" data-rel="chosen">
+                                            <option value="">全部</option>
+                                            <option value="1">否</option>
+                                            <option value="2">是</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <label for="is_delete">是否前端显示</label>
+                                        <select id="is_delete" name="is_top" class="form-control" data-rel="chosen">
+                                            <option value="">全部</option>
+                                            <option value="1">是</option>
+                                            <option value="2">否</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <div class="col-sm-1">
+                                            <button id="searchbtn" type="button" class="btn btn-primary"
+                                                    style="margin-top:25px;">确定
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dataTable_wrapper">
+                <table class="table table-striped table-bordered table-hover" id="datatable">
+                    <thead>
+                    <tr>
+                        <th>医生ID</th>
+                        <th>医生姓名</th>
+                        <th>医生职位</th>
+                        <th>医生头像</th>
+                        <th>所属医院</th>
+                        <th>是否推荐</th>
+                        <th>是否前端可见</th>
+                        <th>修改</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<script type="text/html" id="add_doctor_item">
+    <div class="container col-sm-12" style="margin-top: 20px">
+        <form action="" method="post" enctype="multipart/form-data" id="form_doctor">
+            <input type="hidden" name="hospital_id" value="" id="d_hospital_id">
+            <input type="hidden" name="doctor_id" value="" id="d_doctor_id">
+            <input type="hidden" name="section_select" value="" id="d_section_select">
+
+            <div class="form-group col-sm-12">
+                <div class="col-sm-2"><label for="h_hospital_name">医生姓名</label></div>
+                <div class="col-sm-10"><input type="text" class="form-control" id="d_doctor_name" name="doctor_name">
+                </div>
+            </div>
+            <div class="form-group col-sm-12">
+                <div class="col-sm-2"><label for="d_doctor_image">医生图片</label></div>
+                <div class="col-sm-10"><input type="file" class="form-control" id="d_doctor_image" name="fileName">
+                </div>
+            </div>
+            <div class="form-group col-sm-12">
+                <div class="col-sm-2"><label>医生职位</label></div>
+                <div class="col-sm-10">
+                    <select id="d_doctor_position" name="doctor_position" class="form-control" data-rel="chosen">
+                        <option value="0">请选择</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-12">
+                <div class="col-sm-2"><label>科室选择</label></div>
+                <div class="col-sm-5">
+                    <select name="from" id="optgroup" class="form-control" size="8" multiple="multiple">
+                    </select>
+                </div>
+                <div class="col-sm-5">
+                    <select name="to" id="optgroup_to" class="form-control" size="8" multiple="multiple">
+                        <!--option value="1">C++</option-->
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-12">
+                <div class="col-sm-2"><label>医生简介</label></div>
+                <div class="col-sm-10"><textarea rows="4" name="doctor_des" class="form-control"
+                                                 id="d_doctor_des"></textarea>
+                </div>
+            </div>
+            <div class="form-group col-sm-12">
+                <div class="col-sm-2"><label>擅长领域</label></div>
+                <div class="col-sm-10"><textarea rows="4" name="good_at" class="form-control" id="d_good_at"></textarea>
+                </div>
+            </div>
+            <div class="form-group col-sm-12">
+                <div class="col-sm-2"><label>荣誉</label></div>
+                <div class="col-sm-10"><textarea rows="4" type="text" name="honor" class="form-control"
+                                                 id="d_honor"></textarea></div>
+            </div>
+            <div class="form-group col-sm-12">
+                <div class="col-sm-2"><label>执业经历</label></div>
+                <div class="col-sm-10"><textarea rows="4" type="text" name="work_experience" class="form-control"
+                                                 id="d_work_experience"></textarea></div>
+            </div>
+            <div class="form-group col-sm-12">
+                <div class="col-sm-2"><label>是否推荐</label></div>
+                <div class="col-sm-10">
+                    <select id="d_is_top" name="is_top" class="form-control" data-rel="chosen">
+                        <option value="0">否</option>
+                        <option value="1">是</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-12">
+                <div class="col-sm-2"><label for="h_is_delete">是否前端显示</label></div>
+                <div class="col-sm-10">
+                    <select id="d_is_delete" name="is_delete" class="form-control" data-rel="chosen">
+                        <option value="2">否</option>
+                        <option value="1">是</option>
+                    </select>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default" id="doctor_commit">提交</button>
+        </form>
+    </div>
+</script>
+<script>
+    $(document).ready(function () {
+        $.ajaxSetup({
+            async: false
+        });
+
+        var doctor_level = {};
+        $.post(local + "/doctors_getlevel.php", {}, function (data) {
+            doctor_level = data;
+        }, "json");
+
+        //table列表
+        var dataTable = $('#datatable').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "searching": false,
+            "ordering": false,
+            "bLengthChange": false, //去掉每页显示多少条数据方法
+            "iDisplayLength": 10,
+            "stateSave": false,
+            "ajax": {
+                url: local + "/doctors_index.php", // json datasource
+                type: "post",  // method  , by default get
+                error: function () {  // error handling
+                    $(".employee-grid-error").html("");
+                    $("#employee-grid").append('<tbody class="employee-grid-error"><tr><th colspan="3">No data found in the server</th></tr></tbody>');
+                    $("#employee-grid_processing").css("display", "none");
+                },
+                "data": function (d) {
+                    //添加额外的参数传给服务器
+                    d.name = $("#hospital_name").val();
+                    d.doctor_name = $("#h_oneName").val();
+                    d.is_top = $("#is_top").val();
+                    d.is_delete = $("#is_delete").val();
+                }
+            },
+            "columns": [
+                {"data": "doctor_id"},
+                {"data": "doctor_name"},
+                {
+                    "data": function (data) {
+                        var item_parent_name = "";
+                        $.each(doctor_level, function (k, v) {
+                            if (v.val == data.doctor_position) {
+                                item_parent_name = v.name;
+                            }
+                        });
+                        return item_parent_name;
+                    }
+                },
+                {
+                    "data": function (data) {
+                        return '<img src="' + data.doctor_head + '" width="50"  height="50"/>';
+                    }
+                },
+                {"data": "hospital_name"},
+                {
+                    "data": function (data) {
+                        if (data.is_top == 1) {
+                            return '是';
+                        }
+                        return '否';
+                    }
+                },
+                {
+                    "data": function (data) {
+                        if (data.is_delete == 1) {
+                            return '是';
+                        }
+                        return '否';
+                    }
+                }
+            ],
+            "oLanguage": {//对表格国际化
+                "sLengthMenu": "每页显示 _MENU_条",
+                "sZeroRecords": "没有找到符合条件的数据",
+                //  "sProcessing": "&lt;img src=’./loading.gif’ /&gt;",
+                "sInfo": "当前第 _START_ - _END_ 条　共计 _TOTAL_ 条",
+                "sInfoEmpty": "木有记录",
+                "sInfoFiltered": "(从 _MAX_ 条记录中过滤)",
+                "sSearch": "搜索：",
+                "oPaginate": {
+                    "sFirst": "首页",
+                    "sPrevious": "前一页",
+                    "sNext": "后一页",
+                    "sLast": "尾页"
+                }
+            },
+            "columnDefs": [
+                {
+                    "targets": [7],
+                    "data": function (data) {
+                        return data.doctor_id;
+                    },
+                    "render": function (data, type, full) {
+                        return '<a class="add_doctor_index btn btn-info" data-id="' + data + '" href="javascript:void(0)">修改</a>';
+                    }
+                }
+            ]
+        });
+        //搜索item
+        $("#searchbtn").click(function () {
+            dataTable.draw();
+        });
+        //添加医生界面
+        $(document).on('click', '.add_doctor_index', function () {
+
+            var doctor_id = $(this).attr("data-id");
+            $.post(local + "/doctors_getbyid.php", {"doctor_id": doctor_id}, function (data) {
+
+                var content = $("#add_doctor_item").html();
+                var addlayer = layer.open({
+                    type: 1,
+                    title: "修改医生[医院名称：" + data.hospital_name + "][医生：" + data.doctor_name + "]",
+                    skin: 'layui-layer-rim', //加上边框
+                    area: ['900px', '800px'], //宽高
+                    content: content
+                });
+                var str = '<option value="0">请选择</option>';
+                $.each(doctor_level, function (k, v) {
+                    str += '<option value="' + v.val + '">' + v.name + '</option>';
+                });
+                $("#d_doctor_position").html(str);
+                str = '';
+                $.each(data.select, function (k, v) {
+                    str += '<optgroup label="' + v.name + '">';
+                    $.each(v.child, function (kk, vv) {
+                        str += '<option value="' + vv.id + '">' + vv.name + '</option>';
+                    });
+                    str += '</optgroup>';
+                });
+                $("#optgroup").html(str);
+                str = '';
+                $.each(data.has_select, function (k, v) {
+                    str += '<optgroup label="' + v.name + '">';
+                    $.each(v.child, function (kk, vv) {
+                        str += '<option value="' + vv.id + '">' + vv.name + '</option>';
+                    });
+                    str += '</optgroup>';
+                });
+                $("#optgroup_to").html(str);
+                $("#optgroup").multiselect();
+                $("#d_hospital_id").val(data.hospital_id);
+                $("#d_doctor_id").val(data.doctor_id);
+                $("#d_doctor_position").val(data.doctor_position);
+                $("#d_doctor_name").val(data.doctor_name);
+                $("#d_doctor_des").val(data.doctor_des);
+                $("#d_good_at").val(data.good_at);
+                $("#d_work_experience").val(data.work_experience);
+                $("#d_honor").val(data.honor);
+                $("#d_is_top").val(data.is_top);
+                $("#d_is_delete").val(data.is_delete);
+            }, "json");
+        });
+        //添加医生
+        $(document).on('click', '#doctor_commit', function () {
+            if ($("#d_doctor_position").children('option:selected').val() == 0) {
+                layer.msg('请选择医生职位', {icon: 1, closeBtn: 1, shadeClose: true});
+                return;
+            }
+            if ($("#d_doctor_name").val() == "") {
+                layer.msg('请填写医生名称', {icon: 1, closeBtn: 1, shadeClose: true});
+                return;
+            }
+            var jsonArr = [];
+            var index = 0;
+            $('#optgroup_to option').each(function (k, v) {
+                jsonArr[index] = $(this).val();
+                index = index + 1;
+            });
+            $("#d_section_select").val(JSON.stringify(jsonArr));
+            var options = {
+                type: "post",//请求方式：get或post
+                url: local + "/doctors_updateinsert.php",
+                dataType: "json",//数据返回类型：xml、json、script
+                success: function (data) {//表单提交成功回调函数
+                    if (data.state == 0) {
+                        dataTable.draw();
+                        layer.msg('提交成功', {icon: 1, closeBtn: 1, shadeClose: true});
+                        setTimeout("layer.closeAll()", 2000);
+                    } else {
+                        layer.msg(data.message, {icon: 5, closeBtn: 1, shadeClose: true});
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                    layer.msg('提交表单异常' + err.msg, {icon: 1, closeBtn: 1, shadeClose: true});
+                }
+            };
+            $("#form_doctor").ajaxSubmit(options);
+        });
+    });
+</script>
+</body>
+</html>

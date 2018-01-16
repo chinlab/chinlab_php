@@ -1,0 +1,133 @@
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+	cursor:pointer;
+	color: #e4393c;
+}
+.isShow{
+	display: block!important;
+}
+.isHide{
+	display: none!important;
+}
+#myTab{
+	margin:10px 0;   
+	text-align: center;
+}
+.search_warp{
+	padding:10px 0;
+	margin: 10px 0;
+}
+.nav_list{
+	font-size: 18px;
+}
+.glyphicon{
+	margin:0 5px;
+}
+/*.tagslist{
+	padding: 0;
+	margin: 0;
+}
+.tagslist li{
+	margin-top: 2px;
+}*/
+.nav_list li .keywords{
+	position: relative;
+	display: block;
+	height: 22px;
+    line-height: 22px;
+    border: 1px solid #DDD;
+    font-size: 16px;
+    vertical-align: top;
+    margin: 0 5px 5px 0;
+    padding: 0 26px 0 4px;
+    cursor: pointer;
+    background: #f3f3f3;
+    color:#e4393c;
+} 
+.nav_list li .keywords span{
+	
+	display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 1px;
+}
+
+#hospitalSelect_list{
+	height: auto;
+	border-top: 1px solid #DDD;
+}
+.value_list{
+	margin:0;	
+}
+.value_list li{
+	margin:2px 10px;
+}
+.value_list li a{
+	display: block;
+	width:120px;
+}
+.select{
+	border-bottom: 1px solid #DDD;
+	padding:5px 0;
+}
+.tag{
+	height: 100%;
+	text-align: center;
+	margin-top:3px;
+}
+.morebtn{
+	display: block;
+	width: 60px;
+    height: 23px;
+    line-height: 23px;
+    padding: 0 7px 0 4px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+.visitTime_list{
+	margin:0;
+}
+.visitTime_list li{
+	margin: 2px 10px;
+}
+.visitTime_list li a{
+	/*display: block;
+    width: 100px;*/
+}
+.week{
+	text-align: center;
+	display: block;
+    line-height: 23px;
+   /* padding: 0 17px 0;*/
+    background: #fff;
+    border: 1px solid #ddd;
+    	
+}
+.week_warp{
+	position: relative;
+	padding: 0;
+}
+.specificTime{
+	position: absolute;
+	top:25px;
+	left:0px;
+	padding: 0;
+	display: none;
+	border:1px solid #ddd;
+	border-top: none;
+	z-index: 999999;
+}
+.specificTime li{
+	margin: 0;
+	text-align: center;
+	background: #f5f5f5;
+	padding:5px 0;
+}
+

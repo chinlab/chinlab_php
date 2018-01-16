@@ -1,0 +1,50 @@
+.header{
+	font-size: 24px;
+	height:60px;
+	line-height: 60px;
+	color:#ffffff;
+	background:#66cefa;
+	padding:0 30px;
+}
+.header button{
+	margin-top:13px;
+}
+#save{
+	margin-right:50px;
+}
+#case_img{
+	margin-top:6px;
+}
+.error_img ul{
+	list-style: none;
+}
+.error_img ul li{
+	margin:0 5px;
+}
+.error_img ul img{
+	width: 100px;
+	height:65px;
+}
+#datatable2 th{
+	vertical-align: middle;
+	text-align: center;
+}
+#datatable2 td{
+	vertical-align: middle;
+	text-align: center;
+}
+.imgNum{
+	border-left: 1px dashed #080808;
+}
+
+
+
+
+
+
+
+
+
+
+
+

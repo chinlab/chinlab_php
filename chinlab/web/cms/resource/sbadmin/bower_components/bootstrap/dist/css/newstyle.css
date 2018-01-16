@@ -1,0 +1,30 @@
+a{
+    cursor: pointer;
+}
+.searchform .col-lg-1,.col-lg-10,.searchform  .col-lg-11,.searchform  .col-lg-12,.searchform  .col-lg-2,.searchform  .col-lg-3,.searchform  .col-lg-4,.searchform  .col-lg-5,.searchform  .col-lg-6,.searchform  .col-lg-7,.searchform  .col-lg-8,.searchform  .col-lg-9,.searchform  .col-md-1,.searchform  .col-md-10,.searchform  .col-md-11,.searchform  .col-md-12,.searchform  .col-md-2,.searchform  .col-md-3,.searchform  .col-md-4,.searchform  .col-md-5,.searchform  .col-md-6,.searchform  .col-md-7,.searchform  .col-md-8,.searchform  .col-md-9,.searchform  .col-sm-1,.searchform  .col-sm-10,.searchform  .col-sm-11,.searchform  .col-sm-12,.searchform  .col-sm-2,.searchform  .col-sm-3,.searchform  .col-sm-4,.searchform  .col-sm-5,.searchform  .col-sm-6,.searchform  .col-sm-7,.searchform  .col-sm-8,.searchform  .col-sm-9,.searchform  .col-xs-1,.searchform  .col-xs-10,.searchform  .col-xs-11,.searchform  .col-xs-12,.searchform  .col-xs-2,.searchform  .col-xs-3,.searchform  .col-xs-4,.searchform  .col-xs-5,.searchform  .col-xs-6,.searchform  .col-xs-7,.searchform  .col-xs-8,.searchform  .col-xs-9{
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+.searchform .control-label{
+    line-height: 34px;
+    text-align: right;
+    margin-right: 5px;
+}
+.photos-demo img {
+    width: 100%;
+}
+.mycommonfade{
+    position: fixed;
+    opacity:0.6;
+    width: 100%;
+    height: 100%;
+    background: #e0e1e3;;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    display: none;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    padding-left: 8px !important;
+}
+

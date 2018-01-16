@@ -1,0 +1,48 @@
+html,body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{font-family:"PingFang SC","微软雅黑";margin:0;padding:0}
+img{display: block;border: 0;}
+h1,h2,h3,h4,h5,h6{font-weight: 100;}
+#banner{width:7.5rem;height:2.33rem;border-bottom: 0.1rem solid #f7f7f7;}
+#banner .bannerImg{width: 100%;height: 100%;}
+
+#range{width: 6.7rem;font-size: 0.3rem;margin: 0 auto;}
+#range .title{background: url(../img/title1.png) no-repeat;font-size: 0.3rem;width: 1.89rem;height: 0.49rem;background-size:1.89rem 0.49rem;text-align: center;line-height: 0.49rem;color: #fff;margin-top:0.38rem;margin-bottom: 0.22rem;}
+#range .detail{color: #666;line-height: 0.34rem;font-size: 0.24rem;}
+
+#cure,#advan,#organ{width: 7.5rem;border-bottom: 0.1rem solid #f7f7f7;}
+fieldset{border: 0;border-top: 2px solid #85d3ff;font-size: 0.3rem;text-align: center;width: 6.7rem;margin: 0 auto;margin-top: 0.18rem;}
+fieldset legend{padding: 0 0.12rem 0 0.12rem;color: #fe9c01;margin-bottom: 0.32rem;}
+#cure .cureRange{display: flex;justify-content: space-around;margin-bottom: 0.48rem;}
+#cure .cureRange img{width: 1.55rem;height: 1.55rem;}
+
+
+#advan .instroCon2{display: none;}
+#advan .address{display:flex;justify-content: space-around;margin-bottom: 0.28rem;}
+#advan .address .america{margin-right: 1rem;}
+#advan .address .taiWan{background: #d6d7d7;}
+#advan .address .america,.taiWan{width: 1.14rem;height: 0.42rem;background: #b7e5ff;border-radius: 0.08rem;text-align: center;line-height: 0.42rem;font-size: 0.34rem;color: #fff;}
+#advan h2{z-index:100;font-size:0.24rem;color: #fff;width: 2.2rem;margin: 0 auto;margin-left:0.4rem;height:0.34rem;text-align: center;margin-bottom: 0.3rem;}
+#advan .title1{background: url(../img/pic1.png) no-repeat ;background-size: 2.2rem 0.34rem;z-index: 0;}
+#advan .detail{width: 6.7rem;font-size: 0.24rem;color: #666;margin: 0 auto;margin-bottom: 0.12rem;}
+#advan .title2{background: url(../img/pic2.png) no-repeat ;background-size: 2.2rem 0.34rem;}
+#advan .title3{background: url(../img/pic3.png) no-repeat ;background-size: 2.2rem 0.34rem;}
+#advan .title4{background: url(../img/pic4.png) no-repeat ;background-size: 2.2rem 0.34rem;}
+#organ img{margin: 0 auto;}
+#organ .organImg1{width: 6.72rem;height: 2.43rem;margin-bottom: 0.2rem;}
+#organ .organImg2{width: 6.72rem;height: 2.46rem;}
+#organ .organImg3{width: 6.72rem;height: 2.27rem;}
+#organ .instro{font-size: 0.26rem;text-align: center;color: #666;margin-top: 0.2rem;margin-bottom:0.27rem;}
+#organ .abstract1,.abstract2,.abstract3{display: flex;justify-content: space-around;width: 6.7rem;margin: 0 auto;}
+#organ .abstract1 .expert1{width: 1.94rem;height:2.91rem;margin-right: 0.38rem;}
+#organ .abstract1 .detail1{font-size: 0.24rem;color:#666;width: 4.32rem;margin-top: 0.24rem;line-height: 0.35rem;}
+#organ .detail1 span{margin-left: 1rem;}
+#organ .detail3 span{margin-left: 0.6rem;}
+#organ .abstract2 .expert2{width: 1.99rem;height:2.77rem;margin-right: 0.38rem;}
+#organ .abstract2 .detail2{font-size: 0.24rem;color:#666;width: 3.69rem;margin-left: 0.4rem;margin-top: 0.24rem;line-height: 0.35rem;}
+#organ .abstract3,.abstract2,.abstract1{margin-top: 0.24rem;}
+#organ .abstract3 .expert3{width: 2.51rem;height:3.37rem;margin-right: 0.38rem;}
+#organ .abstract3 .detail3{font-size: 0.24rem;color:#666;width: 4.32rem;line-height: 0.35rem;}
+
+#footer{width: 7.5rem;height:1.9rem;background:#3db2e9;padding-top: 0.2rem;padding-bottom:0.35rem;font-size:0.24rem;color: #fff;}
+#footer .logoImg{width: 2.33rem;height:0.96rem;margin: 0 auto;}
+#footer .link1{text-align: center;margin-top: 0.19rem;}
+#footer .link2{text-align: center;}

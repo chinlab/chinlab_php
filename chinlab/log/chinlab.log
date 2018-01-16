@@ -1,0 +1,881 @@
+2018-01-12 12:35:49 [192.168.1.175][-][-][info][yii\db\Connection::open] Opening DB connection: mysql:host=192.168.1.90;dbname=chinlab
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:248
+2018-01-12 12:35:49 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4651967912789104'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:248
+2018-01-12 12:35:49 [192.168.1.175][-][-][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `tb_user`
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:248
+2018-01-12 12:35:49 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'tb_user' AND kcu.table_name = 'tb_user'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:248
+2018-01-12 12:35:49 [192.168.1.175][-][-][info][application] $_GET = [
+    'userApi/register_getUserMassage_php' => ''
+]
+
+$_POST = [
+    'user_id' => '4651967912789104'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'cle350f4lb01jjh8l9in6j9pav'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'www.chinlab2018.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '24'
+    'HTTP_ACCEPT' => 'text/plain, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://www.chinlab2018.com'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://www.chinlab2018.com/api.html'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=cle350f4lb01jjh8l9in6j9pav'
+    'HTTP_SOCKETLOG' => 'SocketLog(tabid=17&client_id=)'
+    'PATH' => 'C:\\Program Files (x86)\\Lenovo\\FusionEngine;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\ProgramData\\ComposerSetup\\bin;D:\\Git\\cmd;D:\\nodejs\\;E:\\java\\bin;E:\\java\\jre\\bin;D:\\tortoisegit\\bin;D:\\虚拟机\\bin;E:\\MongoDB\\bin;E:/phpStudy/PHPTutorial/MySQL/bin;C:\\Users\\lenovo\\AppData\\Local\\Microsoft\\WindowsApps;E:\\xampp\\php;C:\\Users\\lenovo\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\lenovo\\AppData\\Roaming\\npm;E:/phpStudy/PHPTutorial/MySQL/bin'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 Server at www.chinlab2018.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7'
+    'SERVER_NAME' => 'www.chinlab2018.com'
+    'SERVER_ADDR' => '192.168.1.175'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.1.175'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/beginner/hanyu-php/web/index.php'
+    'REMOTE_PORT' => '55850'
+    'REDIRECT_URL' => '/userApi/register_getUserMassage.php'
+    'REDIRECT_QUERY_STRING' => 'userApi/register_getUserMassage.php'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'userApi/register_getUserMassage.php'
+    'REQUEST_URI' => '/userApi/register_getUserMassage.php'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1515756949.619
+    'REQUEST_TIME' => 1515756949
+]
+2018-01-12 12:40:32 [192.168.1.175][-][-][info][yii\db\Connection::open] Opening DB connection: mysql:host=192.168.1.90;dbname=chinlab
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:248
+2018-01-12 12:40:33 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4651967912789104'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:248
+2018-01-12 12:40:33 [192.168.1.175][-][-][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `tb_user`
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:248
+2018-01-12 12:40:33 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'tb_user' AND kcu.table_name = 'tb_user'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:248
+2018-01-12 12:40:32 [192.168.1.175][-][-][info][application] $_GET = [
+    'userApi/register_getUserMassage_php' => ''
+]
+
+$_POST = [
+    'user_id' => '4651967912789104'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'cle350f4lb01jjh8l9in6j9pav'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'www.chinlab2018.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '24'
+    'HTTP_ACCEPT' => 'text/plain, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://www.chinlab2018.com'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://www.chinlab2018.com/api.html'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=cle350f4lb01jjh8l9in6j9pav'
+    'HTTP_SOCKETLOG' => 'SocketLog(tabid=17&client_id=)'
+    'PATH' => 'C:\\Program Files (x86)\\Lenovo\\FusionEngine;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\ProgramData\\ComposerSetup\\bin;D:\\Git\\cmd;D:\\nodejs\\;E:\\java\\bin;E:\\java\\jre\\bin;D:\\tortoisegit\\bin;D:\\虚拟机\\bin;E:\\MongoDB\\bin;E:/phpStudy/PHPTutorial/MySQL/bin;C:\\Users\\lenovo\\AppData\\Local\\Microsoft\\WindowsApps;E:\\xampp\\php;C:\\Users\\lenovo\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\lenovo\\AppData\\Roaming\\npm;E:/phpStudy/PHPTutorial/MySQL/bin'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 Server at www.chinlab2018.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7'
+    'SERVER_NAME' => 'www.chinlab2018.com'
+    'SERVER_ADDR' => '192.168.1.175'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.1.175'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/beginner/hanyu-php/web/index.php'
+    'REMOTE_PORT' => '56071'
+    'REDIRECT_URL' => '/userApi/register_getUserMassage.php'
+    'REDIRECT_QUERY_STRING' => 'userApi/register_getUserMassage.php'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'userApi/register_getUserMassage.php'
+    'REQUEST_URI' => '/userApi/register_getUserMassage.php'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1515757232.816
+    'REQUEST_TIME' => 1515757232
+]
+2018-01-13 10:09:57 [192.168.1.175][-][-][info][yii\db\Connection::open] Opening DB connection: mysql:host=192.168.1.90;dbname=chinlab
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:09:57 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4652266215154374'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:09:57 [192.168.1.175][-][-][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `tb_user`
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:09:57 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'tb_user' AND kcu.table_name = 'tb_user'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:09:57 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4652266215154374'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:166
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:583
+2018-01-13 10:09:57 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4652266215154374' LIMIT 2
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:175
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:583
+2018-01-13 10:09:57 [192.168.1.175][-][-][info][yii\db\ActiveRecord::update] Model not updated due to validation error.
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:175
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:583
+2018-01-13 10:09:57 [192.168.1.175][-][-][info][application] $_GET = [
+    'userApi/register_updateUserInfo_php' => ''
+]
+
+$_POST = [
+    'user_id' => '4652266215154374'
+    'learn_time' => ''
+    'user_age' => ''
+    'user_agent' => ''
+    'user_nickname' => 'zhangyuxuan'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'cle350f4lb01jjh8l9in6j9pav'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'www.chinlab2018.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '84'
+    'HTTP_ACCEPT' => 'text/plain, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://www.chinlab2018.com'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://www.chinlab2018.com/api.html'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=cle350f4lb01jjh8l9in6j9pav'
+    'HTTP_SOCKETLOG' => 'SocketLog(tabid=17&client_id=)'
+    'PATH' => 'C:\\Program Files (x86)\\Lenovo\\FusionEngine;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\ProgramData\\ComposerSetup\\bin;D:\\Git\\cmd;D:\\nodejs\\;E:\\java\\bin;E:\\java\\jre\\bin;D:\\tortoisegit\\bin;D:\\虚拟机\\bin;E:\\MongoDB\\bin;E:/phpStudy/PHPTutorial/MySQL/bin;C:\\Users\\lenovo\\AppData\\Local\\Microsoft\\WindowsApps;E:\\xampp\\php;C:\\Users\\lenovo\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\lenovo\\AppData\\Roaming\\npm;E:/phpStudy/PHPTutorial/MySQL/bin'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 Server at www.chinlab2018.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7'
+    'SERVER_NAME' => 'www.chinlab2018.com'
+    'SERVER_ADDR' => '192.168.1.175'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.1.175'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/beginner/hanyu-php/web/index.php'
+    'REMOTE_PORT' => '56526'
+    'REDIRECT_URL' => '/userApi/register_updateUserInfo.php'
+    'REDIRECT_QUERY_STRING' => 'userApi/register_updateUserInfo.php'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'userApi/register_updateUserInfo.php'
+    'REQUEST_URI' => '/userApi/register_updateUserInfo.php'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1515834597.402
+    'REQUEST_TIME' => 1515834597
+]
+2018-01-13 10:11:04 [192.168.1.175][-][-][info][yii\db\Connection::open] Opening DB connection: mysql:host=192.168.1.90;dbname=chinlab
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:11:04 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4652266215154374'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:11:04 [192.168.1.175][-][-][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `tb_user`
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:11:04 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'tb_user' AND kcu.table_name = 'tb_user'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:11:05 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4652266215154374'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:166
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:583
+2018-01-13 10:11:05 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4652266215154374' LIMIT 2
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:175
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:583
+2018-01-13 10:11:05 [192.168.1.175][-][-][info][yii\db\Command::execute] UPDATE `tb_user` SET `user_nickname`='asdada' WHERE `user_id`='4652266215154374'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:175
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:583
+2018-01-13 10:11:04 [192.168.1.175][-][-][info][application] $_GET = [
+    'userApi/register_updateUserInfo_php' => ''
+]
+
+$_POST = [
+    'user_id' => '4652266215154374'
+    'learn_time' => ''
+    'user_age' => ''
+    'user_agent' => ''
+    'user_nickname' => 'asdada'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'cle350f4lb01jjh8l9in6j9pav'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'www.chinlab2018.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '79'
+    'HTTP_ACCEPT' => 'text/plain, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://www.chinlab2018.com'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://www.chinlab2018.com/api.html'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=cle350f4lb01jjh8l9in6j9pav'
+    'HTTP_SOCKETLOG' => 'SocketLog(tabid=17&client_id=)'
+    'PATH' => 'C:\\Program Files (x86)\\Lenovo\\FusionEngine;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\ProgramData\\ComposerSetup\\bin;D:\\Git\\cmd;D:\\nodejs\\;E:\\java\\bin;E:\\java\\jre\\bin;D:\\tortoisegit\\bin;D:\\虚拟机\\bin;E:\\MongoDB\\bin;E:/phpStudy/PHPTutorial/MySQL/bin;C:\\Users\\lenovo\\AppData\\Local\\Microsoft\\WindowsApps;E:\\xampp\\php;C:\\Users\\lenovo\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\lenovo\\AppData\\Roaming\\npm;E:/phpStudy/PHPTutorial/MySQL/bin'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 Server at www.chinlab2018.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7'
+    'SERVER_NAME' => 'www.chinlab2018.com'
+    'SERVER_ADDR' => '192.168.1.175'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.1.175'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/beginner/hanyu-php/web/index.php'
+    'REMOTE_PORT' => '56569'
+    'REDIRECT_URL' => '/userApi/register_updateUserInfo.php'
+    'REDIRECT_QUERY_STRING' => 'userApi/register_updateUserInfo.php'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'userApi/register_updateUserInfo.php'
+    'REQUEST_URI' => '/userApi/register_updateUserInfo.php'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1515834664.751
+    'REQUEST_TIME' => 1515834664
+]
+2018-01-13 10:11:29 [192.168.1.175][-][-][info][yii\db\Connection::open] Opening DB connection: mysql:host=192.168.1.90;dbname=chinlab
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:11:29 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4652266215154374'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:11:29 [192.168.1.175][-][-][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `tb_user`
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:11:29 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'tb_user' AND kcu.table_name = 'tb_user'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:11:29 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4652266215154374'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:166
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:583
+2018-01-13 10:11:29 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4652266215154374' LIMIT 2
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:175
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:583
+2018-01-13 10:11:29 [192.168.1.175][-][-][info][yii\db\ActiveRecord::update] Model not updated due to validation error.
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:175
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:583
+2018-01-13 10:11:29 [192.168.1.175][-][-][info][application] $_GET = [
+    'userApi/register_updateUserInfo_php' => ''
+]
+
+$_POST = [
+    'user_id' => '4652266215154374'
+    'learn_time' => ''
+    'user_age' => ''
+    'user_agent' => ''
+    'user_nickname' => 'zhangyuuxan'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'cle350f4lb01jjh8l9in6j9pav'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'www.chinlab2018.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '84'
+    'HTTP_ACCEPT' => 'text/plain, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://www.chinlab2018.com'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://www.chinlab2018.com/api.html'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=cle350f4lb01jjh8l9in6j9pav'
+    'HTTP_SOCKETLOG' => 'SocketLog(tabid=17&client_id=)'
+    'PATH' => 'C:\\Program Files (x86)\\Lenovo\\FusionEngine;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\ProgramData\\ComposerSetup\\bin;D:\\Git\\cmd;D:\\nodejs\\;E:\\java\\bin;E:\\java\\jre\\bin;D:\\tortoisegit\\bin;D:\\虚拟机\\bin;E:\\MongoDB\\bin;E:/phpStudy/PHPTutorial/MySQL/bin;C:\\Users\\lenovo\\AppData\\Local\\Microsoft\\WindowsApps;E:\\xampp\\php;C:\\Users\\lenovo\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\lenovo\\AppData\\Roaming\\npm;E:/phpStudy/PHPTutorial/MySQL/bin'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 Server at www.chinlab2018.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7'
+    'SERVER_NAME' => 'www.chinlab2018.com'
+    'SERVER_ADDR' => '192.168.1.175'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.1.175'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/beginner/hanyu-php/web/index.php'
+    'REMOTE_PORT' => '56591'
+    'REDIRECT_URL' => '/userApi/register_updateUserInfo.php'
+    'REDIRECT_QUERY_STRING' => 'userApi/register_updateUserInfo.php'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'userApi/register_updateUserInfo.php'
+    'REQUEST_URI' => '/userApi/register_updateUserInfo.php'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1515834689.316
+    'REQUEST_TIME' => 1515834689
+]
+2018-01-13 10:12:02 [192.168.1.175][-][-][info][yii\db\Connection::open] Opening DB connection: mysql:host=192.168.1.90;dbname=chinlab
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:12:02 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4652266215154374'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:12:02 [192.168.1.175][-][-][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `tb_user`
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:12:02 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'tb_user' AND kcu.table_name = 'tb_user'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:85
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:566
+2018-01-13 10:12:02 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4652266215154374'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:166
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:583
+2018-01-13 10:12:02 [192.168.1.175][-][-][info][yii\db\Command::query] SELECT * FROM `tb_user` WHERE `user_id`='4652266215154374' LIMIT 2
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:175
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:583
+2018-01-13 10:12:03 [192.168.1.175][-][-][info][yii\db\Command::execute] UPDATE `tb_user` SET `user_nickname`='zhangyuuxan' WHERE `user_id`='4652266215154374'
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\subscriber\controllers\UserController.php:175
+    in E:\xampp\htdocs\beginner\hanyu-php\modules\service\controllers\RegisterController.php:583
+2018-01-13 10:12:02 [192.168.1.175][-][-][info][application] $_GET = [
+    'userApi/register_updateUserInfo_php' => ''
+]
+
+$_POST = [
+    'user_id' => '4652266215154374'
+    'learn_time' => ''
+    'user_age' => ''
+    'user_agent' => ''
+    'user_nickname' => 'zhangyuuxan'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'cle350f4lb01jjh8l9in6j9pav'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'www.chinlab2018.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '84'
+    'HTTP_ACCEPT' => 'text/plain, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://www.chinlab2018.com'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://www.chinlab2018.com/api.html'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=cle350f4lb01jjh8l9in6j9pav'
+    'HTTP_SOCKETLOG' => 'SocketLog(tabid=17&client_id=)'
+    'PATH' => 'C:\\Program Files (x86)\\Lenovo\\FusionEngine;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\ProgramData\\ComposerSetup\\bin;D:\\Git\\cmd;D:\\nodejs\\;E:\\java\\bin;E:\\java\\jre\\bin;D:\\tortoisegit\\bin;D:\\虚拟机\\bin;E:\\MongoDB\\bin;E:/phpStudy/PHPTutorial/MySQL/bin;C:\\Users\\lenovo\\AppData\\Local\\Microsoft\\WindowsApps;E:\\xampp\\php;C:\\Users\\lenovo\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\lenovo\\AppData\\Roaming\\npm;E:/phpStudy/PHPTutorial/MySQL/bin'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 Server at www.chinlab2018.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7'
+    'SERVER_NAME' => 'www.chinlab2018.com'
+    'SERVER_ADDR' => '192.168.1.175'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.1.175'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/beginner/hanyu-php/web/index.php'
+    'REMOTE_PORT' => '56610'
+    'REDIRECT_URL' => '/userApi/register_updateUserInfo.php'
+    'REDIRECT_QUERY_STRING' => 'userApi/register_updateUserInfo.php'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'userApi/register_updateUserInfo.php'
+    'REQUEST_URI' => '/userApi/register_updateUserInfo.php'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1515834722.409
+    'REQUEST_TIME' => 1515834722
+]
+2018-01-15 03:13:59 [192.168.1.175][-][-][info][yii\web\Session::open] Session started
+2018-01-15 03:13:59 [192.168.1.175][-][-][info][application] $_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'www.chinlab2018.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_SOCKETLOG' => 'SocketLog(tabid=2&client_id=)'
+    'PATH' => 'C:\\Program Files (x86)\\Lenovo\\FusionEngine;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\ProgramData\\ComposerSetup\\bin;D:\\Git\\cmd;D:\\nodejs\\;E:\\java\\bin;E:\\java\\jre\\bin;D:\\tortoisegit\\bin;D:\\虚拟机\\bin;E:\\MongoDB\\bin;E:/phpStudy/PHPTutorial/MySQL/bin;C:\\Users\\lenovo\\AppData\\Local\\Microsoft\\WindowsApps;E:\\xampp\\php;C:\\Users\\lenovo\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\lenovo\\AppData\\Roaming\\npm;E:/phpStudy/PHPTutorial/MySQL/bin'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 Server at www.chinlab2018.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7'
+    'SERVER_NAME' => 'www.chinlab2018.com'
+    'SERVER_ADDR' => '192.168.1.175'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.1.175'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/beginner/hanyu-php/web/index.php'
+    'REMOTE_PORT' => '55318'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1515982439.463
+    'REQUEST_TIME' => 1515982439
+]
+2018-01-15 03:14:00 [192.168.1.175][-][-][info][yii\web\Session::open] Session started
+2018-01-15 03:13:59 [192.168.1.175][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'efqjencsvs5vgja5dd4jeg449r'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'www.chinlab2018.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=efqjencsvs5vgja5dd4jeg449r'
+    'HTTP_SOCKETLOG' => 'SocketLog(tabid=2&client_id=)'
+    'PATH' => 'C:\\Program Files (x86)\\Lenovo\\FusionEngine;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\ProgramData\\ComposerSetup\\bin;D:\\Git\\cmd;D:\\nodejs\\;E:\\java\\bin;E:\\java\\jre\\bin;D:\\tortoisegit\\bin;D:\\虚拟机\\bin;E:\\MongoDB\\bin;E:/phpStudy/PHPTutorial/MySQL/bin;C:\\Users\\lenovo\\AppData\\Local\\Microsoft\\WindowsApps;E:\\xampp\\php;C:\\Users\\lenovo\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\lenovo\\AppData\\Roaming\\npm;E:/phpStudy/PHPTutorial/MySQL/bin'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 Server at www.chinlab2018.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7'
+    'SERVER_NAME' => 'www.chinlab2018.com'
+    'SERVER_ADDR' => '192.168.1.175'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.1.175'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/beginner/hanyu-php/web/index.php'
+    'REMOTE_PORT' => '55322'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1515982439.943
+    'REQUEST_TIME' => 1515982439
+]
+2018-01-15 03:14:00 [192.168.1.175][-][-][error][Error] Error: Class 'app\models\LoginForm' not found in E:\xampp\htdocs\beginner\hanyu-php\controllers\SiteController.php:142
+Stack trace:
+#0 [internal function]: app\controllers\SiteController->actionLogin()
+#1 E:\xampp\htdocs\beginner\hanyu-php\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#2 E:\xampp\htdocs\beginner\hanyu-php\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#3 E:\xampp\htdocs\beginner\hanyu-php\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('login', Array)
+#4 E:\xampp\htdocs\beginner\hanyu-php\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('site/login', Array)
+#5 E:\xampp\htdocs\beginner\hanyu-php\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 E:\xampp\htdocs\beginner\hanyu-php\web\index.php(34): yii\base\Application->run()
+#7 {main}
+2018-01-15 03:13:59 [192.168.1.175][-][-][info][application] $_GET = [
+    'site_login_php' => ''
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'efqjencsvs5vgja5dd4jeg449r'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'www.chinlab2018.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=efqjencsvs5vgja5dd4jeg449r'
+    'HTTP_SOCKETLOG' => 'SocketLog(tabid=2&client_id=)'
+    'PATH' => 'C:\\Program Files (x86)\\Lenovo\\FusionEngine;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\ProgramData\\ComposerSetup\\bin;D:\\Git\\cmd;D:\\nodejs\\;E:\\java\\bin;E:\\java\\jre\\bin;D:\\tortoisegit\\bin;D:\\虚拟机\\bin;E:\\MongoDB\\bin;E:/phpStudy/PHPTutorial/MySQL/bin;C:\\Users\\lenovo\\AppData\\Local\\Microsoft\\WindowsApps;E:\\xampp\\php;C:\\Users\\lenovo\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\lenovo\\AppData\\Roaming\\npm;E:/phpStudy/PHPTutorial/MySQL/bin'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 Server at www.chinlab2018.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7'
+    'SERVER_NAME' => 'www.chinlab2018.com'
+    'SERVER_ADDR' => '192.168.1.175'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.1.175'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/beginner/hanyu-php/web/index.php'
+    'REMOTE_PORT' => '55318'
+    'REDIRECT_URL' => '/site_login.php'
+    'REDIRECT_QUERY_STRING' => 'site_login.php'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'site_login.php'
+    'REQUEST_URI' => '/site_login.php'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1515982439.828
+    'REQUEST_TIME' => 1515982439
+]
+2018-01-15 03:14:00 [192.168.1.175][-][-][error][Error] Error: Class 'app\models\LoginForm' not found in E:\xampp\htdocs\beginner\hanyu-php\controllers\SiteController.php:142
+Stack trace:
+#0 [internal function]: app\controllers\SiteController->actionLogin()
+#1 E:\xampp\htdocs\beginner\hanyu-php\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#2 E:\xampp\htdocs\beginner\hanyu-php\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#3 E:\xampp\htdocs\beginner\hanyu-php\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('login', Array)
+#4 E:\xampp\htdocs\beginner\hanyu-php\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('site/login', Array)
+#5 E:\xampp\htdocs\beginner\hanyu-php\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 E:\xampp\htdocs\beginner\hanyu-php\web\index.php(34): yii\base\Application->run()
+#7 {main}
+2018-01-15 03:14:00 [192.168.1.175][-][-][info][application] $_GET = [
+    'site_login_php' => ''
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'efqjencsvs5vgja5dd4jeg449r'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'www.chinlab2018.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=efqjencsvs5vgja5dd4jeg449r'
+    'HTTP_SOCKETLOG' => 'SocketLog(tabid=2&client_id=)'
+    'PATH' => 'C:\\Program Files (x86)\\Lenovo\\FusionEngine;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\ProgramData\\ComposerSetup\\bin;D:\\Git\\cmd;D:\\nodejs\\;E:\\java\\bin;E:\\java\\jre\\bin;D:\\tortoisegit\\bin;D:\\虚拟机\\bin;E:\\MongoDB\\bin;E:/phpStudy/PHPTutorial/MySQL/bin;C:\\Users\\lenovo\\AppData\\Local\\Microsoft\\WindowsApps;E:\\xampp\\php;C:\\Users\\lenovo\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\lenovo\\AppData\\Roaming\\npm;E:/phpStudy/PHPTutorial/MySQL/bin'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 Server at www.chinlab2018.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7'
+    'SERVER_NAME' => 'www.chinlab2018.com'
+    'SERVER_ADDR' => '192.168.1.175'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.1.175'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs/beginner/hanyu-php/web'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/beginner/hanyu-php/web/index.php'
+    'REMOTE_PORT' => '55322'
+    'REDIRECT_URL' => '/site_login.php'
+    'REDIRECT_QUERY_STRING' => 'site_login.php'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'site_login.php'
+    'REQUEST_URI' => '/site_login.php'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1515982440.1
+    'REQUEST_TIME' => 1515982440
+]

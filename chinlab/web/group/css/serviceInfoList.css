@@ -1,0 +1,16 @@
+
+#order_start_time{
+	display: inline-block!important;
+	width: 46%;
+}
+#order_end_time{
+	display: inline-block!important;
+	width: 46%;
+}
+.datatable_infoleft{
+	text-align: right;
+}
+
+.datatable_inforight{
+	text-align: left!important;
+}

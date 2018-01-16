@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>常见问题</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<!-- my_ctrl_c start -->
+<div class="faq">
+	<dl>		
+		<dt>关于用户注册?</dt>
+			<dd>答：伙伴医生目前仅支持手机号注册，一个手机号只能注册一次，如果手机号重复注册，提示用户已注册，可直接登录；如果注册登录过程中遇到问题、注册获取验证码失败，可联系客服电话：400-001-2255；我们及时为您解决问题。</dd>	
+		</dl>	
+	<dl>	
+		<dt>如何申请预约？</dt>
+			<dd>答：   您可根据自身的病情情况，可选择医生、医院、科室，申请预约，预约时填写如下资料信息；
+			<br/>1、	填写疾病信息：患者名称、性别、年龄、病例名称、疾病描述等；
+			<br/>2、	病情资料：身份证、本地医保卡、CT、彩超、B超、核磁，诊断报告等。
+		    </dd>
+	</dl>	
+	<dl>		
+	   <dt>关于费用？</dt>		
+	   <dd>答：
+	   <br/>1、伙伴医生只是收取服务费用作为给患者提供服务基础成本；
+	   <br/>2、服务咨询费，伙伴医生一旦为患者提供服务，服务咨询费是不退换的。
+	   </dd>	
+	</dl>
+	<dl>
+	<dt>伙伴医生能否预约到专家手术？</dt>	
+		<dd>答：
+		    <br/>伙伴医生平台上所提供的医生均为三甲医院副主任及以上的专家为患者提供手术服务。
+		</dd>
+	</dl>
+	<dl>		
+	<dt>手术能保证治疗效果吗？</dt>
+	<dd>答：医疗本身就是具有自身的独特性，患者之间的病情差异不同，医生会跟进患者的病情情况进行治疗的，伙伴医生不承诺包治好，住院几天就能出院；</dd>	
+	</dl>	
+	<dl>		
+	<dt>伙伴医生能为患者提供哪些服务？ </dt>	
+		<dd>答：为患者提供手术的专家预约，专家vip治疗服务通道，海外体检和医疗服务。
+		</dd>
+	</dl>		
+	<dl>		
+	<dt>付费后多久能预约到专家?</dt>	
+		<dd>一般情况下我们在24小时就给患者一个反馈信息，具体能多久能约到专家，要取决于预约的专家和患者的疾病情况。如遇到医生出差等情况可能会有一定时间的延迟。
+		</dd>
+	</dl>
+	</div>
+<!-- end my_ctrl_c -->
+</body>
+<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+<script>
+    $(function(){
+        $(".faq dl").click(function(){
+            $(this).toggleClass("current");
+            $(this).siblings().removeClass("current");
+            $(this).find("dd").slideToggle(500);
+            $(this).siblings().find("dd").slideUp(500);
+        })
+    })
+</script>
+</html>

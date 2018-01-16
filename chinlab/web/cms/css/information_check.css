@@ -1,0 +1,43 @@
+.isHide{
+	display: none!important;
+}
+.isShow{
+	display: block!important;
+}
+
+.control-label{
+	text-align: right!important;
+	margin-top:6px;
+}
+.form-group{
+	overflow: hidden;
+}
+.form-control{
+	display: inline-block;
+	width:70%;
+}
+.tips{
+	margin-left:20px;
+}
+.url_box{
+	display: none;
+}
+.editor{
+	display: none;
+}
+#editor-trigger {
+    height: 400px;
+    /*max-height: 500px;*/
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.upload_img{
+	display: none;
+}
+#pvw a{
+	text-decoration: none;
+	color:#000000;
+}

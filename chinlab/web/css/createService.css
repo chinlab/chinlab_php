@@ -1,0 +1,33 @@
+.control-label{
+	text-align: right!important;
+	margin-top:6px;
+}
+.header{
+	font-size: 24px;
+	height:60px;
+	line-height: 60px;
+	color:#ffffff;
+	background:#66cefa;
+	padding:0 30px;
+}
+.main{
+	padding:100px 0;
+	overflow: hidden;
+	margin:0 20%;
+}
+.form-group{
+	overflow: hidden;
+}
+.form-control{
+	display: inline-block;
+	width:100%;
+}
+.save{
+	border-top:1px solid #b9b9b9;
+	margin:0;
+	padding-top:20px;
+	padding-left:45%;
+}
+#saveedit{
+	margin-right: 50px;
+}

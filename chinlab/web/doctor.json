@@ -1,0 +1,465 @@
+[
+   {
+    "desc": "根据手机号获取医生登录信息",
+    "url": "/userApi/atdoctor/getinfobyphone.php",
+    "params": [
+      {
+        "field": "phone",
+        "fieldDesc": "用户手机号码",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "phone:用户手机号码",
+    "resultDesc": "session_key:测试别的接口需传递的参数"
+  },
+  {
+    "desc": "发送手机验证码（登录和注册）",
+    "url": "/userApi/atdoctor_getCode.php",
+    "params": [
+      {
+        "field": "user_mobile",
+        "fieldDesc": "手机号码",
+        "is_require": "1"
+      },
+      {
+        "field": "type",
+        "fieldDesc": "类型：1注册2找回密码3登录",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "user_mobile:手机号码:type:类型",
+    "resultDesc": ""
+  },
+  {
+    "desc": "短信验证码验证",
+    "url": "/userApi/atdoctor_checkphonecode.php",
+    "params": [
+      {
+        "field": "user_mobile",
+        "fieldDesc": "手机号码",
+        "is_require": "1"
+      },
+      {
+        "field": "smscode",
+        "fieldDesc": "短信验证码",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "user_mobile:用户手机号码:smscode:短信验证码",
+    "resultDesc": ""
+  },
+  {
+    "desc": "医生注册",
+    "url": "/userApi/atdoctor_register.php",
+    "params": [
+      {
+        "field": "user_mobile",
+        "fieldDesc": "用户手机号码",
+        "is_require": "1"
+      },
+      {
+        "field": "smscode",
+        "fieldDesc": "验证码",
+        "is_require": "1"
+      },
+      {
+        "field": "user_pass",
+        "fieldDesc": "用户密码",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "user_mobile:用户手机号码:user_pass:用户面或者手机验证码 ",
+    "resultDesc": "user_pass为空字符创的时候说明用户未设置密码"
+  },
+  {
+    "desc": "医生登录",
+    "url": "/userApi/atdoctor_login.php",
+    "params": [
+      {
+        "field": "user_mobile",
+        "fieldDesc": "用户手机号码",
+        "is_require": "1"
+      },
+      {
+        "field": "user_pass",
+        "fieldDesc": "用户密码或者手机验证码",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "user_mobile:用户手机号码:user_pass:用户面或者手机验证码 ",
+    "resultDesc": "user_pass为空字符创的时候说明用户未设置密码"
+  },
+   {
+    "desc": "修改密码",
+    "url": "/userApi/atdoctor_resetPassword.php",
+    "params": [
+      {
+        "field": "smscode",
+        "fieldDesc": "手机验证码",
+        "is_require": "1"
+      },
+      {
+        "field": "user_mobile",
+        "fieldDesc": "手机号码",
+        "is_require": "1"
+      },
+      {
+        "field": "user_pass",
+        "fieldDesc": "新密码",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "user_mobile:用户手机号码:smscode:短信验证码",
+    "resultDesc": ""
+  },
+   {
+    "desc": "上传图片",
+    "url": "/userApi/myfile_uploaddoctorfile.php",
+    "params": [
+       {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+      {
+        "field": "filetype",
+        "fieldDesc": "",
+        "is_require": "0"
+      },
+      {
+        "field": "fileName",
+        "fieldDesc": "上传文件名",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "user_mobile:手机号码:type:类型",
+    "resultDesc": ""
+  },
+   {
+    "desc": "医生上传基本信息",
+    "url": "/userApi/atdoctor_basicinfo.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+      {
+        "field": "hospital_name",
+        "fieldDesc": "医院名",
+        "is_require": "1"
+      },
+      {
+        "field": "doctor_name",
+        "fieldDesc": "医生名",
+        "is_require": "1"
+      },
+      {
+        "field": "section_info",
+        "fieldDesc": "科室",
+        "is_require": "1"
+      },
+      {
+        "field": "good_at",
+        "fieldDesc": "专业擅长",
+        "is_require": "1"
+      },
+      {
+        "field": "doctor_position_desc",
+        "fieldDesc": "职称",
+        "is_require": "1"
+      },
+      {
+        "field": "honor",
+        "fieldDesc": "荣誉",
+        "is_require": "1"
+      },
+      {
+        "field": "doctor_des",
+        "fieldDesc": "个人简介",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "user_mobile:用户手机号码:user_pass:用户面或者手机验证码 ",
+    "resultDesc": "user_pass为空字符创的时候说明用户未设置密码"
+  },
+   {
+    "desc": "医生上传认证信息",
+    "url": "/userApi/atdoctor_authinfo.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+      {
+        "field": "doctor_image",
+        "fieldDesc": "医生头像",
+        "is_require": "1"
+      },
+      {
+        "field": "work_experience",
+        "fieldDesc": "执业证书",
+        "is_require": "1"
+      },
+      {
+        "field": "doctor_card",
+        "fieldDesc": "职称证书或胸牌",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "user_mobile:用户手机号码:user_pass:用户面或者手机验证码 ",
+    "resultDesc": "user_pass为空字符创的时候说明用户未设置密码"
+  },
+   {
+    "desc": "获取预约订单列表",
+    "url": "/userApi/atdoctor_getorderlist.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+      {
+        "field": "order_type",
+        "fieldDesc": "订单类型",
+        "is_require": "0"
+      },
+      {
+        "field": "order_state",
+        "fieldDesc": "订单状态",
+        "is_require": "0"
+      },
+      {
+        "field": "page",
+        "fieldDesc": "页数",
+        "is_require": "0"
+      },
+      {
+        "field": "common_state",
+        "fieldDesc": "已完成60，进行中70，取消80",
+        "is_require": "0"
+      }
+    ],
+    "requestDesc": "order_type 1 手术科室预约 15健康卡购买 16集团用户 17解读报告 12 vip服务预约 9预约诊疗 13公益 10海外医疗\ncommon_state 60已完成， 70进行中， 80已取消 90为我的咨询",
+    "resultDesc": "见7接口"
+  },
+  {
+    "desc": "根据订单ID获取订单详情",
+    "url": "/userApi/atdoctor_getorder.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+      {
+        "field": "order_id",
+        "fieldDesc": "订单id",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "order_id订单id",
+    "resultDesc": "见7接口"
+  },
+  {
+    "desc": "获取医生信息",
+    "url": "/userApi/atdoctor_doctorinfo.php",
+    "params": [
+       {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "user_mobile:手机号码:type:类型",
+    "resultDesc": ""
+  },
+   {
+    "desc": "添加银行卡",
+    "url": "/userApi/atdoctor_addcards.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+      {
+        "field": "bank_card",
+        "fieldDesc": "银行卡号",
+        "is_require": "1"
+      },
+      {
+        "field": "bank_name",
+        "fieldDesc": "银行名称",
+        "is_require": "1"
+      },
+      {
+        "field": "opening_bank",
+        "fieldDesc": "开户行名称",
+        "is_require": "1"
+      },
+      {
+        "field": "user_name",
+        "fieldDesc": "持卡人姓名",
+        "is_require": "1"
+      },
+      {
+        "field": "user_card",
+        "fieldDesc": "持卡人身份证",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": "见7接口"
+  },
+   {
+    "desc": "查看银行卡",
+    "url": "/userApi/atdoctor_getcards.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+      {
+        "field": "page",
+        "fieldDesc": "页数",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": "见7接口"
+  },
+   {
+    "desc": "解绑银行卡",
+    "url": "/userApi/atdoctor_delcards.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+       {
+        "field": "cards_id",
+        "fieldDesc": "卡id",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": "见7接口"
+  },
+  {
+    "desc": "用户管理列表",
+    "url": "/userApi/atdoctor_getuserlist.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+      {
+        "field": "page",
+        "fieldDesc": "页数",
+        "is_require": "0"
+      }
+    ],
+    "requestDesc": "order_type 1 手术科室预约 15健康卡购买 16集团用户 17解读报告 12 vip服务预约 9预约诊疗 13公益 10海外医疗\ncommon_state 60已完成， 70进行中， 80已取消 90为我的咨询",
+    "resultDesc": "见7接口"
+  },
+  {
+    "desc": "医生结束订单",
+    "url": "/userApi/atdoctor_updateorderstatus.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+      {
+        "field": "order_id",
+        "fieldDesc": "订单Id",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "获取订单提醒数量",
+    "url": "/userApi/atdoctor_getordertip.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+      {
+        "field": "order_type",
+        "fieldDesc": "订单类型",
+        "is_require": "0"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "获取医生总收入及当月收入报表",
+    "url": "/userApi/atdoctor_incomestatement.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+      {
+        "field": "order_type",
+        "fieldDesc": "订单类型",
+        "is_require": "0"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "医生回复问诊",
+    "url": "/userApi/atdoctor_updateorderreply.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "通过[1]接口获得",
+        "is_require": "1"
+      },
+      {
+        "field": "order_id",
+        "fieldDesc": "订单编号",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  },
+  {
+    "desc": "用户意见反馈",
+    "url": "/userApi/atdoctor_adduseropinion.php",
+    "params": [
+      {
+        "field": "session_key",
+        "fieldDesc": "用户登录Key",
+        "is_require": "1"
+      },
+      {
+        "field": "desc",
+        "fieldDesc": "意见描述",
+        "is_require": "1"
+      },
+      {
+        "field": "images",
+        "fieldDesc": "反馈图片, 多图片用英文逗号隔开",
+        "is_require": "1"
+      }
+    ],
+    "requestDesc": "",
+    "resultDesc": ""
+  }
+]
